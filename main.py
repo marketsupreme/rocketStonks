@@ -10,6 +10,10 @@ app = Flask(__name__)
 def index():
 	return render_template('index.html')
 
+
+@app.route('/stock/')
+def stock():
+	return render_template('stocks.html')
 	
 @app.route('/stock/AAPL/')
 def AAPL():
@@ -23,6 +27,10 @@ def HON():
 def MRNA():
 	return render_template('mrna.html')
 
+
+@app.route('/cat/')
+def cat():
+	return render_template('categories.html')
 
 @app.route('/cat/bio')
 def catBio():
@@ -43,11 +51,16 @@ def catIndustry():
 @app.route('/cat/tech/')
 def catTech():
 	return render_template('catTech.html')
+	
 
 
 @app.route('/about/')
 def about():
 	return render_template('about.html')
+
+
+
+
 
 # debug=True to avoid restart the local development server manually after each change to your code. 
 # host='0.0.0.0' to make the server publicly available. 
