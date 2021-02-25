@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-	return render_template('index.html')
+	return render_template('nav_bar.html') + render_template('index.html')
 
 
 @app.route('/stock/')
@@ -56,10 +56,7 @@ def catTech():
 
 @app.route('/about/')
 def about():
-	return render_template('nav_bar.html') + render_template('hon.html')
-
-
-
+	return render_template('about.html')
 
 
 # debug=True to avoid restart the local development server manually after each change to your code. 
