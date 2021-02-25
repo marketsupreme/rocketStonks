@@ -49,6 +49,9 @@ def catTech():
 def about():
 	return render_template('about.html')
 
+@app.route('/stock')
+def stock():
+    return render_template('stocks_page.html')
 # debug=True to avoid restart the local development server manually after each change to your code. 
 # host='0.0.0.0' to make the server publicly available. 
 if __name__ == "__main__":
