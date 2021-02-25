@@ -12,6 +12,11 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/stock/')
+def stock():
+    return render_template('stocks.html')
+
+
 @app.route('/stock/AAPL/')
 def AAPL():
     return render_template('aapl.html')
@@ -25,6 +30,11 @@ def HON():
 @app.route('/stock/MRNA/', methods=['GET', 'POST'])
 def MRNA():
     return render_template('mrna.html')
+
+
+@app.route('/cat/')
+def cat():
+    return render_template('categories.html')
 
 
 @app.route('/cat/bio')
@@ -59,7 +69,7 @@ def projections():
 
 @app.route('/about/')
 def about():
-    return render_template('about.html')
+    return render_template('nav_bar.html') + render_template('hon.html')
 
 
 # debug=True to avoid restart the local development server manually after each change to your code.

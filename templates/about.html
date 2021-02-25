@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>rocketStonks</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+		<link rel="shortcut icon" type="image/x-icon" href="/static/images/icon.png">
+		<link rel="stylesheet" href="index.css">
+        <title> About Us </title>
+    </head>
+    <body>
+		<!--START HERE-->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+		
+		<!--begin navbar-->
+		<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #24c24b;">
+			<div class="container-fluid" style="float:left">
+				<nav class="navbar navbar">
+					<div class="container-fluid">
+					  <a class="navbar-brand" href="{{url_for('index')}}" style="font-size: 25px; font: ;">
+						<img src="/static/images/icon.png" alt="" width="48" height="38" class="d-inline-block align-top" >
+						rocketStonks
+					  </a>
+					</div>
+				  </nav>
+			</div>
+			<div class="collapse navbar-collapse" id="navbarNavDropdown" style="float:right; padding-right: 5%;">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="btn btn-default" href="{{url_for('stock')}}" style="font-size: 20px; padding-right: 20%;">Stocks</a>
+					</li>
+					<li class="nav-item">
+						<a class="btn btn-default" href="#" style="font-size: 20px; padding-right: 20%;">Projections</a>
+					</li>
+					
+					<li class="nav-item dropdown">
+					<a class="btn btn-default dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="true" style="font-size: 20px; padding-right: 20%;">
+						Categories
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<li><a class="dropdown-item" href="{{url_for('catBio')}}">Biomedical</a></li>
+						<li><a class="dropdown-item" href="{{url_for('catIndustry')}}">Industry</a></li>
+						<li><a class="dropdown-item" href="{{url_for('catTech')}}">Technology</a></li>
+						<li><a class="dropdown-item disabled" href="{{url_for('catCrypto')}}">Cryptocurrency</a></li>
+						<li><a class="dropdown-item disabled" href="{{url_for('catPenny')}}">Penny Stocks</a></li>
+					</ul>
+					</li>
+					<li class="nav-item">
+						<a class="btn btn-default" href="{{url_for('about')}}" style="font-size: 20px; padding-right: 20%;">About</a>
+					</li>
+				</ul>
+			  </div>
+			</div>
+		  </nav>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+        </script>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Categories</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Biomedical</a></li>
+                <li><a class="dropdown-item" href="#">Industry</a></li>
+                <li><a class="dropdown-item" href="#">Technology</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item disabled" href="#">Cryptocurrency</a></li>
+                <li><a class="dropdown-item disabled" href="#">Penny Stocks</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Stocks</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Projections</a>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+            </li>
+          </ul>
+        <h1 class="heading"> About Us </h1> 
+        <br>
+        <div class='about-body'>
+            <p class="body"> Hi there! We are the developers of rocketStonks. Feel free to explore this
+                page to learn about us, why we made this website, and how we went about doing so. We are not 
+                financial advisors in any way and this is not legitimate financial advice! </p>
+        </div>
+        <div class="about-body" style="margin-top: 2rem;">
+            <h2 class="heading"> Our Mission </h2>
+        </div>
+        <div class="about-body" style="margin-top: 1rem;">
+            <p class="body"> Nowadays, everyone invests. Whether it is for fun or for a job, 
+                who would not want to passively make some money? Let us help you choose where to 
+                dump your money into! </p>
+        </div>
+        <div class="about-body" style="margin-top: 1rem;">
+            <p class="body">
+                About 55% of the American population owns some form of stock. With more and more people
+                starting to invest everyday, we at rocketStonks aim to create a platform where one can 
+                monitor stocks from varying categories to determine whether or not they should invest. 
+                We seek to do this by providing various stocks of differing industries as well as charts 
+                to illustrate the history of their growth. We hope that these resources will encourage more 
+                people to take advantage of this captialist economy and make their own gains from it!
+            </p>
+        </div>
+        <div class="about-body" style="margin-top: 1rem;">
+            <p class="body">
+                Our website features stocks from categories ranging from Technology to Cryptocurrency and 
+                even includes Penny Stocks. Interested in one category? Use the drop down menu to learn more
+                about that industry and some of our picks of which companies we think you should follow. Our
+                website should make it seamless for the average small time investor to buy high and sell low!
+            </p>
+        </div>
+        <div class="about-body" style="margin-top: 1rem;">
+            <p class="body">
+                We hope our website proves to be a valuable resource for those who wish to do their due dilligence. 
+                Always remember, DIAMOND HANDS!!
+            </p>
+        </div>
+        <br>
+        <br>
+        <div class='teamCard'>
+            <h1 class="heading"> The Team </h1>
+            <br>
+            <div class='teamMember'>
+                <p style='width: 85%;'>
+                    <div class='description'>
+                        <img src='/static/images/profilepic.png' width="200" length="300">
+                        <div class='description-body'>
+                            <div class='name h5'>Nam Nguyen</div>
+                            <div class='description-items'>
+                                <div class='memberInfo'>
+                                    <div>Front-End</div>
+                                </div>
+                                <div class='memberActivity'>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </p>
+            </div>
+                <div class='teamMember'>
+                    <p style='width: 85%;'>
+                        <div class='description'>
+                            <img src='/statics/images/alec.jpg'width="200" length="300">
+                            <div class='description-body'>
+                                <div class='name h5'>Alec Biggerstaff</div>
+                                <div class='description-items'>
+                                    <div class='memberInfo'>
+                                        <div>Front-End</div>
+                                    </div>
+                                    <div class='memberActivity'>
+                                        
+                                    </div>
+                                </div>
+    
+                            </div>
+                        </div>
+                    </p>
+            </div>
+                <div class='teamMember'>
+                    <p style='width: 85%;'>
+                        <div class='description'>
+                            <img src='/statics/images/allan.png' width="200" length="300">
+                            <div class='description-body'>
+                                <div class='name h5'>Allan Castaneda</div>
+                                <div class='description-items'>
+                                    <div class='memberInfo'>
+                                        <div>Front-End</div>
+                                    </div>
+                                    <div class='memberActivity'>
+                                        
+                                    </div>
+                                </div>
+    
+                            </div>
+                        </div>
+                    </p>
+            </div>
+                <div class='teamMember'>
+                    <p style='width: 85%;'>
+                        <div class='description'>
+                            <img src='/static/images/unnamed.jpg'>
+                            <div class='description-body'>
+                                <div class='name h5'>Danfeng Wang</div>
+                                <div class='description-items'>
+                                    <div class='memberInfo'>
+                                        <div>Front-End</div>
+                                    </div>
+                                    <div class='memberActivity'>
+                                        
+                                    </div>
+                                </div>
+    
+                            </div>
+                        </div>
+                    </p>
+            </div>
+                <div class='teamMember'>
+                    <p style='width: 85%;'>
+                        <div class='description'>
+                            <img src='/static/images/michael.jpg'>
+                            <div class='description-body'>
+                                <div class='name h5'>Michael Walters</div>
+                                <div class='description-items'>
+                                    <div class='memberInfo'>
+                                        <div>Front-End</div>
+                                    </div>
+                                    <div class='memberActivity'>
+                                        
+                                    </div>
+                                </div>
+    
+                            </div>
+                        </div>
+                    </p>
+            </div>
+        </div>
+        <br>
+        <br>
+        <h1 class="heading"> Repository Statistcs </h1>
+        <br>
+        <br>
+        <h1 class="heading"> Development Tools </h1>
+        <br>
+        <br>
+        <h1 class="heading"> Our API </h1>
+        <h1 class="heading"> Contact Us </h1>
+    </body>
+</html>
