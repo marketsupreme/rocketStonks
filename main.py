@@ -28,10 +28,10 @@ def book():
     return render_template('book.html')
 
 
-# projections page
-@app.route('/projections/')
+# projections page (AAPL)
+@app.route('/projections/AAPL')
 def projections():
-    return render_template('projections.html')
+    return render_template('projections_AAPL.html')
 
 
 # debug=True to avoid restart the local development server manually after each change to your code.
