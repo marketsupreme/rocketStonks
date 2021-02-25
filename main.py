@@ -56,7 +56,7 @@ def catTech():
 
 @app.route('/about/')
 def about():
-	return render_template('about.html')
+	return render_template('nav_bar.html') + render_template('hon.html')
 
 
 
