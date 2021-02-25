@@ -12,49 +12,6 @@
     <title> Stock Name </title>
 </head>
 <body>
-
-<!-- Option 1: Bootstrap Bundle with Popper -->
-<!--begin navbar-->
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #24c24b;">
-    <div class="container-fluid" style="float:left">
-        <nav class="navbar navbar">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="/static/images/icon.png" alt="" width="48" height="38" class="d-inline-block align-top">
-                    rocketStonks
-                </a>
-            </div>
-        </nav>
-    </div>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown" style="float:right">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Stocks</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Projections</a>
-            </li>
-
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Categories
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="{{url_for('catBio')}}">Biomedical</a></li>
-                    <li><a class="dropdown-item" href="{{url_for('catIndustry')}}">Industry</a></li>
-                    <li><a class="dropdown-item" href="{{url_for('catTech')}}">Technology</a></li>
-                    <li><a class="dropdown-item disabled" href="{{url_for('catCrypto')}}">Cryptocurrency</a></li>
-                    <li><a class="dropdown-item disabled" href="{{url_for('catPenny')}}">Penny Stocks</a></li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{url_for('about')}}">About</a>
-            </li>
-        </ul>
-    </div>
-    </div>
-</nav>
-<!--end navbar-->
 <br>
 <br>
 <div class="container" style="justify-content: flex-start">
@@ -134,7 +91,7 @@
 
         </div>
         <div class="col">
-            <img src="/static/images/honeywell.jpg" alt = 'stock name'>
+            <img src="/static/images/honeywell.jpg" alt = 'Honeywell'>
         </div>
     </div>
 </div>
