@@ -1,47 +1,75 @@
 <!doctype html>
 <html lang="en">
-
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-        <title>rocketStonks</title>
+	<head>
+		<!--START HERE-->
+		<title>rocketStonks</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+		<link rel="shortcut icon" type="image/x-icon" href="/static/images/icon.png">
 		<style type='text/css'>
 			h1 {text-align: center;}
 			div {text-align: center;}
 		</style>
-    </head>
+		<!--END HERE-->
+  	</head>
 
-	<body>
+	<body style="background-color: rgb(200, 234, 248);">
+
+		<!--START HERE-->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-		<ul class="nav nav-pills" style="float:right;">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Categories</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Biomedical</a></li>
-                <li><a class="dropdown-item" href="#">Industry</a></li>
-                <li><a class="dropdown-item" href="#">Technology</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item disabled" href="#">Cryptocurrency</a></li>
-                <li><a class="dropdown-item disabled" href="#">Penny Stocks</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Stocks</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Projections</a>
-            <li class="nav-item">
-                <a class="nav-link" href="#">About Us</a>
-            </li>
-        </ul>
+		
+		<!--begin navbar-->
+		<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #24c24b;">
+			<div class="container-fluid" style="float:left">
+				<nav class="navbar navbar">
+					<div class="container-fluid">
+					  <a class="navbar-brand" href="{{url_for('index')}}">
+						<img src="/static/images/icon.png" alt="" width="48" height="38" class="d-inline-block align-top">
+						rocketStonks
+					  </a>
+					</div>
+				  </nav>
+			</div>
+			<div class="collapse navbar-collapse" id="navbarNavDropdown" style="float:right">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="#">Stocks</a>
+					</li>
+					<li class="nav-item">
+					<a class="nav-link" href="#">Projections</a>
+					</li>
+					
+					<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						Categories
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<li><a class="dropdown-item" href="{{url_for('catBio')}}">Biomedical</a></li>
+						<li><a class="dropdown-item" href="{{url_for('catIndustry')}}">Industry</a></li>
+						<li><a class="dropdown-item" href="{{url_for('catTech')}}">Technology</a></li>
+						<li><a class="dropdown-item disabled" href="{{url_for('catCrypto')}}">Cryptocurrency</a></li>
+						<li><a class="dropdown-item disabled" href="{{url_for('catPenny')}}">Penny Stocks</a></li>
+					</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{url_for('about')}}">About</a>
+					</li>
+				</ul>
+			  </div>
+			</div>
+		  </nav>
+		  <!--end navbar-->
+		  <!--END HERE-->
+
 		<br/><br/><br/>
 		<h1>Biomedical Stocks</h1><br/>
-		<div class="container-fluid">
-			<a href="{{url_for('MRNA')}}">Moderna: MRNA</a>
+		<div class="card" style="width: 18rem;">
+			<img class="card-img-top" src="/static/images/Biomedical.PNG" alt="Card image cap">
+			<div class="card-body">
+				<h5 class="card-title">Moderna: MRNA</h5>
+				<a href="{{url_for('MRNA')}}" class="btn btn-primary"> </a>
+			</div>
 		</div>
 	</body>
 </html>

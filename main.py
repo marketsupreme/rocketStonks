@@ -17,15 +17,15 @@ def stock():
 	
 @app.route('/stock/AAPL/')
 def AAPL():
-	return render_template('nav_bar.html') + render_template('aapl.html')
+	return render_template('aapl.html')
 
 @app.route('/stock/HON/')
 def HON():
-	return render_template('nav_bar.html') + render_template('hon.html')
+	return render_template('hon.html')
 	
 @app.route('/stock/MRNA/', methods=['GET', 'POST'])
 def MRNA():
-	return render_template('nav_bar.html') + render_template('mrna.html')
+	return render_template('mrna.html')
 
 
 @app.route('/cat/')
@@ -56,7 +56,7 @@ def catTech():
 
 @app.route('/about/')
 def about():
-	return render_template('about.html')
+	return render_template('nav_bar.html') + render_template('hon.html')
 
 
 
