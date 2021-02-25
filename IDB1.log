@@ -1,0 +1,67 @@
+commit 8892c64aeae999eecd4a52aab8a9457c7bbbe390
+Author: Michael Walters <mike855@outlook.com>
+Date:   Sat Feb 13 18:57:59 2021 -0600
+
+    main.py has been populated and is confirmed to work with venv
+
+commit 08a2e98e6ad29342e97b08eb058e03e604a27d54
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Sat Feb 13 17:45:29 2021 -0600
+
+    Finished stock page template, and static stock page content.
+
+commit 562c82a6578a061c8961e8fe622d10fa1e8b407f
+Merge: 2e256db 45bed56
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Sat Feb 13 17:14:43 2021 -0600
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+
+commit 2e256db71a7307e75104a5ed60b90e8405dc88c7
+Merge: 3149d67 cc40e3d
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Sat Feb 13 17:12:33 2021 -0600
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+
+commit 45bed56e011a6beb6ddf774a28dcf6c000a5dede
+Author: Michael Walters <mike855@outlook.com>
+Date:   Sat Feb 13 17:12:15 2021 -0600
+
+    working on index.html and navbar
+
+commit cc40e3d172b4cd331798bf25eaed7288907d47c1
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Sat Feb 13 17:09:13 2021 -0600
+
+    Updated WIP Stock page - part 2.
+
+commit 3149d67de17ec05f292481d9470bc434f9f59f58
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Sat Feb 13 16:48:34 2021 -0600
+
+    categories
+
+commit a8ed3fc8209b24fb819ea4829fcfaf8635d8506f
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Sat Feb 13 16:36:24 2021 -0600
+
+    Updated WIP Stock page.
+
+commit 31a5b8963b29efa0c1b586b9c0ef4abae16eadfb
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Sat Feb 13 16:06:05 2021 -0600
+
+    Added static folder, some images, and WIP stock page.
+
+commit 37e413a99d42589853411db841b57df8733e89c9
+Author: Michael Walters <mike855@outlook.com>
+Date:   Tue Feb 9 12:23:52 2021 -0600
+
+    updated repo with Fraij's template
+
+commit c89ff4af8d021392ad4496f78b588bad517635fe
+Author: Michael Walters <mike855@outlook.com>
+Date:   Mon Feb 8 20:22:19 2021 +0000
+
+    Initial commit

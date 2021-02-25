@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <link href="../static/css/stocks.css" rel="stylesheet">
+    <title> Stock Name </title>
+</head>
+<body>
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<ul class="nav nav-pills" style="float:right;" >
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Categories</a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Biomedical</a></li>
+            <li><a class="dropdown-item" href="#">Industry</a></li>
+            <li><a class="dropdown-item" href="#">Technology</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item disabled" href="#">Cryptocurrency</a></li>
+            <li><a class="dropdown-item disabled" href="#">Penny Stocks</a></li>
+        </ul>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Stocks</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Projections</a>
+    <li class="nav-item">
+        <a class="nav-link" href="#">About Us</a>
+    </li>
+</ul>
+<br>
+<br>
+<div class="container" style="justify-content: flex-start">
+    <div class="row row-cols-2">
+        <div class="col">
+            <h3> <strong>Stock Name </strong> </h3>
+            <h5> Some Stock Information </h5>
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+            <h2> <strong> Current Price </strong> <a style="color:green;"> + Day Change (+ Percent Change%) </a> </h2>
+            <h5> At close: February 12 5:40PM EST </h5>
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+            <button> Summary </button> <button> Chart </button> <button> Historical Data </button> <button> Options </button>
+            <button> Components </button>
+        </div>
+        <div class="col">
+            <button> 1D </button> <button> 5D </button> <button> 1M </button> <button> 6M </button>
+            <button> YTD </button> <button> 1Y </button> <button> 5Y </button> <button> Max </button>
+        </div>
+        <div class="col">
+            <table>
+                <tr >
+                    <td> Previous Close </td>
+                    <td> <strong> Money </strong> </td>
+                    <td> Market Cap </td>
+                    <td> <strong> Money </strong> </td>
+                </tr>
+                <tr>
+                <tr>
+                    <td> Open </td>
+                    <td> <strong> Money </strong> </td>
+                    <td> Beta(5Y Monthly) </td>
+                    <td> <strong> Number </strong> </td>
+                </tr>
+                <tr>
+                    <td> Bid </td>
+                    <td> <strong> Money </strong> </td>
+                    <td> PE Ratio (TTM) </td>
+                    <td> <strong> Number </strong> </td>
+                </tr>
+                <tr>
+                    <td> Ask </td>
+                    <td> <strong> Money </strong> </td>
+                    <td> EPS (TTM) </td>
+                    <td> <strong> Number </strong> </td>
+                </tr>
+                <tr>
+                    <td> Day's Range </td>
+                    <td> <strong> Money - Money </strong> </td>
+                    <td> Earnings Date </td>
+                    <td> <strong> Date </strong> </td>
+                </tr>
+                <tr>
+                    <td> 52 Week Range </td>
+                    <td> <strong> Money - Money </strong> </td>
+                    <td> Forward Dividend & Yield </td>
+                    <td> <strong> Money </strong> </td>
+                </tr>
+                <tr>
+                    <td> Volume </td>
+                    <td> <strong> Number </strong> </td>
+                    <td> Ex-Dividend Date </td>
+                    <td> <strong> Date </strong> </td>
+                </tr>
+                <tr>
+                    <td> Avg. Volume </td>
+                    <td> <strong> Number </strong> </td>
+                    <td> 1y Target Est </td>
+                    <td> <strong> Money </strong> </td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="col">
+            <img src="../static/images/apple.JPG" alt = 'stock name' style="padding-left: 3em;">
+        </div>
+    </div>
+</div>
+</body>
+</html>
