@@ -1,61 +1,131 @@
 <!doctype html>
 <html lang="en">
+
+	<head>
+		<!--START HERE-->
+		<title>rocketStonks</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+		<link rel="shortcut icon" type="image/x-icon" href="/static/images/icon.png">
+		<link rel="stylesheet" href="index.css">
+		<!--END HERE-->
+	</head>
+
+	<body style="background-color: rgb(63, 180, 235);">
+		<div class="row row-cols-1 row-cols-md-4 g-4" style ="padding-top:1em; padding-left:5em; padding-right:5em;">
+			<div class="col">
+				<div class="card h-100" onclick = "location.href = '{{url_for('HON')}}';" onmouseover="">
+					<img src="/static/images/Honeywell-logo.png" class="card-img-top" alt="honeywell logo">
+					<div class="card-body">
+						<h5 class="card-title"> Honeywell International Inc. <strong>(HON)</strong> </h5>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card h-100" onclick = "location.href = '{{url_for('AAPL')}}';" onmouseover="">
+					<img src="/static/images/apple-logo.png" class="card-img-top" alt="apple logo">
+					<div class="card-body" >
+						<h5 class="card-title">Apple Inc. <strong> (AAPL) </strong></h5>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card h-100" onclick = "location.href = '{{url_for('MRNA')}}';" onmouseover="">
+					<img src="/static/images/moderna-logo.jpg" class="card-img-top" alt="moderna logo">
+					<div class="card-body">
+						<h5 class="card-title"> Moderna, Inc. <strong> (MRNA) </strong></h5>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card h-100" onclick = "location.href = '{{url_for('dummy')}}';" onmouseover="">
+					<img src="/static/images/Microsoft-Logo.jpg" class="card-img-top" alt="microsoft logo">
+					<div class="card-body">
+						<h5 class="card-title"> Microsoft Corporation <strong> (MSFT) </strong> </h5>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card h-100" onclick = "location.href = '{{url_for('dummy')}}';" onmouseover="">
+					<img src="/static/images/Alphabet-logo.png" class="card-img-top" alt="alphabet logo">
+					<div class="card-body">
+						<h5 class="card-title"> Alphabet Inc. <strong> (GOOG) </strong></h5>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card h-100" onclick = "location.href = '{{url_for('dummy')}}';" onmouseover="">
+					<img src="/static/images/Amazon-logo.png" class="card-img-top" alt="amazon logo">
+					<div class="card-body">
+						<h5 class="card-title"> Amazon.com, Inc. <strong> (AMZN) </strong></h5>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card h-100" onclick = "location.href = '{{url_for('dummy')}}';" onmouseover="">
+					<img src="/static/images/Pfizer-logo.jpg" class="card-img-top" alt="pfizer logo">
+					<div class="card-body">
+						<h5 class="card-title"> Pfizer Inc. <strong> (PFE) </strong></h5>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card h-100" onclick = "location.href = '{{url_for('dummy')}}';" onmouseover="">
+					<img src="/static/images/Alexion-logo.png" class="card-img-top" alt="alexion logo">
+					<div class="card-body">
+						<h5 class="card-title"> Alexion Pharmaceuticals, Inc. <strong> (ALXN) </strong></h5>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card h-100" onclick = "location.href = '{{url_for('dummy')}}';" onmouseover="">
+					<img src="/static/images/Novartis-logo.webp" class="card-img-top" alt="novartis logo">
+					<div class="card-body">
+						<h5 class="card-title"> Novartis AG <strong> (NVS) </strong></h5>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card h-100" onclick = "location.href = '{{url_for('dummy')}}';" onmouseover="">
+					<img src="/static/images/GE-logo.png" class="card-img-top" alt="general electric logo">
+					<div class="card-body">
+						<h5 class="card-title">General Electric Company <strong> (GE) </strong></h5>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card h-100" onclick = "location.href = '{{url_for('dummy')}}';" onmouseover="">
+					<img src="/static/images/3M-logo.png" class="card-img-top" alt="3M logo">
+					<div class="card-body">
+						<h5 class="card-title"> 3M Company <strong> (MMM) </strong></h5>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card h-100" onclick = "location.href = '{{url_for('dummy')}}';" onmouseover="">
+					<img src="/static/images/Caterpillar-logo.webp" class="card-img-top" alt="caterpillar logo">
+					<div class="card-body">
+						<h5 class="card-title"> Caterpillar Inc. <strong> (CAT) </strong></h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+=======
 <head>
     <!--START HERE-->
     <title>rocketStonks</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <link href="/static/css/stocks_page.css" rel = stylesheet>
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/icon.png">
     <!--END HERE-->
 </head>
 
 <body>
-
-<!--begin navbar-->
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #24c24b;">
-    <div class="container-fluid" style="float:left">
-        <nav class="navbar navbar">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="{{url_for('index')}}" style="font-size: 25px; font: ;">
-                    <img src="/static/images/icon.png" alt="" width="48" height="38" class="d-inline-block align-top" >
-                    rocketStonks
-                </a>
-            </div>
-        </nav>
-    </div>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown" style="float:right; padding-right: 5%;">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="btn btn-default" href="{{url_for('stock')}}" style="font-size: 20px; padding-right: 20%;">Stocks</a>
-            </li>
-            <li class="nav-item">
-                <a class="btn btn-default" href="#" style="font-size: 20px; padding-right: 20%;">Projections</a>
-            </li>
-
-            <li class="nav-item dropdown">
-                <a class="btn btn-default dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="true" style="font-size: 20px; padding-right: 20%;">
-                    Categories
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="{{url_for('catBio')}}">Biomedical</a></li>
-                    <li><a class="dropdown-item" href="{{url_for('catIndustry')}}">Industry</a></li>
-                    <li><a class="dropdown-item" href="{{url_for('catTech')}}">Technology</a></li>
-                    <li><a class="dropdown-item disabled" href="{{url_for('catCrypto')}}">Cryptocurrency</a></li>
-                    <li><a class="dropdown-item disabled" href="{{url_for('catPenny')}}">Penny Stocks</a></li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a class="btn btn-default" href="{{url_for('about')}}" style="font-size: 20px; padding-right: 20%;">About</a>
-            </li>
-        </ul>
-    </div>
-    </div>
-</nav>
-<!--end navbar-->
-<!--END HERE-->
 <div class="row row-cols-1 row-cols-md-4 g-4" style ="padding-top:1em; padding-left:5em; padding-right:5em;">
     <div class="col">
         <div class="card h-100" onclick = "location.href = '{{url_for('HON')}}';" onmouseover="">
@@ -155,4 +225,5 @@
     </div>
 </div>
 </body>
+>>>>>>> 5be480e92c55f34e982fde6f03cb657238baeab3
 </html>
