@@ -61,7 +61,6 @@ def catIndustry():
 def catTech():
     return render_template('nav_bar.html') + render_template('catTech.html')
 
-
 # Projections page
 @app.route('/projections/AAPL')
 def projections_AAPL():
