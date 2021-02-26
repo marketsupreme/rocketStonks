@@ -73,6 +73,11 @@ def projections_HON():
     return render_template('projections_HON.html')
 
 
+@app.route('/projections/MRNA')
+def projections_MRNA():
+    return render_template('projections_MRNA.html')
+
+
 @app.route('/about/')
 def about():
     return render_template('nav_bar.html') + render_template('hon.html')
