@@ -62,9 +62,20 @@ def catTech():
     return render_template('catTech.html')
 
 
+# Projections page
 @app.route('/projections/AAPL')
-def projections():
+def projections_AAPL():
     return render_template('projections_AAPL.html')
+
+
+@app.route('/projections/HON')
+def projections_HON():
+    return render_template('projections_HON.html')
+
+
+@app.route('/projections/MRNA')
+def projections_MRNA():
+    return render_template('projections_MRNA.html')
 
 
 @app.route('/about/')
