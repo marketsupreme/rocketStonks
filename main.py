@@ -14,7 +14,7 @@ def index():
 
 @app.route('/stock/')
 def stock():
-    return render_template('stocks.html')
+    return render_template('nav_bar.html') + render_template('stocks.html')
 
 
 @app.route('/stock/AAPL/')
@@ -65,17 +65,17 @@ def catTech():
 # Projections page
 @app.route('/projections/AAPL')
 def projections_AAPL():
-    return render_template('projections_AAPL.html')
+    return  render_template('nav_bar.html') + render_template('projections_AAPL.html')
 
 
 @app.route('/projections/HON')
 def projections_HON():
-    return render_template('projections_HON.html')
+    return  render_template('nav_bar.html') + render_template('projections_HON.html')
 
 
 @app.route('/projections/MRNA')
 def projections_MRNA():
-    return render_template('projections_MRNA.html')
+    return  render_template('nav_bar.html') + render_template('projections_MRNA.html')
 
 
 @app.route('/about/')
