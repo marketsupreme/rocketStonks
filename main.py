@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html')
+    return render_template('nav_bar.html') + render_template('index.html')
 
 
 @app.route('/stock/')
@@ -19,17 +19,17 @@ def stock():
 
 @app.route('/stock/AAPL/')
 def AAPL():
-    return render_template('aapl.html')
+    return  render_template('nav_bar.html') + render_template('aapl.html')
 
 
 @app.route('/stock/HON/')
 def HON():
-    return render_template('hon.html')
+    return  render_template('nav_bar.html') + render_template('hon.html')
 
 
 @app.route('/stock/MRNA/', methods=['GET', 'POST'])
 def MRNA():
-    return render_template('mrna.html')
+    return  render_template('nav_bar.html') + render_template('mrna.html')
 
 
 @app.route('/cat/')
@@ -69,9 +69,11 @@ def projections():
 
 @app.route('/about/')
 def about():
-    return render_template('nav_bar.html') + render_template('hon.html')
+    return render_template('nav_bar.html') + render_template('about.html')
 
-
+@app.route('/dummy/')
+def dummy():
+    return render_template('nav_bar.html') + render_template('dummy_link.html')
 # debug=True to avoid restart the local development server manually after each change to your code.
 # host='0.0.0.0' to make the server publicly available.
 if __name__ == "__main__":
