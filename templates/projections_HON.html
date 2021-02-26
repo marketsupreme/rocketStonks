@@ -54,119 +54,138 @@
                 <a class="nav-link" href="#">About Us</a>
             </li>
         </ul> -->
-        <header>
-            <h1>Honeywell International Inc. (HON)</h1>
-        </header>
+
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Honeywell International Inc. (HON)</h1>
+                <p class="lead">
+                    Suncoast Equity Management cut its stake in shares of
+                    Honeywell International Inc. (NYSE:HON) by 97.9% during the
+                    4th quarter
+                </p>
+                <hr class="my-4" />
+                <p class="lead d-flex justify-content-end">
+                    <a
+                        class="btn btn-outline-secondary btn-sm"
+                        href="{{ url_for('HON') }}"
+                        role="button"
+                        >Back to stock page</a
+                    >
+                </p>
+            </div>
+        </div>
 
         <!-- Valuation Measures --- A table  -->
-        <div>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col"></th>
-                    <th scope="col">Current</th>
-                    <th scope="col">12/31/2020</th>
-                    <th scope="col">9/30/2020</th>
-                    <th scope="col">6/30/2020</th>
-                    <th scope="col">3/31/2020</th>
-                    <th scope="col">12/31/2019</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">Market Cap (intraday)</th>
-                    <td>141.58B</td>
-                    <td>148.21B</td>
-                    <td>115.50B</td>
-                    <td>101.47B</td>
-                    <td>93.90B</td>
-                    <td>125.86B</td>
-                </tr>
-                <tr>
-                    <th scope="row">Enterprise Value</th>
-                    <td>149.57B</td>
-                    <td>155.42B</td>
-                    <td>122.47B</td>
-                    <td>108.79B</td>
-                    <td>100.19B</td>
-                    <td>132.11B</td>
-                </tr>
-                <tr>
-                    <th scope="row">Trailing P/E</th>
-                    <td>30.29</td>
-                    <td>30.52</td>
-                    <td>20.25</td>
-                    <td>16.62</td>
-                    <td>15.91</td>
-                    <td>20.68</td>
-                </tr>
-                <tr>
-                    <th scope="row">Forward P/E</th>
-                    <td>25.84</td>
-                    <td>26.67</td>
-                    <td>21.10</td>
-                    <td>20.66</td>
-                    <td>15.15</td>
-                    <td>20.12</td>
-                </tr>
-                <tr>
-                    <th scope="row">PEG Ratio (5 yr expected)</th>
-                    <td>2.95</td>
-                    <td>3.05</td>
-                    <td>2.36</td>
-                    <td>2.29</td>
-                    <td>1.49</td>
-                    <td>2.35</td>
-                </tr>
-                <tr>
-                    <th scope="row">Price/Sales (ttm)</th>
-                    <td>4.44</td>
-                    <td>4.57</td>
-                    <td>3.43</td>
-                    <td>2.89</td>
-                    <td>2.66</td>
-                    <td>3.52</td>
-                </tr>
-                <tr>
-                    <th scope="row">Price/Book (mrq)</th>
-                    <td>8.07</td>
-                    <td>8.09</td>
-                    <td>6.36</td>
-                    <td>5.75</td>
-                    <td>5.08</td>
-                    <td>6.95</td>
-                </tr>
-                <tr>
-                    <th scope="row">Enterprise Value/Revenue</th>
-                    <td>4.58</td>
-                    <td>17.46</td>
-                    <td>15.71</td>
-                    <td>14.55</td>
-                    <td>11.84</td>
-                    <td>13.91</td>
-                </tr>
-                <tr>
-                    <th scope="row">Enterprise Value/EBITDA</th>
-                    <td>20.29</td>
-                    <td>75.48</td>
-                    <td>81.43</td>
-                    <td>69.78</td>
-                    <td>44.51</td>
-                    <td>62.08</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="table-responsive mx-5 mb-3">
+            <table class="table table-sm table-primary table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Current</th>
+                        <th scope="col">12/31/2020</th>
+                        <th scope="col">9/30/2020</th>
+                        <th scope="col">6/30/2020</th>
+                        <th scope="col">3/31/2020</th>
+                        <th scope="col">12/31/2019</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Market Cap (intraday)</th>
+                        <td>141.58B</td>
+                        <td>148.21B</td>
+                        <td>115.50B</td>
+                        <td>101.47B</td>
+                        <td>93.90B</td>
+                        <td>125.86B</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Enterprise Value</th>
+                        <td>149.57B</td>
+                        <td>155.42B</td>
+                        <td>122.47B</td>
+                        <td>108.79B</td>
+                        <td>100.19B</td>
+                        <td>132.11B</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Trailing P/E</th>
+                        <td>30.29</td>
+                        <td>30.52</td>
+                        <td>20.25</td>
+                        <td>16.62</td>
+                        <td>15.91</td>
+                        <td>20.68</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Forward P/E</th>
+                        <td>25.84</td>
+                        <td>26.67</td>
+                        <td>21.10</td>
+                        <td>20.66</td>
+                        <td>15.15</td>
+                        <td>20.12</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">PEG Ratio (5 yr expected)</th>
+                        <td>2.95</td>
+                        <td>3.05</td>
+                        <td>2.36</td>
+                        <td>2.29</td>
+                        <td>1.49</td>
+                        <td>2.35</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Price/Sales (ttm)</th>
+                        <td>4.44</td>
+                        <td>4.57</td>
+                        <td>3.43</td>
+                        <td>2.89</td>
+                        <td>2.66</td>
+                        <td>3.52</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Price/Book (mrq)</th>
+                        <td>8.07</td>
+                        <td>8.09</td>
+                        <td>6.36</td>
+                        <td>5.75</td>
+                        <td>5.08</td>
+                        <td>6.95</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Enterprise Value/Revenue</th>
+                        <td>4.58</td>
+                        <td>17.46</td>
+                        <td>15.71</td>
+                        <td>14.55</td>
+                        <td>11.84</td>
+                        <td>13.91</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Enterprise Value/EBITDA</th>
+                        <td>20.29</td>
+                        <td>75.48</td>
+                        <td>81.43</td>
+                        <td>69.78</td>
+                        <td>44.51</td>
+                        <td>62.08</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <!-- Hinancial Highlights & Trading Information --- Two Columns  -->
-        <div class="container">
+        <div class="container bg-light mb-5">
             <div class="row">
-                <div class="col">
-                    <h6>Financial Highlights</h6>
+                <div class="col mx-3 px-2">
+                    <h6 class="display-6 pt-2">Financial Highlights</h6>
 
-                    <table class="table">
+                    <table class="table table-success table-sm mr-0 pr-0">
                         <thead>
                             <tr>
                                 <th scope="col">Fiscal Year</th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -179,12 +198,10 @@
                                 <td>Dec 31, 2020</td>
                             </tr>
                         </tbody>
-                    </table>
-
-                    <table class="table">
                         <thead>
                             <tr>
                                 <th scope="col">Profitability</th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -197,12 +214,10 @@
                                 <td>20.39%</td>
                             </tr>
                         </tbody>
-                    </table>
-
-                    <table class="table">
                         <thead>
                             <tr>
                                 <th scope="col">Management Effectiveness</th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -215,12 +230,10 @@
                                 <td>26.65%</td>
                             </tr>
                         </tbody>
-                    </table>
-
-                    <table class="table">
                         <thead>
                             <tr>
                                 <th scope="col">Income Statement</th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -263,11 +276,10 @@
                                 <td>-13.00%</td>
                             </tr>
                         </tbody>
-                    </table>
-                    <table class="table">
                         <thead>
                             <tr>
                                 <th scope="col">Balance Sheet</th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -296,11 +308,10 @@
                                 <td>25.18</td>
                             </tr>
                         </tbody>
-                    </table>
-                    <table class="table">
                         <thead>
                             <tr>
                                 <th scope="col">Cash Flow Statement</th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -316,14 +327,26 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
-                <div class="col">
-                    <h6>Trading Information</h6>
 
-                    <table class="table">
+                    <br />
+                    <p class="lead d-flex justify-content-start">
+                        <a
+                            class="btn btn-outline-secondary btn-sm"
+                            href="{{ url_for('HON') }}"
+                            role="button"
+                            >Back to stock page</a
+                        >
+                    </p>
+                </div>
+
+                <div class="col mx-3 px-2">
+                    <h6 class="display-6 pt-2">Trading Information</h6>
+
+                    <table class="table table-sm table-success mr-0 pr-0">
                         <thead>
                             <tr>
                                 <th scope="col">Stock Price History</th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -356,12 +379,10 @@
                                 <td>187.75</td>
                             </tr>
                         </tbody>
-                    </table>
-
-                    <table class="table">
                         <thead>
                             <tr>
                                 <th scope="col">Share Statistics</th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -416,12 +437,10 @@
                                 <td>4.96M</td>
                             </tr>
                         </tbody>
-                    </table>
-
-                    <table class="table">
                         <thead>
                             <tr>
                                 <th scope="col">Dividends & Splits</th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
