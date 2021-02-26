@@ -34,32 +34,32 @@ def MRNA():
 
 @app.route('/cat/')
 def cat():
-    return render_template('categories.html')
+    return render_template('nav_bar.html') + render_template('categories.html')
 
 
 @app.route('/cat/bio')
 def catBio():
-    return render_template('catBiomedical.html')
+    return render_template('nav_bar.html') + render_template('catBiomedical.html')
 
 
 @app.route('/cat/penny')
 def catPenny():
-    return render_template('catPenny_Stocks.html')
+    return render_template('nav_bar.html') + render_template('catPenny_Stocks.html')
 
 
 @app.route('/cat/crypto')
 def catCrypto():
-    return render_template('catCryptocurrency.html')
+    return render_template('nav_bar.html') + render_template('catCryptocurrency.html')
 
 
 @app.route('/cat/industry/')
 def catIndustry():
-    return render_template('catIndustry.html')
+    return render_template('nav_bar.html') + render_template('catIndustry.html')
 
 
 @app.route('/cat/tech/')
 def catTech():
-    return render_template('catTech.html')
+    return render_template('nav_bar.html') + render_template('catTech.html')
 
 
 # Projections page

@@ -14,54 +14,8 @@
 		<!--END HERE-->
   	</head>
 
-	<body>
+	<body style="background-color: rgb(63, 180, 235);">
 
-		<!--START HERE-->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-		
-		<!--begin navbar-->
-		<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #24c24b;">
-			<div class="container-fluid" style="float:left">
-				<nav class="navbar navbar">
-					<div class="container-fluid">
-					  <a class="navbar-brand" href="{{url_for('index')}}">
-						<img src="/static/images/icon.png" alt="" width="48" height="38" class="d-inline-block align-top">
-						rocketStonks
-					  </a>
-					</div>
-				  </nav>
-			</div>
-			<div class="collapse navbar-collapse" id="navbarNavDropdown" style="float:right">
-				<ul class="navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link" href="#">Stocks</a>
-					</li>
-					<li class="nav-item">
-					<a class="nav-link" href="#">Projections</a>
-					</li>
-					
-					<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						Categories
-					</a>
-					<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-						<li><a class="dropdown-item" href="{{url_for('catBio')}}">Biomedical</a></li>
-						<li><a class="dropdown-item" href="{{url_for('catIndustry')}}">Industry</a></li>
-						<li><a class="dropdown-item" href="{{url_for('catTech')}}">Technology</a></li>
-						<li><a class="dropdown-item disabled" href="{{url_for('catCrypto')}}">Cryptocurrency</a></li>
-						<li><a class="dropdown-item disabled" href="{{url_for('catPenny')}}">Penny Stocks</a></li>
-					</ul>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{{url_for('about')}}">About</a>
-					</li>
-				</ul>
-			  </div>
-			</div>
-		  </nav>
-		  <!--end navbar-->
-		  <!--END HERE-->
-		  
 		<br/><br/><br/>
 		<h1>Industrial Stocks</h1><br/>
 		<div class="row row-cols-1 row-cols-md-4 g-4" style ="padding-top:1em; padding-left:5em; padding-right:5em;">
