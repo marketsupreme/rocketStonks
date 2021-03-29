@@ -2,7 +2,11 @@
 # projects/IDB3/main.py
 # Fares Fraij
 
-from flask import Flask, render_template
+from flask import Flask, render_template, Response
+import io
+import random
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+from matplotlib.figure import Figure
 
 app = Flask(__name__, static_folder="./static", template_folder="./templates")
 
@@ -115,6 +119,21 @@ def stockPage(stockName):
     stock['exDividend'] = 'Mar. 14, 2021'
     stock['avgVolume'] = '800000'
     return render_template('nav_bar.html') + render_template('dynamic_stock.html', stock = stock)
+
+@app.route('/static/images/plot.png')
+def plot_png():
+    fig = create_figure()
+    output = io.BytesIO()
+    FigureCanvas(fig).print_png(output)
+    return Response(output.getvalue(), mimetype = 'image/png')
+
+def create_figure():
+    fig = Figure()
+    axis = fig.add_subplot(1, 1, 1)
+    xs = range(10)
+    ys = [random.randint(1, 50) for x in xs]
+    axis.plot(xs, ys)
+    return fig
 
 @app.route('/stock/projection/<stockName>')
 def stockProjection(stockName):
