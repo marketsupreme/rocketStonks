@@ -3,8 +3,7 @@
 # Fares Fraij
 
 from flask import Flask, render_template
-
-app = Flask(__name__, static_folder="./static", template_folder="./templates")
+from create_db import app, db, Book, create_books
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -85,6 +84,12 @@ def about():
 @app.route('/dummy/')
 def dummy():
     return render_template('nav_bar.html') + render_template('dummy_link.html')
+
+@app.route('/books/')
+def book():
+	book_list = db.session.query(Book).all()
+	return render_template('books.html', book_list = book_list)
+
 
 
 # debug=True to avoid restart the local development server manually after each change to your code.
