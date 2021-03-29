@@ -86,7 +86,39 @@ def about():
 def dummy():
     return render_template('nav_bar.html') + render_template('dummy_link.html')
 
+@app.route('/stock/<stockName>')
+def stockPage(stockName):
+    # the following dict values will be created with DB calls in future
+    stock = {}
+    stock['name'] = 'Microsoft'
+    stock['ticker'] = 'MSFT'
+    stock['exchange'] = 'NYSE'
+    stock['price'] = '100'
+    stock['change'] = '+10'
+    stock['changePercent'] = '+10%'
+    stock['day'] = 'Today'
+    stock['projection'] = "'stockProjection', stockName = '" + stockName + "'"
+    stock['previousClose'] = '90'
+    stock['marketCapitalization'] = '10000000'
+    stock['open'] = '90'
+    stock['beta'] = '0.12'
+    stock['peRatio'] = '0.56'
+    stock['eps'] = '0.18'
+    stock['low'] = '89'
+    stock['high'] = '101'
+    stock['earningDate'] = 'Feb. 12, 2021'
+    stock['yearlyLow'] = '15'
+    stock['yearlyHigh'] = '115'
+    stock['dividend'] = '3.78'
+    stock['dividendYield'] = '0.83'
+    stock['volume'] = '100000'
+    stock['exDividend'] = 'Mar. 14, 2021'
+    stock['avgVolume'] = '800000'
+    return render_template('nav_bar.html') + render_template('dynamic_stock.html', stock = stock)
 
+@app.route('/stock/projection/<stockName>')
+def stockProjection(stockName):
+    return render_template('nav_bar.html') + render_template('dummy_link.html')
 # debug=True to avoid restart the local development server manually after each change to your code.
 # host='0.0.0.0' to make the server publicly available.
 if __name__ == "__main__":
