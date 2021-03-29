@@ -138,6 +138,12 @@ def create_figure():
 @app.route('/stock/projection/<stockName>')
 def stockProjection(stockName):
     return render_template('nav_bar.html') + render_template('dummy_link.html')
+
+@app.route('/books/')
+def book():
+	book_list = db.session.query(Book).all()
+	return render_template('books.html', book_list = book_list)
+
 # debug=True to avoid restart the local development server manually after each change to your code.
 # host='0.0.0.0' to make the server publicly available.
 if __name__ == "__main__":
