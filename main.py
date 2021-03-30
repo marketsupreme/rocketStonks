@@ -2,8 +2,13 @@
 # projects/IDB3/main.py
 # Fares Fraij
 
-from flask import Flask, render_template
-from create_db import app, db, Book, create_books
+from flask import Flask, render_template, Response
+import io
+import random
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+from matplotlib.figure import Figure
+
+app = Flask(__name__, static_folder="./static", template_folder="./templates")
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -85,12 +90,59 @@ def about():
 def dummy():
     return render_template('nav_bar.html') + render_template('dummy_link.html')
 
+@app.route('/stock/<stockName>')
+def stockPage(stockName):
+    # the following dict values will be created with DB calls in future
+    stock = {}
+    stock['name'] = 'Microsoft'
+    stock['ticker'] = 'MSFT'
+    stock['exchange'] = 'NYSE'
+    stock['price'] = '100'
+    stock['change'] = '+10'
+    stock['changePercent'] = '+10%'
+    stock['day'] = 'Today'
+    stock['projection'] = "'stockProjection', stockName = '" + stockName + "'"
+    stock['previousClose'] = '90'
+    stock['marketCapitalization'] = '10000000'
+    stock['open'] = '90'
+    stock['beta'] = '0.12'
+    stock['peRatio'] = '0.56'
+    stock['eps'] = '0.18'
+    stock['low'] = '89'
+    stock['high'] = '101'
+    stock['earningDate'] = 'Feb. 12, 2021'
+    stock['yearlyLow'] = '15'
+    stock['yearlyHigh'] = '115'
+    stock['dividend'] = '3.78'
+    stock['dividendYield'] = '0.83'
+    stock['volume'] = '100000'
+    stock['exDividend'] = 'Mar. 14, 2021'
+    stock['avgVolume'] = '800000'
+    return render_template('nav_bar.html') + render_template('dynamic_stock.html', stock = stock)
+
+@app.route('/static/images/plot.png')
+def plot_png():
+    fig = create_figure()
+    output = io.BytesIO()
+    FigureCanvas(fig).print_png(output)
+    return Response(output.getvalue(), mimetype = 'image/png')
+
+def create_figure():
+    fig = Figure()
+    axis = fig.add_subplot(1, 1, 1)
+    xs = range(10)
+    ys = [random.randint(1, 50) for x in xs]
+    axis.plot(xs, ys)
+    return fig
+
+@app.route('/stock/projection/<stockName>')
+def stockProjection(stockName):
+    return render_template('nav_bar.html') + render_template('dummy_link.html')
+
 @app.route('/books/')
 def book():
 	book_list = db.session.query(Book).all()
 	return render_template('books.html', book_list = book_list)
-
-
 
 # debug=True to avoid restart the local development server manually after each change to your code.
 # host='0.0.0.0' to make the server publicly available.
