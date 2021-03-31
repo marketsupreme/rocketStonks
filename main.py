@@ -7,9 +7,8 @@ import io
 import random
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
-from create_db import app, db, Book, create_books
+from create_db import app, db, Stock, create_stocks
 
-app = Flask(__name__, static_folder="./static", template_folder="./templates")
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -94,31 +93,7 @@ def dummy():
 @app.route('/stock/<stockName>')
 def stockPage(stockName):
     # the following dict values will be created with DB calls in future
-    stock = {}
-    stock['name'] = 'Microsoft'
-    stock['ticker'] = 'MSFT'
-    stock['exchange'] = 'NYSE'
-    stock['price'] = '100'
-    stock['change'] = '+10'
-    stock['changePercent'] = '+10%'
-    stock['day'] = 'Today'
-    stock['projection'] = "'stockProjection', stockName = '" + stockName + "'"
-    stock['previousClose'] = '90'
-    stock['marketCapitalization'] = '10000000'
-    stock['open'] = '90'
-    stock['beta'] = '0.12'
-    stock['peRatio'] = '0.56'
-    stock['eps'] = '0.18'
-    stock['low'] = '89'
-    stock['high'] = '101'
-    stock['earningDate'] = 'Feb. 12, 2021'
-    stock['yearlyLow'] = '15'
-    stock['yearlyHigh'] = '115'
-    stock['dividend'] = '3.78'
-    stock['dividendYield'] = '0.83'
-    stock['volume'] = '100000'
-    stock['exDividend'] = 'Mar. 14, 2021'
-    stock['avgVolume'] = '800000'
+    stock = Stock.query.get(stockName)
     return render_template('nav_bar.html') + render_template('dynamic_stock.html', stock = stock)
 
 @app.route('/static/images/plot.png')
@@ -140,10 +115,6 @@ def create_figure():
 def stockProjection(stockName):
     return render_template('nav_bar.html') + render_template('dummy_link.html')
 
-@app.route('/books/')
-def book():
-	book_list = db.session.query(Book).all()
-	return render_template('books.html', book_list = book_list)
 
 # debug=True to avoid restart the local development server manually after each change to your code.
 # host='0.0.0.0' to make the server publicly available.

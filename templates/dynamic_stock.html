@@ -35,6 +35,7 @@
             <button> YTD </button> <button> 1Y </button> <button> 5Y </button> <button> Max </button>
         </div>
         <div class="col" style="padding-top:1em;">
+            <br> <br> <br> <br>
             <table  class="table table-success table-sm mr-0 pr-0">
                 <tr >
                     <td> Previous Close </td>
@@ -64,26 +65,14 @@
                 <tr>
                     <td> Day's Range </td>
                     <td> <strong> {{stock.low}}-{{stock.high}} </strong> </td>
-                    <td> Earnings Date </td>
-                    <td> <strong> {{stock.earningDate}} </strong> </td>
+                    <td> Volume </td>
+                    <td> <strong> {{stock.volume}} </strong> </td>
                 </tr>
                 <tr>
                     <td> 52 Week Range </td>
                     <td> <strong> {{stock.yearlyLow}} - {{stock.yearlyHigh}} </strong> </td>
                     <td> 1y Target Est </td>
                     <td> <strong> 217.86 </strong> </td>
-                </tr>
-                <tr>
-                    <td> Volume </td>
-                    <td> <strong> {{stock.volume}} </strong> </td>
-                    <td></td>
-                    <td> <strong></strong> </td>
-                </tr>
-                <tr>
-                    <td> Avg. Volume </td>
-                    <td> <strong> {{stock.avgVolume}} </strong> </td>
-                    <td></td>
-                    <td> <strong></strong> </td>
                 </tr>
             </table>
 
