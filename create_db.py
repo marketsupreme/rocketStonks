@@ -25,13 +25,13 @@ def load_json(filename):
 # ------------
 # create_books
 # ------------
-def create_books():
+def create_stocks():
     """
     populate book table
     """
-    book = load_json('books.json')
+    stock = load_json('stocks.json')
 
-    for oneBook in book['Books']:
+    for oneStock in stock['Stocks']:
         title = oneBook['title']
         id = oneBook['id']
 		

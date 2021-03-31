@@ -7,6 +7,7 @@ import io
 import random
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
+from create_db import app, db, Book, create_books
 
 app = Flask(__name__, static_folder="./static", template_folder="./templates")
 
