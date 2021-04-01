@@ -10,7 +10,7 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 
 app = Flask(__name__, static_folder="./static", template_folder="./templates")
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_STRING",'postgres://postgres:1234@34.66.91.137:5432/postgres')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_STRING",'postgres://postgres:Ac1999&&@localhost:5432/postgres')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True # to suppress a warning message
 db = SQLAlchemy(app)
 
@@ -43,6 +43,15 @@ class Stock(db.Model):
     volume = db.Column(db.String(30), nullable = False) #
     exDividend = db.Column(db.String(80), nullable = False) #
     category = db.Column(db.String(20), nullable = False) #
+
+class StockIntraday(db.Model):
+
+    __tablename__ = 'stockhistory'
+
+    ticker = db.Column(db.String(6), nullable = False)
+    price = db.Column(db.String(20), nullable = False)
+    date = db.Column(db.String(20), nullable = False)
+    id = db.Column(db.Integer, primary_key = True)
 
 db.drop_all()
 db.create_all()

@@ -7,7 +7,7 @@ import io
 import random
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
-from create_db import app, db, Stock, create_stocks
+from create_db import app, db, Stock, StockIntraday
 
 
 
@@ -92,22 +92,31 @@ def dummy():
 
 @app.route('/stock/<stockName>')
 def stockPage(stockName):
-    # the following dict values will be created with DB calls in future
     stock = Stock.query.get(stockName)
     return render_template('nav_bar.html') + render_template('dynamic_stock.html', stock = stock)
 
-@app.route('/static/images/plot.png')
-def plot_png():
-    fig = create_figure()
+@app.route('/static/images/matplotlib/<stockName>.png')
+def plot_png(stockName):
+    fig = create_figure(stockName)
     output = io.BytesIO()
     FigureCanvas(fig).print_png(output)
     return Response(output.getvalue(), mimetype = 'image/png')
 
-def create_figure():
+def create_figure(stockName):
+    stockData = StockIntraday.query.filter_by(ticker = stockName).all()
+    stockData.reverse()
+    xs = []
+    ys = []
+    current = 0
+    for i in stockData:
+        xs.append(current)
+        ys.append(float(i.price))
+        current += 1
+    minimum = min(ys)
+    maximum = max(ys)
     fig = Figure()
+    #axis = fig.add_axes([0,0,1,1])
     axis = fig.add_subplot(1, 1, 1)
-    xs = range(10)
-    ys = [random.randint(1, 50) for x in xs]
     axis.plot(xs, ys)
     return fig
 

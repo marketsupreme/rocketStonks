@@ -6,7 +6,7 @@
 # ---------------------------
 
 import json
-from models import app, db, Stock
+from models import app, db, Stock, StockIntraday
 
 # ------------
 # load_json
@@ -61,10 +61,18 @@ def create_stocks():
             open = open, beta = beta, peRatio = peRatio, eps = eps, low = low, high = high, yearlyLow = yearlyLow, \
             yearlyHigh = yearlyHigh, dividend = dividend, dividendYield = dividendYield, volume = volume, exDividend = exDividend, \
             category = category)
-        
-            # After I create the book, I can then add it to my session.
+
             db.session.add(newStock)
-            # commit the session to my DB.
             db.session.commit()
+
+            for date in stockList[stock]["TIME_SERIES_INTRADAY"]["Time Series (15min)"]:
+                date = date
+                price = stockList[stock]["TIME_SERIES_INTRADAY"]["Time Series (15min)"][date]["4. close"]
+                ticker = stockList[stock]["OVERVIEW"]["Symbol"]
+                newStockIntraday = StockIntraday(date = date, price = price, ticker = ticker)
+
+                db.session.add(newStockIntraday)
+                db.session.commit()
+
 	
 create_stocks()

@@ -78,7 +78,7 @@
 
         </div>
         <div class="col" style="padding-top:3em;">
-            <img src="/static/images/plot.png" alt = 'Honeywell'>
+            <img src='{{url_for('plot_png', stockName = stock.ticker)}}' alt = 'Honeywell'>
         </div>
     </div>
 </div>
