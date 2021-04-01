@@ -44,5 +44,14 @@ class Stock(db.Model):
     exDividend = db.Column(db.String(80), nullable = False) #
     category = db.Column(db.String(20), nullable = False) #
 
+class StockIntraday(db.Model):
+
+    __tablename__ = 'stockhistory'
+
+    ticker = db.Column(db.String(6), nullable = False)
+    price = db.Column(db.String(20), nullable = False)
+    date = db.Column(db.String(20), nullable = False)
+    id = db.Column(db.Integer, primary_key = True)
+
 db.drop_all()
 db.create_all()
