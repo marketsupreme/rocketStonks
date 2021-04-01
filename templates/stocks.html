@@ -15,6 +15,17 @@
 
 	<body style="background-color: rgb(63, 180, 235);">
 		<div class="row row-cols-1 row-cols-md-4 g-4" style ="padding-top:1em; padding-left:5em; padding-right:5em;">
+			{% for i in stocks %}
+				<div class="col">
+					<div class="card h-100" onclick = "location.href = '{{ i.ticker }}';" onmouseover="">
+						<img src="/static/images/Honeywell-logo.png" class="card-img-top" alt="logo">
+						<div class="card-body">
+							<h5 class="card-title"> {{ i.name }} <strong>({{ i.ticker }})</strong> </h5>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+			<!--
 			<div class="col">
 				<div class="card h-100" onclick = "location.href = '{{url_for('HON')}}';" onmouseover="">
 					<img src="/static/images/Honeywell-logo.png" class="card-img-top" alt="honeywell logo">
@@ -111,6 +122,7 @@
 					</div>
 				</div>
 			</div>
+			-->
 		</div>
 	</body>
 </html>

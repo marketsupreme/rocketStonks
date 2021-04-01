@@ -18,7 +18,8 @@ def index():
 
 @app.route('/stock/')
 def stock():
-    return render_template('nav_bar.html') + render_template('stocks.html')
+    stocks = Stock.query.all()
+    return render_template('nav_bar.html') + render_template('stocks.html',stocks=stocks)
 
 
 @app.route('/stock/AAPL/')
