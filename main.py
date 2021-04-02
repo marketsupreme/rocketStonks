@@ -7,8 +7,7 @@ import io
 import random
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
-from create_db import app, db, Stock, StockIntraday
-
+from create_db import app, db, Stock, StockIntraday, StockStats
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -19,7 +18,7 @@ def index():
 @app.route('/stock/')
 def stock():
     stocks = Stock.query.all()
-    return render_template('nav_bar.html') + render_template('stocks.html',stocks=stocks)
+    return render_template('nav_bar.html') + render_template('stocks.html', stocks=stocks)
 
 
 @app.route('/cat/')
@@ -38,12 +37,20 @@ def catIndustry():
     stocks = Stock.query.all()
     return render_template('nav_bar.html') + render_template('catIndustry.html', stocks=stocks)
 
+
 @app.route('/cat/tech/')
 def catTech():
     stocks = Stock.query.all()
     return render_template('nav_bar.html') + render_template('catTech.html', stocks=stocks)
 
-# Projections page
+
+# Projections page TODO
+@app.route('/statistics/<stockName>')
+def statistics_page(stockName):
+    stock = StockStats.query.get(stockName)
+    return render_template('nav_bar.html') + render_template('projections_AAPL.html', stock=stock)
+
+
 @app.route('/projections/AAPL')
 def projections_AAPL():
     return render_template('nav_bar.html') + render_template('projections_AAPL.html')
@@ -63,39 +70,46 @@ def projections_MRNA():
 def about():
     return render_template('nav_bar.html') + render_template('about.html')
 
+
 @app.route('/dummy/')
 def dummy():
     return render_template('nav_bar.html') + render_template('dummy_link.html')
 
+
 @app.route('/stock/<stockName>')
 def stockPage(stockName):
     stock = Stock.query.get(stockName)
-    return render_template('nav_bar.html') + render_template('dynamic_stock.html', stock = stock)
+    return render_template('nav_bar.html') + render_template('dynamic_stock.html', stock=stock)
+
 
 @app.route('/cat/<stockName>')
 def cat_Bio_Stock(stockName):
     stock = Stock.query.get(stockName)
-    return render_template('nav_bar.html') + render_template('dynamic_stock.html', stock = stock)
+    return render_template('nav_bar.html') + render_template('dynamic_stock.html', stock=stock)
+
 
 @app.route('/cat/industry/<stockName>')
 def cat_Industry_Stock(stockName):
     stock = Stock.query.get(stockName)
-    return render_template('nav_bar.html') + render_template('dynamic_stock.html', stock = stock)
+    return render_template('nav_bar.html') + render_template('dynamic_stock.html', stock=stock)
+
 
 @app.route('/cat/tech/<stockName>')
 def cat_Tech_Stock(stockName):
     stock = Stock.query.get(stockName)
-    return render_template('nav_bar.html') + render_template('dynamic_stock.html', stock = stock)
+    return render_template('nav_bar.html') + render_template('dynamic_stock.html', stock=stock)
+
 
 @app.route('/static/images/matplotlib/<stockName>.png')
 def plot_png(stockName):
     fig = create_figure(stockName)
     output = io.BytesIO()
     FigureCanvas(fig).print_png(output)
-    return Response(output.getvalue(), mimetype = 'image/png')
+    return Response(output.getvalue(), mimetype='image/png')
+
 
 def create_figure(stockName):
-    stockData = StockIntraday.query.filter_by(ticker = stockName).all()
+    stockData = StockIntraday.query.filter_by(ticker=stockName).all()
     stockData.reverse()
     xs = []
     ys = []
@@ -112,14 +126,15 @@ def create_figure(stockName):
     axis.plot(xs, ys)
     return fig
 
+
 @app.route('/stock/projection/<stockName>')
 def stockProjection(stockName):
     return render_template('nav_bar.html') + render_template('dummy_link.html')
 
 
-
-
 '''OLD OLD OLD OLD'''
+
+
 @app.route('/cat/penny')
 def catPenny():
     return render_template('nav_bar.html') + render_template('catPenny_Stocks.html')
@@ -128,6 +143,7 @@ def catPenny():
 @app.route('/cat/crypto')
 def catCrypto():
     return render_template('nav_bar.html') + render_template('catCryptocurrency.html')
+
 
 @app.route('/stock/AAPL/')
 def AAPL():
@@ -142,6 +158,7 @@ def HON():
 @app.route('/stock/MRNA/', methods=['GET', 'POST'])
 def MRNA():
     return render_template('nav_bar.html') + render_template('mrna.html')
+
 
 # debug=True to avoid restart the local development server manually after each change to your code.
 # host='0.0.0.0' to make the server publicly available.
