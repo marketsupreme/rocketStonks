@@ -22,21 +22,6 @@ def stock():
     return render_template('nav_bar.html') + render_template('stocks.html',stocks=stocks)
 
 
-@app.route('/stock/AAPL/')
-def AAPL():
-    return render_template('nav_bar.html') + render_template('aapl.html')
-
-
-@app.route('/stock/HON/')
-def HON():
-    return render_template('nav_bar.html') + render_template('hon.html')
-
-
-@app.route('/stock/MRNA/', methods=['GET', 'POST'])
-def MRNA():
-    return render_template('nav_bar.html') + render_template('mrna.html')
-
-
 @app.route('/cat/')
 def cat():
     return render_template('nav_bar.html') + render_template('categories.html')
@@ -48,21 +33,10 @@ def catBio():
     return render_template('nav_bar.html') + render_template('catBiomedical.html', stocks=stocks)
 
 
-@app.route('/cat/penny')
-def catPenny():
-    return render_template('nav_bar.html') + render_template('catPenny_Stocks.html')
-
-
-@app.route('/cat/crypto')
-def catCrypto():
-    return render_template('nav_bar.html') + render_template('catCryptocurrency.html')
-
-
 @app.route('/cat/industry/')
 def catIndustry():
     stocks = Stock.query.all()
     return render_template('nav_bar.html') + render_template('catIndustry.html', stocks=stocks)
-
 
 @app.route('/cat/tech/')
 def catTech():
@@ -89,13 +63,27 @@ def projections_MRNA():
 def about():
     return render_template('nav_bar.html') + render_template('about.html')
 
-
 @app.route('/dummy/')
 def dummy():
     return render_template('nav_bar.html') + render_template('dummy_link.html')
 
 @app.route('/stock/<stockName>')
 def stockPage(stockName):
+    stock = Stock.query.get(stockName)
+    return render_template('nav_bar.html') + render_template('dynamic_stock.html', stock = stock)
+
+@app.route('/cat/<stockName>')
+def cat_Bio_Stock(stockName):
+    stock = Stock.query.get(stockName)
+    return render_template('nav_bar.html') + render_template('dynamic_stock.html', stock = stock)
+
+@app.route('/cat/industry/<stockName>')
+def cat_Industry_Stock(stockName):
+    stock = Stock.query.get(stockName)
+    return render_template('nav_bar.html') + render_template('dynamic_stock.html', stock = stock)
+
+@app.route('/cat/tech/<stockName>')
+def cat_Tech_Stock(stockName):
     stock = Stock.query.get(stockName)
     return render_template('nav_bar.html') + render_template('dynamic_stock.html', stock = stock)
 
@@ -128,6 +116,32 @@ def create_figure(stockName):
 def stockProjection(stockName):
     return render_template('nav_bar.html') + render_template('dummy_link.html')
 
+
+
+
+'''OLD OLD OLD OLD'''
+@app.route('/cat/penny')
+def catPenny():
+    return render_template('nav_bar.html') + render_template('catPenny_Stocks.html')
+
+
+@app.route('/cat/crypto')
+def catCrypto():
+    return render_template('nav_bar.html') + render_template('catCryptocurrency.html')
+
+@app.route('/stock/AAPL/')
+def AAPL():
+    return render_template('nav_bar.html') + render_template('aapl.html')
+
+
+@app.route('/stock/HON/')
+def HON():
+    return render_template('nav_bar.html') + render_template('hon.html')
+
+
+@app.route('/stock/MRNA/', methods=['GET', 'POST'])
+def MRNA():
+    return render_template('nav_bar.html') + render_template('mrna.html')
 
 # debug=True to avoid restart the local development server manually after each change to your code.
 # host='0.0.0.0' to make the server publicly available.
