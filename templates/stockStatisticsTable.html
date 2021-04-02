@@ -87,10 +87,10 @@
         </tbody>
     </table>
     {% if page != 6 %}
-    <button style = "float:right;" onclick = "location.href = '{{url_for('stockTable', sortBy = sortBy, asc = asc, page = page + 1 )}}';"> Next Page </button>
+    <button style = "float:right;" onclick = "location.href = '{{url_for('stockStatisticsTable', sortBy = sortBy, asc = asc, page = page + 1 )}}';"> Next Page </button>
     {% endif %}
     {% if page != 1 %}
-    <button style = "float:left;" onclick = "location.href = '{{url_for('stockTable', sortBy = sortBy, asc = asc, page = page - 1 )}}';"> Previous Page </button>
+    <button style = "float:left;" onclick = "location.href = '{{url_for('stockStatisticsTable', sortBy = sortBy, asc = asc, page = page - 1 )}}';"> Previous Page </button>
     {% endif %}
 </div>
 </body>
