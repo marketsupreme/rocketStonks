@@ -60,7 +60,7 @@ class StockIntraday(db.Model):
     id = db.Column(db.Integer, primary_key=True)
 
 
-class Stock_stats(db.Model):
+class StockStats(db.Model):
 
     __tablename__ = 'stock statistics'
 
