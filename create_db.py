@@ -71,11 +71,14 @@ def create_stocks():
 
             for date in stockList[stock]["TIME_SERIES_INTRADAY"]["Time Series (15min)"]:
                 date = date
-                price = stockList[stock]["TIME_SERIES_INTRADAY"]["Time Series (15min)"][date][
-                    "4. close"]
+                price = float(stockList[stock]["TIME_SERIES_INTRADAY"]["Time Series (15min)"][date]["4. close"])
+                open = float(stockList[stock]["TIME_SERIES_INTRADAY"]["Time Series (15min)"][date]["1. open"])
+                high = float(stockList[stock]["TIME_SERIES_INTRADAY"]["Time Series (15min)"][date]["2. high"])
+                low = float(stockList[stock]["TIME_SERIES_INTRADAY"]["Time Series (15min)"][date]["3. low"])
+                volume = float(stockList[stock]["TIME_SERIES_INTRADAY"]["Time Series (15min)"][date]["5. volume"])
                 ticker = stockList[stock]["OVERVIEW"]["Symbol"]
                 newStockIntraday = StockIntraday(
-                    date=date, price=price, ticker=ticker)
+                    date=date, price=price, ticker=ticker, open=open, high=high, volume=volume, low=low)
 
                 db.session.add(newStockIntraday)
                 db.session.commit()

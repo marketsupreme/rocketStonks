@@ -151,6 +151,39 @@ def stockTable(sortBy=None, asc=True, page=1):
             stocks = Stock.query.order_by(Stock.high).all()
     return render_template('nav_bar.html') + render_template('stockTable.html', stocks=stocks, page=page, sortBy=sortBy, asc=asc)
 
+@app.route('/tables/stockIntraday')
+def stockIntradayTable(sortBy=None, asc=True, page=1):
+    sortBy = request.args.get('sortBy')
+    asc = request.args.get('asc')
+    page = int(request.args.get('page'))
+    if sortBy == None:
+        stocks = StockIntraday.query.all()
+    elif sortBy == 'Price':
+        if asc == 'True':
+            stocks = StockIntraday.query.order_by(StockIntraday.price.desc()).all()
+        else:
+            stocks = StockIntraday.query.order_by(StockIntraday.price).all()
+    elif sortBy == 'Open':
+        if asc == 'True':
+            stocks = StockIntraday.query.order_by(StockIntraday.open.desc()).all()
+        else:
+            stocks = StockIntraday.query.order_by(StockIntraday.open).all()
+    elif sortBy == 'Low':
+        if asc == 'True':
+            stocks = StockIntraday.query.order_by(StockIntraday.low.desc()).all()
+        else:
+            stocks = StockIntraday.query.order_by(StockIntraday.low).all()
+    elif sortBy == 'High':
+        if asc == 'True':
+            stocks = StockIntraday.query.order_by(StockIntraday.high.desc()).all()
+        else:
+            stocks = StockIntraday.query.order_by(StockIntraday.high).all()
+    else:
+        if asc == 'True':
+            stocks = StockIntraday.query.order_by(StockIntraday.volume.desc()).all()
+        else:
+            stocks = StockIntraday.query.order_by(StockIntraday.volume).all()
+    return render_template('nav_bar.html') + render_template('stockIntradayTable.html', stocks=stocks, page=page, sortBy=sortBy, asc=asc)
 
 @app.route('/tables/stockStatistics')
 def stockStatisticsTable(sortBy = None, asc = True, page = 1):
