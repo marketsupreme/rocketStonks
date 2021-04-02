@@ -18,7 +18,8 @@
 			{% for i in stocks %}
 				<div class="col">
 					<div class="card h-100" onclick = "location.href = '{{ i.ticker }}';" onmouseover="">
-						<img src="/static/images/Honeywell-logo.png" class="card-img-top" alt="logo">
+						<img src="/static/images/{{i.ticker}}.jpg" class="card-img-top" alt=.>
+						<img src="/static/images/{{i.ticker}}.png" class="card-img-top" alt=.>
 						<div class="card-body">
 							<h5 class="card-title"> {{ i.name }} <strong>({{ i.ticker }})</strong> </h5>
 						</div>
