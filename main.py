@@ -44,7 +44,8 @@ def cat():
 
 @app.route('/cat/bio')
 def catBio():
-    return render_template('nav_bar.html') + render_template('catBiomedical.html')
+    stocks = Stock.query.all()
+    return render_template('nav_bar.html') + render_template('catBiomedical.html', stocks=stocks)
 
 
 @app.route('/cat/penny')
@@ -59,12 +60,14 @@ def catCrypto():
 
 @app.route('/cat/industry/')
 def catIndustry():
-    return render_template('nav_bar.html') + render_template('catIndustry.html')
+    stocks = Stock.query.all()
+    return render_template('nav_bar.html') + render_template('catIndustry.html', stocks=stocks)
 
 
 @app.route('/cat/tech/')
 def catTech():
-    return render_template('nav_bar.html') + render_template('catTech.html')
+    stocks = Stock.query.all()
+    return render_template('nav_bar.html') + render_template('catTech.html', stocks=stocks)
 
 # Projections page
 @app.route('/projections/AAPL')

@@ -19,9 +19,22 @@
 
 		<br/><br/><br/>
 		<h1>Biomedical Stocks</h1><br/>
+		
 		<div class="row row-cols-1 row-cols-md-4 g-4" style ="padding-top:1em; padding-left:5em; padding-right:5em;">
-			<div class="col">
-				<div class="card h-100" onclick = "location.href = '{{url_for('MRNA')}}';" onmouseover="">
+		{% for i in stocks %}
+			{% if i.category == 'Biomedical' %}
+				<div class="col">
+					<div class="card h-100" onclick = "location.href = '{{ i.ticker }}';" onmouseover="">
+						<img src="/static/images/{{i.ticker}}.jpg" class="card-img-top" alt=.>
+						<img src="/static/images/{{i.ticker}}.png" class="card-img-top" alt=.>
+						<div class="card-body">
+							<h5 class="card-title"> {{ i.name }} <strong>({{ i.ticker }})</strong> </h5>
+						</div>
+					</div>
+				</div>
+			{% endif %}
+		{% endfor %}
+				<!-- <div class="card h-100" onclick = "location.href = '{{url_for('MRNA')}}';" onmouseover="">
 					<img src="/static/images/moderna-logo.jpg" class="card-img-top" alt="moderna logo">
 					<div class="card-body">
 						<h5 class="card-title"> Moderna Inc. <strong>(MRNA)</strong> </h5>
@@ -51,7 +64,7 @@
 						<h5 class="card-title"> Novartis AG <strong> (NVS) </strong></h5>
 					</div>
 				</div>
-			</div>
-		</div>
+			</div> --> -->
+		<!-- </div> -->
 	</body>
 </html>
