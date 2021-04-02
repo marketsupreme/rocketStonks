@@ -18,6 +18,7 @@ def index():
 @app.route('/stock/')
 
 def stock(sortBy=None, asc=True, page=1):
+    # creates stock page with cards sorted by filter, in asc/desc order, and by page
     sortBy = request.args.get('sortBy')
     asc = request.args.get('asc')
     page = int(request.args.get('page'))
