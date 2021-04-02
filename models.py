@@ -12,7 +12,7 @@ import os
 app = Flask(__name__, static_folder="./static", template_folder="./templates")
 #app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_STRING",'postgres://postgres:1234@34.66.91.137:5432/postgres')
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
-    "DB_STRING", 'postgres://postgres:tbtbtb311@localhost:5432/postgres')
+    "DB_STRING", 'postgres://postgres:YourPassword@localhost:5432/postgres')
 # to suppress a warning message
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)

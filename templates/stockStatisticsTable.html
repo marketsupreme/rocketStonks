@@ -40,7 +40,7 @@
         {% for i in range( (page - 1) * 12, (page * 12) - 1 ) %}
         <tr>
             <td>
-                <a href="{{url_for('stockProjection', stockName = stocks[i].symbol)}}"> {{stocks[i].symbol}} </a>
+                <a href="{{url_for('statistics_page', stockName = stocks[i].symbol)}}"> {{stocks[i].symbol}} </a>
             </td>
             <td>
                 {{stocks[i].OperatingMarginTTM}}
@@ -64,7 +64,7 @@
         {% for i in range( (page - 1) * 12, page * 12) %}
         <tr>
             <td>
-                <a href="{{url_for('stockProjection', stockName = stocks[i].symbol)}}"> {{stocks[i].symbol}} </a>
+                <a href="{{url_for('statistics_page', stockName = stocks[i].symbol)}}"> {{stocks[i].symbol}} </a>
             </td>
             <td>
                 {{stocks[i].OperatingMarginTTM}}
