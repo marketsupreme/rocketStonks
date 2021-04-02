@@ -48,7 +48,7 @@ def catTech():
 @app.route('/statistics/<stockName>')
 def statistics_page(stockName):
     stock = StockStats.query.get(stockName)
-    return render_template('nav_bar.html') + render_template('projections_AAPL.html', stock=stock)
+    return render_template('nav_bar.html') + render_template('statistics.html', stock=stock)
 
 
 @app.route('/projections/AAPL')

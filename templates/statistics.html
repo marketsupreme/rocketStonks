@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+            crossorigin="anonymous"
+        />
+        <title>{{ stock.symbol }}</title>
+    </head>
+    <body>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">{{ stock.name }}</h1>
+                <p class="lead">{{ stock.description }}</p>
+                <hr class="my-4" />
+                <p class="lead d-flex justify-content-end">
+                    <a
+                        class="btn btn-outline-secondary btn-sm"
+                        href="{{ url_for('AAPL') }}"
+                        role="button"
+                        >Back to stock page</a
+                    >
+                </p>
+            </div>
+        </div>
+
+        <div class="container bg-light mb-5">
+            <div class="row">
+                <!-- Table 1 -->
+                <div class="col mx-3 px-2">
+                    <h6 class="display-6 pt-2">Financial Highlights</h6>
+
+                    <table class="table table-success table-sm mr-0 pr-0">
+                        <tbody>
+                            <tr>
+                                <td scope="row">Name</td>
+                                <td>{{ stock.name }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Country</td>
+                                <td>{{ stock.country}}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Currency</td>
+                                <td>{{ stock.currency }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">MarketCapitalization</td>
+                                <td>{{ stock.MarketCapitalization }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">EBITDA</td>
+                                <td>{{ stock.EBITDA }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">PERatio</td>
+                                <td>{{ stock.PERatio }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">PEGRatio</td>
+                                <td>{{ stock.PEGRatio }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">BookValue</td>
+                                <td>{{ stock.BookValue }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">DividendPerShare</td>
+                                <td>{{ stock.DividendPerShare }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">DividendYield</td>
+                                <td>{{ stock.DividendYield }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">EPS</td>
+                                <td>{{ stock.EPS }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">RevenuePerShareTTM</td>
+                                <td>{{ stock.RevenuePerShareTTM }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">ProfitMargin</td>
+                                <td>{{ stock.ProfitMargin }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">OperatingMarginTTM</td>
+                                <td>{{ stock.OperatingMarginTTM }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Table 2 -->
+                <div class="col mx-3 px-2">
+                    <h6 class="display-6 pt-2">Trading Information</h6>
+
+                    <table class="table table-success table-sm mr-0 pr-0">
+                        <tbody>
+                            <tr>
+                                <td scope="row">ReturnOnAssetsTTM</td>
+                                <td>{{ stock.ReturnOnAssetsTTM}}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">ReturnOnEquityTTM</td>
+                                <td>{{ stock.ReturnOnEquityTTM }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">RevenueTTM</td>
+                                <td>{{ stock.RevenueTTM }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">GrossProfitTTM</td>
+                                <td>{{ stock.GrossProfitTTM }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">DilutedEPSTTM</td>
+                                <td>{{ stock.DilutedEPSTTM }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">QuarterlyEarningsGrowthYOY</td>
+                                <td>{{ stock.QuarterlyEarningsGrowthYOY }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">QuarterlyRevenueGrowthYOY</td>
+                                <td>{{ stock.QuarterlyRevenueGrowthYOY }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">AnalystTargetPrice</td>
+                                <td>{{ stock.AnalystTargetPrice }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">TrailingPE</td>
+                                <td>{{ stock.TrailingPE }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">ForwardPE</td>
+                                <td>{{ stock.ForwardPE }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">PriceToSalesRatioTTM</td>
+                                <td>{{ stock.PriceToSalesRatioTTM }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">PriceToBookRatio</td>
+                                <td>{{ stock.PriceToBookRatio }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">EVToRevenue</td>
+                                <td>{{ stock.EVToRevenue }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">EVToEBITDA</td>
+                                <td>{{ stock.EVToEBITDA }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
