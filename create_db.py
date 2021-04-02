@@ -34,7 +34,7 @@ def create_stocks():
     populate stock table
     """
     stocks = load_json('stocks.json')
-
+    # parsing JSON dictionaries
     for category, stockList in stocks.items():
         for stock in stockList:
             name = stockList[stock]["OVERVIEW"]["Name"]
@@ -88,7 +88,7 @@ def create_stocks():
 
 def create_stock_statistics():
     stocks = load_json('stocks.json')
-
+    # parsing JSON dictionaries
     for category, stockList in stocks.items():
         for stock in stockList.keys():
             overview = stockList[stock]['OVERVIEW']

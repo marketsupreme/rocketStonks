@@ -17,6 +17,7 @@ def index():
 
 @app.route('/stock/')
 def stock():
+    # our stock page queries all stocks for display
     stocks = Stock.query.all()
     return render_template('nav_bar.html') + render_template('stocks.html', stocks=stocks)
 
@@ -28,18 +29,21 @@ def cat():
 
 @app.route('/cat/bio')
 def catBio():
+    # sorts for category = biomedical in html with jinja
     stocks = Stock.query.all()
     return render_template('nav_bar.html') + render_template('catBiomedical.html', stocks=stocks)
 
 
 @app.route('/cat/industry/')
 def catIndustry():
+    # sorts for category = industry in html with jinja
     stocks = Stock.query.all()
     return render_template('nav_bar.html') + render_template('catIndustry.html', stocks=stocks)
 
 
 @app.route('/cat/tech/')
 def catTech():
+    # sorts for category = technology in html with jinja
     stocks = Stock.query.all()
     return render_template('nav_bar.html') + render_template('catTech.html', stocks=stocks)
 
@@ -47,6 +51,7 @@ def catTech():
 # Projections page TODO
 @app.route('/statistics/<stockName>')
 def statistics_page(stockName):
+    # query for statistics
     stock = StockStats.query.get(stockName)
     return render_template('nav_bar.html') + render_template('statistics.html', stock=stock)
 
@@ -63,6 +68,7 @@ def dummy():
 
 @app.route('/stock/<stockName>')
 def stockPage(stockName):
+    # query for specific stock
     stock = Stock.query.get(stockName)
     return render_template('nav_bar.html') + render_template('dynamic_stock.html', stock=stock)
 
@@ -87,6 +93,7 @@ def cat_Tech_Stock(stockName):
 
 @app.route('/static/images/matplotlib/<stockName>.png')
 def plot_png(stockName):
+    # prints png to io where it can be accessed in specific stock html
     fig = create_figure(stockName)
     output = io.BytesIO()
     FigureCanvas(fig).print_png(output)
@@ -94,6 +101,7 @@ def plot_png(stockName):
 
 
 def create_figure(stockName):
+    # creates graph using intraday data
     stockData = StockIntraday.query.filter_by(ticker=stockName).all()
     stockData.reverse()
     xs = []
@@ -119,6 +127,7 @@ def stockProjection(stockName):
 
 @app.route('/tables/stock')
 def stockTable(sortBy=None, asc=True, page=1):
+    # creates stock table sorted by filter, in asc/desc order, and by page
     sortBy = request.args.get('sortBy')
     asc = request.args.get('asc')
     page = int(request.args.get('page'))
@@ -153,6 +162,7 @@ def stockTable(sortBy=None, asc=True, page=1):
 
 @app.route('/tables/stockIntraday')
 def stockIntradayTable(sortBy=None, asc=True, page=1):
+    # creates stock table sorted by filter, in asc/desc order, and by page
     sortBy = request.args.get('sortBy')
     asc = request.args.get('asc')
     page = int(request.args.get('page'))
@@ -187,6 +197,7 @@ def stockIntradayTable(sortBy=None, asc=True, page=1):
 
 @app.route('/tables/stockStatistics')
 def stockStatisticsTable(sortBy = None, asc = True, page = 1):
+    # creates stock table sorted by filter, in asc/desc order, and by page
     sortBy = request.args.get('sortBy')
     asc = request.args.get('asc')
     page = int(request.args.get('page'))
