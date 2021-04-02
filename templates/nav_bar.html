@@ -47,6 +47,18 @@
                     <li><a class="dropdown-item disabled" href="{{url_for('catPenny')}}">Penny Stocks</a></li> -->
                 </ul>
             </li>
+            <li class="nav-item dropdown">
+                <a class="btn btn-default dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="true" style="font-size: 20px; padding-right: 20%;">
+                    Tables
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="{{url_for('stockTable', page = 1, sortBy = None, asc = 'True')}}"> Stocks </a></li>
+                    <li><a class="dropdown-item" href="{{url_for('catIndustry')}}"> Stock Statistics</a></li>
+                    <li><a class="dropdown-item" href="{{url_for('catTech')}}"> Stock Intraday </a></li>
+                    <!-- <li><a class="dropdown-item disabled" href="{{url_for('catCrypto')}}">Cryptocurrency</a></li>
+                    <li><a class="dropdown-item disabled" href="{{url_for('catPenny')}}">Penny Stocks</a></li> -->
+                </ul>
+            </li>
             <li class="nav-item">
                 <a class="btn btn-default" href="{{url_for('about')}}" style="font-size: 20px; padding-right: 20%;">About</a>
             </li>

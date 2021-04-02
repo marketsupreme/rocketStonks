@@ -50,13 +50,13 @@ def create_stocks():
             dividendYield = stockList[stock]["OVERVIEW"]["ForwardAnnualDividendYield"]
             exDividend = stockList[stock]["OVERVIEW"]["ExDividendDate"]
             category = category
-            price = stockList[stock]["GLOBAL_QUOTE"]["Global Quote"]["05. price"]
+            price = float(stockList[stock]["GLOBAL_QUOTE"]["Global Quote"]["05. price"])
             change = stockList[stock]["GLOBAL_QUOTE"]["Global Quote"]["09. change"]
             changePercent = stockList[stock]["GLOBAL_QUOTE"]["Global Quote"]["10. change percent"]
-            previousClose = stockList[stock]["GLOBAL_QUOTE"]["Global Quote"]["08. previous close"]
-            open = stockList[stock]["GLOBAL_QUOTE"]["Global Quote"]["02. open"]
-            low = stockList[stock]["GLOBAL_QUOTE"]["Global Quote"]["04. low"]
-            high = stockList[stock]["GLOBAL_QUOTE"]["Global Quote"]["03. high"]
+            previousClose = float(stockList[stock]["GLOBAL_QUOTE"]["Global Quote"]["08. previous close"])
+            open = float(stockList[stock]["GLOBAL_QUOTE"]["Global Quote"]["02. open"])
+            low = float(stockList[stock]["GLOBAL_QUOTE"]["Global Quote"]["04. low"])
+            high = float(stockList[stock]["GLOBAL_QUOTE"]["Global Quote"]["03. high"])
             volume = stockList[stock]["GLOBAL_QUOTE"]["Global Quote"]["06. volume"]
             day = stockList[stock]["GLOBAL_QUOTE"]["Global Quote"]["07. latest trading day"]
 

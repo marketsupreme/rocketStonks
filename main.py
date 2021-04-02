@@ -2,7 +2,7 @@
 # projects/IDB3/main.py
 # Fares Fraij
 
-from flask import Flask, render_template, Response
+from flask import Flask, render_template, Response, request
 import io
 import random
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
@@ -122,7 +122,7 @@ def create_figure(stockName):
     maximum = max(ys)
     fig = Figure()
     #axis = fig.add_axes([0,0,1,1])
-    axis = fig.add_subplot(1, 1, 1)
+    axis = fig.add_subplot(1, 1, 1, title = '5 Day Graph in USD')
     axis.plot(xs, ys)
     return fig
 
@@ -131,6 +131,39 @@ def create_figure(stockName):
 def stockProjection(stockName):
     return render_template('nav_bar.html') + render_template('dummy_link.html')
 
+@app.route('/tables/stock')
+def stockTable(sortBy = None, asc = True, page = 1):
+    sortBy = request.args.get('sortBy')
+    asc = request.args.get('asc')
+    page = int(request.args.get('page'))
+    if sortBy == None:
+        stocks = Stock.query.all()
+    elif sortBy == 'Price':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.price.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.price).all()
+    elif sortBy == 'Open':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.open.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.open).all()
+    elif sortBy == 'PreviousClose':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.previousClose.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.previousClose).all()
+    elif sortBy == 'Low':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.low.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.low).all()
+    else:
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.high.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.high).all()
+    return render_template('nav_bar.html') + render_template('stockTable.html', stocks = stocks, page = page, sortBy = sortBy, asc = asc)
 
 '''OLD OLD OLD OLD'''
 
@@ -147,17 +180,20 @@ def catCrypto():
 
 @app.route('/stock/AAPL/')
 def AAPL():
-    return render_template('nav_bar.html') + render_template('aapl.html')
+    stock = Stock.query.get('AAPL')
+    return render_template('nav_bar.html') + render_template('dynamic_stock.html', stock=stock)
 
 
 @app.route('/stock/HON/')
 def HON():
-    return render_template('nav_bar.html') + render_template('hon.html')
+    stock = Stock.query.get('HON')
+    return render_template('nav_bar.html') + render_template('dynamic_stock.html', stock=stock)
 
 
 @app.route('/stock/MRNA/', methods=['GET', 'POST'])
 def MRNA():
-    return render_template('nav_bar.html') + render_template('mrna.html')
+    stock = Stock.query.get('MRNA')
+    return render_template('nav_bar.html') + render_template('dynamic_stock.html', stock=stock)
 
 
 # debug=True to avoid restart the local development server manually after each change to your code.

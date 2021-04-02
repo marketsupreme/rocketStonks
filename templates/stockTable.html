@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="/static/css/stocks.css" rel="stylesheet">
+    <title> Stock Name </title>
+</head>
+<body>
+<br>
+<div class="table-responsive mx-5 mb-3">
+<table  class="table table-success table-sm mr-0 pr-0">
+    <h6> Stock Data on 2021-03-30 </h6>
+    <thead>
+    <tr>
+        <th scope="col"> Ticker </th>
+        <th scope="col"> Price   <button onclick = "location.href = '{{url_for('stockTable', sortBy = 'Price', asc = True, page = page )}}';">
+            &and; </button> <button onclick = "location.href = '{{url_for('stockTable', sortBy = 'Price', asc = False, page = page )}}';"> &or; </button>
+        </th>
+        <th scope="col"> Open <button onclick = "location.href = '{{url_for('stockTable', sortBy = 'Open', asc = True, page = page  )}}';">
+        &and; </button> <button onclick = "location.href = '{{url_for('stockTable', sortBy = 'Open', asc = False, page = page )}}';"> &or; </button>
+        </th>
+        <th scope="col"> Previous Close <button onclick = "location.href = '{{url_for('stockTable', sortBy = 'PreviousClose', asc = True, page = page  )}}';">
+        &and; </button> <button onclick = "location.href = '{{url_for('stockTable', sortBy = 'PreviousClose', asc = False, page = page )}}';"> &or; </button>
+        </th>
+        <th scope="col"> Low <button onclick = "location.href = '{{url_for('stockTable', sortBy = 'Low', asc = True , page = page )}}';">
+        &and; </button> <button onclick = "location.href = '{{url_for('stockTable', sortBy = 'Low', asc = False, page = page )}}';"> &or; </button>
+        </th>
+        <th scope="col"> High <button onclick = "location.href = '{{url_for('stockTable', sortBy = 'High', asc = True , page = page )}}';">
+            &and; </button> <button onclick = "location.href = '{{url_for('stockTable', sortBy = 'High', asc = False, page = page )}}';"> &or; </button>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    {% if page == 6 %}
+        {% for i in range( (page - 1) * 12, (page * 12) - 1 ) %}
+       <tr>
+           <td>
+               <a href="{{url_for('stockPage', stockName = stocks[i].ticker)}}"> {{stocks[i].ticker}} </a>
+           </td>
+           <td>
+               {{stocks[i].price}}
+           </td>
+           <td>
+               {{stocks[i].open}}
+           </td>
+           <td>
+               {{stocks[i].previousClose}}
+           </td>
+           <td>
+               {{stocks[i].low}}
+           </td>
+           <td>
+               {{stocks[i].high}}
+           </td>
+       </tr>
+        {% endfor %}
+    {% endif %}
+    {% if page != 6 %}
+        {% for i in range( (page - 1) * 12, page * 12) %}
+        <tr>
+            <td>
+                <a href="{{url_for('stockPage', stockName = stocks[i].ticker)}}"> {{stocks[i].ticker}} </a>
+            </td>
+            <td>
+                {{stocks[i].price}}
+            </td>
+            <td>
+                {{stocks[i].open}}
+            </td>
+            <td>
+                {{stocks[i].previousClose}}
+            </td>
+            <td>
+                {{stocks[i].low}}
+            </td>
+            <td>
+                {{stocks[i].high}}
+            </td>
+        </tr>
+        {% endfor %}
+    {% endif %}
+    </tbody>
+</table>
+    {% if page != 6 %}
+    <button style = "float:right;" onclick = "location.href = '{{url_for('stockTable', sortBy = sortBy, asc = asc, page = page + 1 )}}';"> Next Page </button>
+    {% endif %}
+    {% if page != 1 %}
+    <button style = "float:left;" onclick = "location.href = '{{url_for('stockTable', sortBy = sortBy, asc = asc, page = page - 1 )}}';"> Previous Page </button>
+    {% endif %}
+</div>
+</body>
+</html>
