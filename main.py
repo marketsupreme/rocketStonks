@@ -51,21 +51,6 @@ def statistics_page(stockName):
     return render_template('nav_bar.html') + render_template('statistics.html', stock=stock)
 
 
-@app.route('/projections/AAPL')
-def projections_AAPL():
-    return render_template('nav_bar.html') + render_template('projections_AAPL.html')
-
-
-@app.route('/projections/HON')
-def projections_HON():
-    return render_template('nav_bar.html') + render_template('projections_HON.html')
-
-
-@app.route('/projections/MRNA')
-def projections_MRNA():
-    return render_template('nav_bar.html') + render_template('projections_MRNA.html')
-
-
 @app.route('/about/')
 def about():
     return render_template('nav_bar.html') + render_template('about.html')
@@ -122,7 +107,7 @@ def create_figure(stockName):
     maximum = max(ys)
     fig = Figure()
     #axis = fig.add_axes([0,0,1,1])
-    axis = fig.add_subplot(1, 1, 1, title = '5 Day Graph in USD')
+    axis = fig.add_subplot(1, 1, 1, title='5 Day Graph in USD')
     axis.plot(xs, ys)
     return fig
 
@@ -131,8 +116,9 @@ def create_figure(stockName):
 def stockProjection(stockName):
     return render_template('nav_bar.html') + render_template('dummy_link.html')
 
+
 @app.route('/tables/stock')
-def stockTable(sortBy = None, asc = True, page = 1):
+def stockTable(sortBy=None, asc=True, page=1):
     sortBy = request.args.get('sortBy')
     asc = request.args.get('asc')
     page = int(request.args.get('page'))
@@ -163,7 +149,8 @@ def stockTable(sortBy = None, asc = True, page = 1):
             stocks = Stock.query.order_by(Stock.high.desc()).all()
         else:
             stocks = Stock.query.order_by(Stock.high).all()
-    return render_template('nav_bar.html') + render_template('stockTable.html', stocks = stocks, page = page, sortBy = sortBy, asc = asc)
+    return render_template('nav_bar.html') + render_template('stockTable.html', stocks=stocks, page=page, sortBy=sortBy, asc=asc)
+
 
 @app.route('/tables/stockStatistics')
 def stockStatisticsTable(sortBy = None, asc = True, page = 1):
