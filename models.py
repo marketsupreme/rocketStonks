@@ -10,7 +10,9 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 
 app = Flask(__name__, static_folder="./static", template_folder="./templates")
+# the uri below is used for GCP
 #app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_STRING",'postgres://postgres:1234@34.66.91.137:5432/postgres')
+# make sure to type in your password to connect properly
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
     "DB_STRING", 'postgresql://postgres:Right1Baby!@localhost:5432/postgres')
 # to suppress a warning message
@@ -23,7 +25,7 @@ db = SQLAlchemy(app)
 
 
 class Stock(db.Model):
-
+    # SQL Table for all stocks and general data
     __tablename__ = 'stock'
 
     name = db.Column(db.String(80), nullable=False)
@@ -51,17 +53,21 @@ class Stock(db.Model):
 
 
 class StockIntraday(db.Model):
-
+    # SQL table for all stocks and their intraday data
     __tablename__ = 'stockhistory'
 
     ticker = db.Column(db.String(6), nullable=False)
-    price = db.Column(db.String(20), nullable=False)
+    price = db.Column(db.Float, nullable=False)
+    high = db.Column(db.Float, nullable=False)
+    low = db.Column(db.Float, nullable=False)
+    volume = db.Column(db.Float, nullable=False)
+    open = db.Column(db.Float, nullable=False)
     date = db.Column(db.String(20), nullable=False)
     id = db.Column(db.Integer, primary_key=True)
 
 
 class StockStats(db.Model):
-
+    # SQL Table for all stocks and their statistics
     __tablename__ = 'stock statistics'
 
     symbol = db.Column(db.String(10), primary_key=True)

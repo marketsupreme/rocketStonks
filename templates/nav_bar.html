@@ -54,7 +54,7 @@
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <li><a class="dropdown-item" href="{{url_for('stockTable', page = 1, sortBy = None, asc = 'True')}}"> Stocks </a></li>
                     <li><a class="dropdown-item" href="{{url_for('stockStatisticsTable', page = 1, sortBy = None, asc = 'True')}}"> Stock Statistics</a></li>
-                    <li><a class="dropdown-item" href="{{url_for('catTech')}}"> Stock Intraday </a></li>
+                    <li><a class="dropdown-item" href="{{url_for('stockIntradayTable', page = 1, sortBy = None, asc = 'True')}}"> Stock Intraday </a></li>
                     <!-- <li><a class="dropdown-item disabled" href="{{url_for('catCrypto')}}">Cryptocurrency</a></li>
                     <li><a class="dropdown-item disabled" href="{{url_for('catPenny')}}">Penny Stocks</a></li> -->
                 </ul>

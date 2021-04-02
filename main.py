@@ -16,6 +16,7 @@ def index():
 
 
 @app.route('/stock/')
+
 def stock(sortBy=None, asc=True, page=1):
     sortBy = request.args.get('sortBy')
     asc = request.args.get('asc')
@@ -57,18 +58,21 @@ def cat():
 
 @app.route('/cat/bio')
 def catBio():
+    # sorts for category = biomedical in html with jinja
     stocks = Stock.query.all()
     return render_template('nav_bar.html') + render_template('catBiomedical.html', stocks=stocks)
 
 
 @app.route('/cat/industry/')
 def catIndustry():
+    # sorts for category = industry in html with jinja
     stocks = Stock.query.all()
     return render_template('nav_bar.html') + render_template('catIndustry.html', stocks=stocks)
 
 
 @app.route('/cat/tech/')
 def catTech():
+    # sorts for category = technology in html with jinja
     stocks = Stock.query.all()
     return render_template('nav_bar.html') + render_template('catTech.html', stocks=stocks)
 
@@ -76,6 +80,7 @@ def catTech():
 # Projections page TODO
 @app.route('/statistics/<stockName>')
 def statistics_page(stockName):
+    # query for statistics
     stock = StockStats.query.get(stockName)
     return render_template('nav_bar.html') + render_template('statistics.html', stock=stock)
 
@@ -92,6 +97,7 @@ def dummy():
 
 @app.route('/stock/<stockName>')
 def stockPage(stockName):
+    # query for specific stock
     stock = Stock.query.get(stockName)
     return render_template('nav_bar.html') + render_template('dynamic_stock.html', stock=stock)
 
@@ -116,6 +122,7 @@ def cat_Tech_Stock(stockName):
 
 @app.route('/static/images/matplotlib/<stockName>.png')
 def plot_png(stockName):
+    # prints png to io where it can be accessed in specific stock html
     fig = create_figure(stockName)
     output = io.BytesIO()
     FigureCanvas(fig).print_png(output)
@@ -123,6 +130,7 @@ def plot_png(stockName):
 
 
 def create_figure(stockName):
+    # creates graph using intraday data
     stockData = StockIntraday.query.filter_by(ticker=stockName).all()
     stockData.reverse()
     xs = []
@@ -148,6 +156,7 @@ def stockProjection(stockName):
 
 @app.route('/tables/stock')
 def stockTable(sortBy=None, asc=True, page=1):
+    # creates stock table sorted by filter, in asc/desc order, and by page
     sortBy = request.args.get('sortBy')
     asc = request.args.get('asc')
     page = int(request.args.get('page'))
@@ -180,9 +189,44 @@ def stockTable(sortBy=None, asc=True, page=1):
             stocks = Stock.query.order_by(Stock.high).all()
     return render_template('nav_bar.html') + render_template('stockTable.html', stocks=stocks, page=page, sortBy=sortBy, asc=asc)
 
+@app.route('/tables/stockIntraday')
+def stockIntradayTable(sortBy=None, asc=True, page=1):
+    # creates stock table sorted by filter, in asc/desc order, and by page
+    sortBy = request.args.get('sortBy')
+    asc = request.args.get('asc')
+    page = int(request.args.get('page'))
+    if sortBy == None:
+        stocks = StockIntraday.query.all()
+    elif sortBy == 'Price':
+        if asc == 'True':
+            stocks = StockIntraday.query.order_by(StockIntraday.price.desc()).all()
+        else:
+            stocks = StockIntraday.query.order_by(StockIntraday.price).all()
+    elif sortBy == 'Open':
+        if asc == 'True':
+            stocks = StockIntraday.query.order_by(StockIntraday.open.desc()).all()
+        else:
+            stocks = StockIntraday.query.order_by(StockIntraday.open).all()
+    elif sortBy == 'Low':
+        if asc == 'True':
+            stocks = StockIntraday.query.order_by(StockIntraday.low.desc()).all()
+        else:
+            stocks = StockIntraday.query.order_by(StockIntraday.low).all()
+    elif sortBy == 'High':
+        if asc == 'True':
+            stocks = StockIntraday.query.order_by(StockIntraday.high.desc()).all()
+        else:
+            stocks = StockIntraday.query.order_by(StockIntraday.high).all()
+    else:
+        if asc == 'True':
+            stocks = StockIntraday.query.order_by(StockIntraday.volume.desc()).all()
+        else:
+            stocks = StockIntraday.query.order_by(StockIntraday.volume).all()
+    return render_template('nav_bar.html') + render_template('stockIntradayTable.html', stocks=stocks, page=page, sortBy=sortBy, asc=asc)
 
 @app.route('/tables/stockStatistics')
 def stockStatisticsTable(sortBy = None, asc = True, page = 1):
+    # creates stock table sorted by filter, in asc/desc order, and by page
     sortBy = request.args.get('sortBy')
     asc = request.args.get('asc')
     page = int(request.args.get('page'))
