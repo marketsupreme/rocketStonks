@@ -105,11 +105,11 @@ def create_stock_statistics():
             EPS = overview['EPS']
             RevenuePerShareTTM = overview['RevenuePerShareTTM']
             ProfitMargin = overview['ProfitMargin']
-            OperatingMarginTTM = overview['OperatingMarginTTM']
-            ReturnOnAssetsTTM = overview['ReturnOnAssetsTTM']
-            ReturnOnEquityTTM = overview['ReturnOnEquityTTM']
-            RevenueTTM = overview['RevenueTTM']
-            GrossProfitTTM = overview['GrossProfitTTM']
+            OperatingMarginTTM = float(overview['OperatingMarginTTM'])
+            ReturnOnAssetsTTM = float(overview['ReturnOnAssetsTTM'])
+            ReturnOnEquityTTM = float(overview['ReturnOnEquityTTM'])
+            RevenueTTM = float(overview['RevenueTTM'])
+            GrossProfitTTM = float(overview['GrossProfitTTM'])
             DilutedEPSTTM = overview['DilutedEPSTTM']
             QuarterlyEarningsGrowthYOY = overview['QuarterlyEarningsGrowthYOY']
             QuarterlyRevenueGrowthYOY = overview['QuarterlyRevenueGrowthYOY']

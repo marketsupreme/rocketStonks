@@ -165,6 +165,40 @@ def stockTable(sortBy = None, asc = True, page = 1):
             stocks = Stock.query.order_by(Stock.high).all()
     return render_template('nav_bar.html') + render_template('stockTable.html', stocks = stocks, page = page, sortBy = sortBy, asc = asc)
 
+@app.route('/tables/stockStatistics')
+def stockStatisticsTable(sortBy = None, asc = True, page = 1):
+    sortBy = request.args.get('sortBy')
+    asc = request.args.get('asc')
+    page = int(request.args.get('page'))
+    if sortBy == None:
+        stocks = StockStats.query.all()
+    elif sortBy == 'OperatingMarginTTM':
+        if asc == 'True':
+            stocks = StockStats.query.order_by(StockStats.OperatingMarginTTM.desc()).all()
+        else:
+            stocks = StockStats.query.order_by(StockStats.OperatingMarginTTM).all()
+    elif sortBy == 'ReturnOnAssetsTTM':
+        if asc == 'True':
+            stocks = StockStats.query.order_by(StockStats.ReturnOnAssetsTTM.desc()).all()
+        else:
+            stocks = StockStats.query.order_by(StockStats.ReturnOnAssetsTTM).all()
+    elif sortBy == 'ReturnOnEquityTTM':
+        if asc == 'True':
+            stocks = StockStats.query.order_by(StockStats.ReturnOnEquityTTM.desc()).all()
+        else:
+            stocks = StockStats.query.order_by(StockStats.ReturnOnEquityTTM).all()
+    elif sortBy == 'GrossProfitTTM':
+        if asc == 'True':
+            stocks = StockStats.query.order_by(StockStats.GrossProfitTTM.desc()).all()
+        else:
+            stocks = StockStats.query.order_by(StockStats.GrossProfitTTM).all()
+    else:
+        if asc == 'True':
+            stocks = StockStats.query.order_by(StockStats.RevenueTTM.desc()).all()
+        else:
+            stocks = StockStats.query.order_by(StockStats.RevenueTTM).all()
+    return render_template('nav_bar.html') + render_template('stockStatisticsTable.html', stocks = stocks, page = page, sortBy = sortBy, asc = asc)
+
 '''OLD OLD OLD OLD'''
 
 
