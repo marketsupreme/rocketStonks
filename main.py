@@ -85,6 +85,10 @@ def statistics_page(stockName):
     stock = StockStats.query.get(stockName)
     return render_template('nav_bar.html') + render_template('statistics.html', stock=stock)
 
+@app.route('/about/tests/')
+def unit_tests():
+    return render_template('nav_bar.html') + render_template('tests.html')
+
 
 @app.route('/about/')
 def about():
