@@ -1,0 +1,259 @@
+[33mcommit 14751cc382ca74556cccc3e01255419949b4d67a[m[33m ([m[1;36mHEAD -> [m[1;32mdev[m[33m, [m[1;31morigin/dev[m[33m)[m
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Fri Apr 2 18:45:49 2021 -0500
+
+    Fixed stock glitch on index page.
+
+[33mcommit a2057e1d8fc7986effb47dfeb3ff64b842d6d200[m
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Fri Apr 2 17:14:25 2021 -0500
+
+    comments
+
+[33mcommit dbef4ce4faeba17dc189458843dd6277cb3fff99[m
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Fri Apr 2 17:02:49 2021 -0500
+
+    models.py
+
+[33mcommit 7e8fa7d6e9ac21c6f46508425995d23e276c5974[m
+Merge: 94528dd 925dd7b
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Fri Apr 2 16:54:01 2021 -0500
+
+    Pagination on stocks page
+
+[33mcommit 94528dd5657591bc474df4014833070408f49821[m
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Fri Apr 2 16:47:27 2021 -0500
+
+    Pagination on stocks page
+
+[33mcommit 925dd7bee44786e48f7180c78f923d21941f89d1[m
+Merge: 9e069f5 03a66dc
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Fri Apr 2 16:35:24 2021 -0500
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+
+[33mcommit 9e069f531ec16aa6ede8e23eb8a56f96bfa159d5[m
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Fri Apr 2 16:35:09 2021 -0500
+
+    Commenting code for readibility.
+
+[33mcommit 03a66dcced1af1a2c38db4b6d829bf254bc445ce[m
+Author: Allan Castaneda <allan.castaneda@utexas.edu>
+Date:   Fri Apr 2 21:15:58 2021 +0000
+
+    Update models.py
+
+[33mcommit 14d73f2c103ac190e80589440337350c392ef6f4[m
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Fri Apr 2 16:13:48 2021 -0500
+
+    Fixed Issue #20
+
+[33mcommit 58e08df7f594fc3e936a4dd0b4a4689d31b12846[m
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Fri Apr 2 16:12:04 2021 -0500
+
+    Fixed Issue #20
+
+[33mcommit e73d528445165dc5ae53bde0c5e886c4cedba183[m
+Merge: c6aecf3 2e82006
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Fri Apr 2 15:53:27 2021 -0500
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+
+[33mcommit c6aecf3867ffb9fccb4ce378c0922d829fbc0763[m
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Fri Apr 2 15:53:12 2021 -0500
+
+    Added stock intraday table.
+
+[33mcommit 2e82006ad165ef1cad46b363054e11dea875a114[m
+Author: Michael Walters <mike855@outlook.com>
+Date:   Fri Apr 2 15:51:22 2021 -0500
+
+    fixed about.html stats
+
+[33mcommit 63e0748c417c27922bac48d95aef725b99316e2f[m
+Author: Michael Walters <mike855@outlook.com>
+Date:   Fri Apr 2 15:39:36 2021 -0500
+
+    adjusted some typos in index
+
+[33mcommit c4e680e876262e93d7502fe6269553c0c5e51045[m
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Fri Apr 2 15:26:12 2021 -0500
+
+    Added stock statistics table.
+
+[33mcommit 3bc07f8abaffcf77c5e7f53076c0e54affedd560[m
+Merge: a0a6b3b 1d7c426
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Fri Apr 2 15:22:56 2021 -0500
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+
+[33mcommit 1d7c42681dd88aab694186c1ec771fb5f22d92e1[m
+Author: Danfeng Wang <dannywang@utexas.edu>
+Date:   Fri Apr 2 16:22:09 2021 -0400
+
+    connect stock page and statistics page
+
+[33mcommit a0a6b3be124e03e6a32f5a1fc2fdfba5dd420cde[m
+Merge: 75790d0 43bdac5
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Fri Apr 2 15:22:04 2021 -0500
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+
+[33mcommit 75790d0cff26e28f6dae003156e8b9d36007a33a[m
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Fri Apr 2 15:21:51 2021 -0500
+
+    Added stock statistics table.
+
+[33mcommit 43bdac5722d239124cae0e133e4c17903eca9545[m
+Merge: 568f95c d2dff50
+Author: Danfeng Wang <dannywang@utexas.edu>
+Date:   Fri Apr 2 15:45:43 2021 -0400
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+
+[33mcommit 568f95c81577fa5dea91b298804ef02b2763ff87[m
+Author: Danfeng Wang <dannywang@utexas.edu>
+Date:   Fri Apr 2 15:45:41 2021 -0400
+
+    finish dynamic statistics page
+
+[33mcommit d2dff500b079f36169935ea8b7a325a78e5e3a93[m
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Fri Apr 2 14:39:56 2021 -0500
+
+    Added tables to navbar along with sortable tables with pagination.
+
+[33mcommit 9bc37322f1155946bd3fb64b9b0a8c16187945dc[m
+Author: Nam Nguyen <namnguyen430@gmail.com>
+Date:   Fri Apr 2 02:37:34 2021 -0500
+
+    created another unit test
+
+[33mcommit b153b26b860a68db96a43ff473a9aec3eaf2e4f5[m
+Author: Nam Nguyen <namnguyen430@gmail.com>
+Date:   Fri Apr 2 02:22:54 2021 -0500
+
+    created unit test button
+
+[33mcommit a821e37f068dbc28be3d4bd0d44feafa434a0c18[m
+Author: Danfeng Wang <dannywang@utexas.edu>
+Date:   Fri Apr 2 02:33:55 2021 -0400
+
+    added statistics_page function in main.py
+
+[33mcommit 6750f4c22dd5d24bb3e9993f98bdfef47bfd80dd[m
+Author: Danfeng Wang <dannywang@utexas.edu>
+Date:   Fri Apr 2 02:14:48 2021 -0400
+
+    populate data into the stock statistics table in the database
+
+[33mcommit 8877dd5ff66410c0e46c91047ea9122065f38f1c[m
+Author: Danfeng Wang <dannywang@utexas.edu>
+Date:   Fri Apr 2 01:28:45 2021 -0400
+
+    setting up database for stock statistics
+
+[33mcommit 67c20e76991c3015fbfcede7f7a24f7d971f575f[m
+Author: Michael Walters <mike855@outlook.com>
+Date:   Thu Apr 1 21:51:03 2021 -0500
+
+    categories load stocks dynamically now
+
+[33mcommit bb1e4cb08fa9f6b2d488102bd073b57b563e3666[m
+Author: Michael Walters <mike855@outlook.com>
+Date:   Thu Apr 1 21:35:15 2021 -0500
+
+    categories pages are now dyanmic
+
+[33mcommit 97ae164ef5b0799ff34b90125063fe52e709328f[m
+Author: Michael Walters <mike855@outlook.com>
+Date:   Thu Apr 1 20:56:01 2021 -0500
+
+    added logos for all stocks
+
+[33mcommit e7a8be398f6eb9633445ef4ff567d9348d492b57[m
+Author: Nam Nguyen <namnguyen430@gmail.com>
+Date:   Wed Mar 31 19:42:29 2021 -0500
+
+    basic layout of unittest created
+
+[33mcommit 202fb042ee107839d55e36cf468263a1d729e3b3[m
+Author: Nam Nguyen <namnguyen430@gmail.com>
+Date:   Wed Mar 31 19:35:08 2021 -0500
+
+    created unit test file
+
+[33mcommit 49bc74635da3a9f78f54cdf8f54c364564f01287[m
+Merge: a41d7a3 74b8b0d
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Wed Mar 31 19:32:18 2021 -0500
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+
+[33mcommit a41d7a34a728d6ea1bfab34fa1b1fef12c21d5da[m
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Wed Mar 31 19:32:03 2021 -0500
+
+    Jinja stocks loop
+
+[33mcommit 74b8b0d270c5a93f894effa8018c250a15dcd7ab[m
+Merge: ac9603c 9f158d3
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Wed Mar 31 19:05:23 2021 -0500
+
+    Got graphs working and added table to db.
+
+[33mcommit ac9603c739e85a6fc36bc1d55a941d30ae4321ce[m
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Wed Mar 31 19:02:15 2021 -0500
+
+    Got graphs working and added table to db.
+
+[33mcommit 9f158d3c1cd8d1558ae69b6e9f35e329944a91ec[m
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Wed Mar 31 18:34:35 2021 -0500
+
+    postgres to postgresql
+
+[33mcommit 11766a8251abefaca7dfa998e2ea3ddff0e3776d[m
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Wed Mar 31 16:36:41 2021 -0500
+
+    Made changes to JSON and created db along with dynamic pages now querying db.
+
+[33mcommit 124ff97b44b3d13e0a1786293c8ff95029cfa2d9[m
+Merge: 0c2a09a 218bf6f
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Wed Mar 31 13:30:35 2021 -0500
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+    
+     Conflicts:
+    	requirements.txt
+
+[33mcommit 0c2a09af202e0f1f21b0673b4e42d0a390907cf0[m
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Wed Mar 31 13:29:59 2021 -0500
+
+    WIP DB setup.
+
+[33mcommit 218bf6f30875061d6dcbf3b988835427f9469f28[m
+Author: Michael Walters <mike855@outlook.com>
+Date:   Wed Mar 31 13:27:25 2021 -0500
+
+    scrape.py and stocks.json created. still need crypto and penny stocks tickers
+
+[33mcommit 2143abcc829e8080
