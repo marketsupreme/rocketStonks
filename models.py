@@ -11,7 +11,7 @@ import os
 
 app = Flask(__name__, static_folder="./static", template_folder="./templates")
 # the uri below is used for GCP
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_STRING",'postgres://postgres:1234@34.66.136.81:5432/postgres')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_STRING",'postgresql://postgres:1234@34.66.136.81:5432/postgres')
 # make sure to type in your password to connect properly
 # app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_STRING", 'postgresql://postgres:Password@localhost:5432/postgres')
 # to suppress a warning message
@@ -21,7 +21,6 @@ db = SQLAlchemy(app)
 # ------------
 # Book
 # ------------
-
 
 class Stock(db.Model):
     # SQL Table for all stocks and general data
@@ -51,18 +50,18 @@ class Stock(db.Model):
     category = db.Column(db.String(20), nullable=False)
 
 
-class StockIntraday(db.Model):
-    # SQL table for all stocks and their intraday data
-    __tablename__ = 'stockhistory'
+# class StockIntraday(db.Model):
+#     # SQL table for all stocks and their intraday data
+#     __tablename__ = 'stockhistory'
 
-    ticker = db.Column(db.String(6), nullable=False)
-    price = db.Column(db.Float, nullable=False)
-    high = db.Column(db.Float, nullable=False)
-    low = db.Column(db.Float, nullable=False)
-    volume = db.Column(db.Float, nullable=False)
-    open = db.Column(db.Float, nullable=False)
-    date = db.Column(db.String(20), nullable=False)
-    id = db.Column(db.Integer, primary_key=True)
+#     ticker = db.Column(db.String(6), nullable=False)
+#     price = db.Column(db.Float, nullable=False)
+#     high = db.Column(db.Float, nullable=False)
+#     low = db.Column(db.Float, nullable=False)
+#     volume = db.Column(db.Float, nullable=False)
+#     open = db.Column(db.Float, nullable=False)
+#     date = db.Column(db.String(20), nullable=False)
+#     id = db.Column(db.Integer, primary_key=True)
 
 
 class StockStats(db.Model):
@@ -99,3 +98,7 @@ class StockStats(db.Model):
     PriceToBookRatio = db.Column(db.String(20), nullable=False)
     EVToRevenue = db.Column(db.String(20), nullable=False)
     EVToEBITDA = db.Column(db.String(20), nullable=False)
+
+
+# db.drop_all()
+# db.create_all()

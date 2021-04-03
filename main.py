@@ -7,7 +7,7 @@ import io
 import random
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
-from models import app, db, Stock, StockIntraday, StockStats
+from models import app, db, Stock, StockStats#StockIntraday
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -197,37 +197,37 @@ def stockTable(sortBy=None, asc=True, page=1):
 @app.route('/tables/stockIntraday')
 def stockIntradayTable(sortBy=None, asc=True, page=1):
     # creates stock table sorted by filter, in asc/desc order, and by page
-    sortBy = request.args.get('sortBy')
-    asc = request.args.get('asc')
-    page = int(request.args.get('page'))
-    if sortBy == None:
-        stocks = StockIntraday.query.all()
-    elif sortBy == 'Price':
-        if asc == 'True':
-            stocks = StockIntraday.query.order_by(StockIntraday.price.desc()).all()
-        else:
-            stocks = StockIntraday.query.order_by(StockIntraday.price).all()
-    elif sortBy == 'Open':
-        if asc == 'True':
-            stocks = StockIntraday.query.order_by(StockIntraday.open.desc()).all()
-        else:
-            stocks = StockIntraday.query.order_by(StockIntraday.open).all()
-    elif sortBy == 'Low':
-        if asc == 'True':
-            stocks = StockIntraday.query.order_by(StockIntraday.low.desc()).all()
-        else:
-            stocks = StockIntraday.query.order_by(StockIntraday.low).all()
-    elif sortBy == 'High':
-        if asc == 'True':
-            stocks = StockIntraday.query.order_by(StockIntraday.high.desc()).all()
-        else:
-            stocks = StockIntraday.query.order_by(StockIntraday.high).all()
-    else:
-        if asc == 'True':
-            stocks = StockIntraday.query.order_by(StockIntraday.volume.desc()).all()
-        else:
-            stocks = StockIntraday.query.order_by(StockIntraday.volume).all()
-    return render_template('nav_bar.html') + render_template('stockIntradayTable.html', stocks=stocks, page=page, sortBy=sortBy, asc=asc)
+    # sortBy = request.args.get('sortBy')
+    # asc = request.args.get('asc')
+    # page = int(request.args.get('page'))
+    # if sortBy == None:
+    #     stocks = StockIntraday.query.all()
+    # elif sortBy == 'Price':
+    #     if asc == 'True':
+    #         stocks = StockIntraday.query.order_by(StockIntraday.price.desc()).all()
+    #     else:
+    #         stocks = StockIntraday.query.order_by(StockIntraday.price).all()
+    # elif sortBy == 'Open':
+    #     if asc == 'True':
+    #         stocks = StockIntraday.query.order_by(StockIntraday.open.desc()).all()
+    #     else:
+    #         stocks = StockIntraday.query.order_by(StockIntraday.open).all()
+    # elif sortBy == 'Low':
+    #     if asc == 'True':
+    #         stocks = StockIntraday.query.order_by(StockIntraday.low.desc()).all()
+    #     else:
+    #         stocks = StockIntraday.query.order_by(StockIntraday.low).all()
+    # elif sortBy == 'High':
+    #     if asc == 'True':
+    #         stocks = StockIntraday.query.order_by(StockIntraday.high.desc()).all()
+    #     else:
+    #         stocks = StockIntraday.query.order_by(StockIntraday.high).all()
+    # else:
+    #     if asc == 'True':
+    #         stocks = StockIntraday.query.order_by(StockIntraday.volume.desc()).all()
+    #     else:
+    #         stocks = StockIntraday.query.order_by(StockIntraday.volume).all()
+    return render_template('nav_bar.html') + render_template('dummy_link.html')#stocks=stocks, page=page, sortBy=sortBy, asc=asc
 
 @app.route('/tables/stockStatistics')
 def stockStatisticsTable(sortBy = None, asc = True, page = 1):
