@@ -16,7 +16,6 @@ def index():
 
 
 @app.route('/stock/')
-
 def stock(sortBy=None, asc=True, page=1):
     # creates stock page with cards sorted by filter, in asc/desc order, and by page
     sortBy = request.args.get('sortBy')
@@ -190,6 +189,7 @@ def stockTable(sortBy=None, asc=True, page=1):
             stocks = Stock.query.order_by(Stock.high).all()
     return render_template('nav_bar.html') + render_template('stockTable.html', stocks=stocks, page=page, sortBy=sortBy, asc=asc)
 
+
 @app.route('/tables/stockIntraday')
 def stockIntradayTable(sortBy=None, asc=True, page=1):
     # creates stock table sorted by filter, in asc/desc order, and by page
@@ -200,33 +200,39 @@ def stockIntradayTable(sortBy=None, asc=True, page=1):
         stocks = StockIntraday.query.all()
     elif sortBy == 'Price':
         if asc == 'True':
-            stocks = StockIntraday.query.order_by(StockIntraday.price.desc()).all()
+            stocks = StockIntraday.query.order_by(
+                StockIntraday.price.desc()).all()
         else:
             stocks = StockIntraday.query.order_by(StockIntraday.price).all()
     elif sortBy == 'Open':
         if asc == 'True':
-            stocks = StockIntraday.query.order_by(StockIntraday.open.desc()).all()
+            stocks = StockIntraday.query.order_by(
+                StockIntraday.open.desc()).all()
         else:
             stocks = StockIntraday.query.order_by(StockIntraday.open).all()
     elif sortBy == 'Low':
         if asc == 'True':
-            stocks = StockIntraday.query.order_by(StockIntraday.low.desc()).all()
+            stocks = StockIntraday.query.order_by(
+                StockIntraday.low.desc()).all()
         else:
             stocks = StockIntraday.query.order_by(StockIntraday.low).all()
     elif sortBy == 'High':
         if asc == 'True':
-            stocks = StockIntraday.query.order_by(StockIntraday.high.desc()).all()
+            stocks = StockIntraday.query.order_by(
+                StockIntraday.high.desc()).all()
         else:
             stocks = StockIntraday.query.order_by(StockIntraday.high).all()
     else:
         if asc == 'True':
-            stocks = StockIntraday.query.order_by(StockIntraday.volume.desc()).all()
+            stocks = StockIntraday.query.order_by(
+                StockIntraday.volume.desc()).all()
         else:
             stocks = StockIntraday.query.order_by(StockIntraday.volume).all()
     return render_template('nav_bar.html') + render_template('stockIntradayTable.html', stocks=stocks, page=page, sortBy=sortBy, asc=asc)
 
+
 @app.route('/tables/stockStatistics')
-def stockStatisticsTable(sortBy = None, asc = True, page = 1):
+def stockStatisticsTable(sortBy=None, asc=True, page=1):
     # creates stock table sorted by filter, in asc/desc order, and by page
     sortBy = request.args.get('sortBy')
     asc = request.args.get('asc')
@@ -235,30 +241,39 @@ def stockStatisticsTable(sortBy = None, asc = True, page = 1):
         stocks = StockStats.query.all()
     elif sortBy == 'OperatingMarginTTM':
         if asc == 'True':
-            stocks = StockStats.query.order_by(StockStats.OperatingMarginTTM.desc()).all()
+            stocks = StockStats.query.order_by(
+                StockStats.OperatingMarginTTM.desc()).all()
         else:
-            stocks = StockStats.query.order_by(StockStats.OperatingMarginTTM).all()
+            stocks = StockStats.query.order_by(
+                StockStats.OperatingMarginTTM).all()
     elif sortBy == 'ReturnOnAssetsTTM':
         if asc == 'True':
-            stocks = StockStats.query.order_by(StockStats.ReturnOnAssetsTTM.desc()).all()
+            stocks = StockStats.query.order_by(
+                StockStats.ReturnOnAssetsTTM.desc()).all()
         else:
-            stocks = StockStats.query.order_by(StockStats.ReturnOnAssetsTTM).all()
+            stocks = StockStats.query.order_by(
+                StockStats.ReturnOnAssetsTTM).all()
     elif sortBy == 'ReturnOnEquityTTM':
         if asc == 'True':
-            stocks = StockStats.query.order_by(StockStats.ReturnOnEquityTTM.desc()).all()
+            stocks = StockStats.query.order_by(
+                StockStats.ReturnOnEquityTTM.desc()).all()
         else:
-            stocks = StockStats.query.order_by(StockStats.ReturnOnEquityTTM).all()
+            stocks = StockStats.query.order_by(
+                StockStats.ReturnOnEquityTTM).all()
     elif sortBy == 'GrossProfitTTM':
         if asc == 'True':
-            stocks = StockStats.query.order_by(StockStats.GrossProfitTTM.desc()).all()
+            stocks = StockStats.query.order_by(
+                StockStats.GrossProfitTTM.desc()).all()
         else:
             stocks = StockStats.query.order_by(StockStats.GrossProfitTTM).all()
     else:
         if asc == 'True':
-            stocks = StockStats.query.order_by(StockStats.RevenueTTM.desc()).all()
+            stocks = StockStats.query.order_by(
+                StockStats.RevenueTTM.desc()).all()
         else:
             stocks = StockStats.query.order_by(StockStats.RevenueTTM).all()
-    return render_template('nav_bar.html') + render_template('stockStatisticsTable.html', stocks = stocks, page = page, sortBy = sortBy, asc = asc)
+    return render_template('nav_bar.html') + render_template('stockStatisticsTable.html', stocks=stocks, page=page, sortBy=sortBy, asc=asc)
+
 
 '''OLD OLD OLD OLD'''
 
