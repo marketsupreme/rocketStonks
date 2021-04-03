@@ -100,5 +100,5 @@ class StockStats(db.Model):
     EVToEBITDA = db.Column(db.String(20), nullable=False)
 
 
-db.drop_all()
-db.create_all()
+# db.drop_all()
+# db.create_all()

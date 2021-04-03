@@ -7,7 +7,7 @@ import io
 import random
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
-from create_db import app, db, Stock, StockStats#StockIntraday
+from models import app, db, Stock, StockStats#StockIntraday
 
 
 @app.route('/', methods=['GET', 'POST'])
