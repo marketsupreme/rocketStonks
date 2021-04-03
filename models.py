@@ -99,7 +99,3 @@ class StockStats(db.Model):
     PriceToBookRatio = db.Column(db.String(20), nullable=False)
     EVToRevenue = db.Column(db.String(20), nullable=False)
     EVToEBITDA = db.Column(db.String(20), nullable=False)
-
-
-db.drop_all()
-db.create_all()
