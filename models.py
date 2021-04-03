@@ -22,7 +22,6 @@ db = SQLAlchemy(app)
 # Book
 # ------------
 
-
 class Stock(db.Model):
     # SQL Table for all stocks and general data
     __tablename__ = 'stock'
@@ -51,18 +50,18 @@ class Stock(db.Model):
     category = db.Column(db.String(20), nullable=False)
 
 
-class StockIntraday(db.Model):
-    # SQL table for all stocks and their intraday data
-    __tablename__ = 'stockhistory'
+# class StockIntraday(db.Model):
+#     # SQL table for all stocks and their intraday data
+#     __tablename__ = 'stockhistory'
 
-    ticker = db.Column(db.String(6), nullable=False)
-    price = db.Column(db.Float, nullable=False)
-    high = db.Column(db.Float, nullable=False)
-    low = db.Column(db.Float, nullable=False)
-    volume = db.Column(db.Float, nullable=False)
-    open = db.Column(db.Float, nullable=False)
-    date = db.Column(db.String(20), nullable=False)
-    id = db.Column(db.Integer, primary_key=True)
+#     ticker = db.Column(db.String(6), nullable=False)
+#     price = db.Column(db.Float, nullable=False)
+#     high = db.Column(db.Float, nullable=False)
+#     low = db.Column(db.Float, nullable=False)
+#     volume = db.Column(db.Float, nullable=False)
+#     open = db.Column(db.Float, nullable=False)
+#     date = db.Column(db.String(20), nullable=False)
+#     id = db.Column(db.Integer, primary_key=True)
 
 
 class StockStats(db.Model):

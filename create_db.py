@@ -6,7 +6,7 @@
 # ---------------------------
 
 import json
-from models import app, db, Stock, StockIntraday, StockStats
+from models import app, db, Stock, StockStats#StockIntraday
 
 # ------------
 # load_json
@@ -69,28 +69,7 @@ def create_stocks():
             db.session.add(newStock)
             db.session.commit()
 
-            for date in stockList[stock]["TIME_SERIES_INTRADAY"]["Time Series (15min)"]:
-                date = date
-                price = float(stockList[stock]["TIME_SERIES_INTRADAY"]["Time Series (15min)"][date]["4. close"])
-                open = float(stockList[stock]["TIME_SERIES_INTRADAY"]["Time Series (15min)"][date]["1. open"])
-                high = float(stockList[stock]["TIME_SERIES_INTRADAY"]["Time Series (15min)"][date]["2. high"])
-                low = float(stockList[stock]["TIME_SERIES_INTRADAY"]["Time Series (15min)"][date]["3. low"])
-                volume = float(stockList[stock]["TIME_SERIES_INTRADAY"]["Time Series (15min)"][date]["5. volume"])
-                ticker = stockList[stock]["OVERVIEW"]["Symbol"]
-                newStockIntraday = StockIntraday(
-                    date=date, price=price, ticker=ticker, open=open, high=high, volume=volume, low=low)
-
-                db.session.add(newStockIntraday)
-                db.session.commit()
-
-    create_stock_statistics()
-
-
-def create_stock_statistics():
-    stocks = load_json('stocks.json')
-    # parsing JSON dictionaries
-    for category, stockList in stocks.items():
-        for stock in stockList.keys():
+            # statistics section
             overview = stockList[stock]['OVERVIEW']
 
             symbol = overview['Symbol']
@@ -130,5 +109,66 @@ def create_stock_statistics():
             db.session.add(new_StockStats)
             db.session.commit()
 
+            # for date in stockList[stock]["TIME_SERIES_INTRADAY"]["Time Series (15min)"]:
+            #     date = date
+            #     price = float(stockList[stock]["TIME_SERIES_INTRADAY"]["Time Series (15min)"][date]["4. close"])
+            #     open = float(stockList[stock]["TIME_SERIES_INTRADAY"]["Time Series (15min)"][date]["1. open"])
+            #     high = float(stockList[stock]["TIME_SERIES_INTRADAY"]["Time Series (15min)"][date]["2. high"])
+            #     low = float(stockList[stock]["TIME_SERIES_INTRADAY"]["Time Series (15min)"][date]["3. low"])
+            #     volume = float(stockList[stock]["TIME_SERIES_INTRADAY"]["Time Series (15min)"][date]["5. volume"])
+            #     ticker = stockList[stock]["OVERVIEW"]["Symbol"]
+            #     newStockIntraday = StockIntraday(
+            #         date=date, price=price, ticker=ticker, open=open, high=high, volume=volume, low=low)
+
+            #     db.session.add(newStockIntraday)
+            #     db.session.commit()
+
 
 create_stocks()
+
+# def create_stock_statistics():
+#     stocks = load_json('stocks.json')
+#     # parsing JSON dictionaries
+#     for category, stockList in stocks.items():
+#         for stock in stockList.keys():
+#             overview = stockList[stock]['OVERVIEW']
+
+#             symbol = overview['Symbol']
+#             name = overview['Name']
+#             description = overview['Description']
+#             currency = overview['Currency']
+#             country = overview['Country']
+#             MarketCapitalization = overview['MarketCapitalization']
+#             EBITDA = overview['EBITDA']
+#             PERatio = overview['PERatio']
+#             PEGRatio = overview['PEGRatio']
+#             BookValue = overview['BookValue']
+#             DividendPerShare = overview['DividendPerShare']
+#             DividendYield = overview['DividendYield']
+#             EPS = overview['EPS']
+#             RevenuePerShareTTM = overview['RevenuePerShareTTM']
+#             ProfitMargin = overview['ProfitMargin']
+#             OperatingMarginTTM = float(overview['OperatingMarginTTM'])
+#             ReturnOnAssetsTTM = float(overview['ReturnOnAssetsTTM'])
+#             ReturnOnEquityTTM = float(overview['ReturnOnEquityTTM'])
+#             RevenueTTM = float(overview['RevenueTTM'])
+#             GrossProfitTTM = float(overview['GrossProfitTTM'])
+#             DilutedEPSTTM = overview['DilutedEPSTTM']
+#             QuarterlyEarningsGrowthYOY = overview['QuarterlyEarningsGrowthYOY']
+#             QuarterlyRevenueGrowthYOY = overview['QuarterlyRevenueGrowthYOY']
+#             AnalystTargetPrice = overview['AnalystTargetPrice']
+#             TrailingPE = overview['TrailingPE']
+#             ForwardPE = overview['ForwardPE']
+#             PriceToSalesRatioTTM = overview['PriceToSalesRatioTTM']
+#             PriceToBookRatio = overview['PriceToBookRatio']
+#             EVToRevenue = overview['EVToRevenue']
+#             EVToEBITDA = overview['EVToEBITDA']
+
+#             new_StockStats = StockStats(symbol=symbol, name=name, description=description, currency=currency, country=country, MarketCapitalization=MarketCapitalization, EBITDA=EBITDA, PERatio=PERatio, PEGRatio=PEGRatio, BookValue=BookValue, DividendPerShare=DividendPerShare, DividendYield=DividendYield, EPS=EPS, RevenuePerShareTTM=RevenuePerShareTTM, ProfitMargin=ProfitMargin, OperatingMarginTTM=OperatingMarginTTM, ReturnOnAssetsTTM=ReturnOnAssetsTTM,
+#                                         ReturnOnEquityTTM=ReturnOnEquityTTM, RevenueTTM=RevenueTTM, GrossProfitTTM=GrossProfitTTM, DilutedEPSTTM=DilutedEPSTTM, QuarterlyEarningsGrowthYOY=QuarterlyEarningsGrowthYOY, QuarterlyRevenueGrowthYOY=QuarterlyRevenueGrowthYOY, AnalystTargetPrice=AnalystTargetPrice, TrailingPE=TrailingPE, ForwardPE=ForwardPE, PriceToSalesRatioTTM=PriceToSalesRatioTTM, PriceToBookRatio=PriceToBookRatio, EVToRevenue=EVToRevenue, EVToEBITDA=EVToEBITDA)
+
+#             db.session.add(new_StockStats)
+#             db.session.commit()
+
+
+
