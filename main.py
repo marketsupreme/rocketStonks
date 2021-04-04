@@ -227,7 +227,7 @@ def stockIntradayTable(sortBy=None, asc=True, page=1):
              stocks = StockIntraday.query.order_by(StockIntraday.volume.desc()).all()
          else:
              stocks = StockIntraday.query.order_by(StockIntraday.volume).all()
-    return render_template('nav_bar.html') + render_template('stockIntradayTable.html', stocks=stocks, page=page, sortBy=sortBy, asc=asc)
+     return render_template('nav_bar.html') + render_template('stockIntradayTable.html', stocks=stocks, page=page, sortBy=sortBy, asc=asc)
 
 @app.route('/tables/stockStatistics')
 def stockStatisticsTable(sortBy = None, asc = True, page = 1):
