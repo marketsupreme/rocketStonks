@@ -264,6 +264,50 @@ def stockStatisticsTable(sortBy = None, asc = True, page = 1):
             stocks = StockStats.query.order_by(StockStats.RevenueTTM).all()
     return render_template('nav_bar.html') + render_template('stockStatisticsTable.html', stocks = stocks, page = page, sortBy = sortBy, asc = asc)
 
+@app.route('/api/stocks')
+def stocks_api():
+    stocks = Stock.query.all()
+    dict = {}
+    for stock in stocks:
+        dict[stock.ticker] = {'name' : stock.name, 'exchange' : stock.exchange, 'price' : stock.price, 'change' : stock.change,
+         'changePercent' : stock.changePercent, 'day' : stock.day, 'previousClose' : stock.previousClose, 'marketCapitalization'
+         : stock.marketCapitalization, 'open' : stock.open, 'beta' : stock.beta, 'peRatio' : stock.peRatio, 'eps' : stock.eps,
+         'low' : stock.low, 'high' : stock.high, 'yearlyLow' : stock.yearlyLow, 'yearlyHigh' : stock.yearlyHigh, 'dividend' : stock.dividend,
+         'dividendYield' : stock.dividendYield, 'volume' : stock.volume, 'exDividend' : stock.exDividend, 'category' : stock.category}
+    return dict
+
+@app.route('/api/stocks/<stockName>')
+def specific_stock_api(stockName):
+    stock = Stock.query.filter_by(ticker=stockName).all()
+    stock = stock[0]
+    dict = {stockName : {'name' : stock.name, 'exchange' : stock.exchange, 'price' : stock.price, 'change' : stock.change,
+           'changePercent' : stock.changePercent, 'day' : stock.day, 'previousClose' : stock.previousClose, 'marketCapitalization'
+           : stock.marketCapitalization, 'open' : stock.open, 'beta' : stock.beta, 'peRatio' : stock.peRatio, 'eps' : stock.eps,
+           'low' : stock.low, 'high' : stock.high, 'yearlyLow' : stock.yearlyLow, 'yearlyHigh' : stock.yearlyHigh, 'dividend' : stock.dividend,
+           'dividendYield' : stock.dividendYield, 'volume' : stock.volume, 'exDividend' : stock.exDividend, 'category' : stock.category}}
+    return dict
+
+@app.route('/api/stockIntraday/<stockName>')
+def specific_stock_intraday_api(stockName):
+    stock_intraday = StockIntraday.query.filter_by(ticker=stockName).all()
+    ticker_dict = {}
+    for day in stock_intraday:
+        ticker_dict[day.date] = {'price' : day.price, 'high': day.high, 'low' : day.low, 'volume' : day.volume, 'open' : day.open}
+    dict = {stockName : ticker_dict}
+    return dict
+
+@app.route('/api/stockIntraday')
+def stocks_intraday_api():
+    stocks = Stock.query.all()
+    dict = {}
+    for stock in stocks:
+        stock_intraday = StockIntraday.query.filter_by(ticker=stock.ticker).all()
+        ticker_dict = {}
+        for day in stock_intraday:
+            ticker_dict[day.date] = {'price' : day.price, 'high': day.high, 'low' : day.low, 'volume' : day.volume, 'open' : day.open}
+        dict[stock.ticker] = ticker_dict
+    return dict
+
 '''OLD OLD OLD OLD'''
 
 
