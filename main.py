@@ -38,6 +38,28 @@ def results():
             return render_template('nav_bar.html') + render_template('results.html', stocks=stock_info, entry=entry)
     return render_template('nav_bar.html') + render_template('dummy_link.html', entry=entry)
 
+@app.route('/results2/', methods=['GET', 'POST'])
+def results2():
+    entry = request.form['search']
+    entry_lower = entry.lower()
+    stock_info = []
+    stocks = Stock.query.all()
+    if entry in ['technology','biomedical', 'industry']:
+        if entry == 'technology':
+            return render_template('nav_bar.html') + render_template('catTech.html', stocks=stocks)
+        elif entry == 'biomedical':
+            return render_template('nav_bar.html') + render_template('catBiomedical.html', stocks=stocks)
+        elif entry == 'industry':
+            return render_template('nav_bar.html') + render_template('catIndustry.html', stocks=stocks)
+
+        #checking the database for specific stocks
+    for stock in stocks:
+        if entry_lower in stock.ticker.lower():
+            stock_info.append(stock)
+        elif entry_lower in stock.name.lower():
+            stock_info.append(stock)
+    return render_template('nav_bar.html') + render_template('results2.html', entry=entry, stocks = stock_info)
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('nav_bar.html') + render_template('index.html')
