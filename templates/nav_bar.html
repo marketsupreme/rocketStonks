@@ -28,10 +28,9 @@
                     rocketStonks
                 </a>
                 <li class="search" style = "float:center">
-                    <form action="{{url_for('results')}}" method = 'GET'> 
-                        <input type = "text" name ="" id = "search" placeholder= "Search for a stock" >
+                    <form action="{{url_for('results')}}" method = 'POST'> 
+                        <input type = "text" name ="search" id = "search" placeholder= "Search for a stock" >
                         <button type='submit'> Search </button>
-                        <form action="{{url_for('results', entry=entry)}}" method = 'GET'>
                         </form>
                     </form>
                 </li>

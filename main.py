@@ -10,12 +10,15 @@ from matplotlib.figure import Figure
 from models import app, db, Stock, StockStats, StockIntraday
 # from create_db import app, db, create_stocks, Stock, StockIntraday, StockStats
 
-# @app.route('/results/', methods=['GET'])
-# def results(entry=None):
-#     entry = str(entry)
-#     if entry in json dict:
-        
-#     return render_template('nav_bar.html') + render_template('index.html')
+
+@app.route('/results/', methods=['GET', 'POST'])
+def results():
+    entry = request.form['search']
+    if Stock.query(Stock.name).filter_by(name=entry).first() != None:
+        return render_template('nav_bar.html') + render_template('dummy_link.html')
+
+    else:
+        return render_template('nav_bar.html') + render_template('second.html')
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -99,11 +102,6 @@ def unit_tests():
 @app.route('/about/')
 def about():
     return render_template('nav_bar.html') + render_template('about.html')
-
-
-@app.route('/results/')
-def results():
-    return render_template('nav_bar.html') + render_template('results.html')
 
 
 @app.route('/stock/<stockName>')
