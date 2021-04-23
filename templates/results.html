@@ -13,8 +13,18 @@
 </head>
 
 <body style="background-color: rgb(63, 180, 235);">
-<div style="font-size:x-large; padding:2em;"> Showing results for: {{entry}} </div>
-<div style="font-size:x-large; padding:2em;"><a href="{{url_for('index')}}"> here </a></div>
+<div style="font-size:x-large; padding-top:1em; padding-left:3em; padding-right:5em; padding-bottom:0em;"> Showing results for: {{entry}} </div>
+<div class="row row-cols-1 row-cols-md-4 g-4" style ="padding-top:1em; padding-left:5em; padding-right:5em; padding-bottom:1em;">
+	<div class="col">
+		<div class="card h-100" onclick = "location.href = '{{ stocks[1] }}';" onmouseover="">
+			<img src="/static/images/{{stocks[1]}}.jpg" class="card-img-top" alt=.>
+			<img src="/static/images/{{stocks[1]}}.png" class="card-img-top" alt=.>
+			<div class="card-body">
+				<h5 class="card-title"> {{ stocks[0] }} <strong>({{ stocks[1] }})</strong> </h5>
+			</div>
+		</div>
+	</div>
+</div>
 </body>
 
 </html>

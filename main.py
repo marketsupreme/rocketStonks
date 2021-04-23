@@ -18,11 +18,14 @@ def results():
     stocks = Stock.query.all()
     for stock in stocks:
         if entry in stock.ticker:
-            stock_info.append(stock.name, stock.ticker)
-            return render_template('nav_bar.html') + render_template('results.html', stocks=stock_info)
+            stock_info.append(stock.name)
+            stock_info.append(stock.ticker)
+            return render_template('nav_bar.html') + render_template('results.html', stocks=stock_info, entry=entry)
         elif entry in stock.name:
-            stock_info.append(stock.name, stock.ticker)
-            return render_template('nav_bar.html') + render_template('results.html', stocks=stock_info)
+            stock_info.append(stock.name)
+            stock_info.append(stock.ticker)
+            return render_template('nav_bar.html') + render_template('results.html', stocks=stock_info, entry=entry)
+    return render_template('nav_bar.html') + render_template('dummy_link.html', entry=entry)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -108,15 +111,6 @@ def about():
     return render_template('nav_bar.html') + render_template('about.html')
 
 
-<<<<<<< HEAD
-@app.route('/results/', methods=['GET'])
-def results(entry=entry):
-    entry = request.args.get('entry'))
-    return render_template('nav_bar.html') + render_template('results.html')
-
-
-=======
->>>>>>> 72e0f8bb6b3cbf6ad338b6b95f80e012227d5668
 @app.route('/stock/<stockName>')
 def stockPage(stockName):
     # query for specific stock
