@@ -19,6 +19,16 @@
 
 		<br/><br/><br/>
 		<h1>Biomedical Stocks</h1><br/>
+		<strong> &nbsp &nbsp &nbsp Sort By: </strong><button onclick = "location.href = '{{url_for('catBio', sortBy = 'Price', asc = True)}}';"> Price Desc. </button>
+		<button onclick = "location.href = '{{url_for('catBio', sortBy = 'Price', asc = False)}}';"> Price Asc. </button>
+		<button onclick = "location.href = '{{url_for('catBio', sortBy = 'Open', asc = True)}}';"> Open Desc. </button>
+		<button onclick = "location.href = '{{url_for('catBio', sortBy = 'Open', asc = False)}}';"> Open Asc. </button>
+		<button onclick = "location.href = '{{url_for('catBio', sortBy = 'PreviousClose', asc = True)}}';"> Previous Close Desc. </button>
+		<button onclick = "location.href = '{{url_for('catBio', sortBy = 'PreviousClose', asc = False)}}';"> Previous Close Asc. </button>
+		<button onclick = "location.href = '{{url_for('catBio', sortBy = 'Low', asc = True)}}';"> Low Desc. </button>
+		<button onclick = "location.href = '{{url_for('catBio', sortBy = 'Low', asc = False)}}';"> Low Asc. </button>
+		<button onclick = "location.href = '{{url_for('catBio', sortBy = 'High', asc = True)}}';"> High Desc. </button>
+		<button onclick = "location.href = '{{url_for('catBio', sortBy = 'High', asc = False)}}';"> High Asc. </button>
 		
 		<div class="row row-cols-1 row-cols-md-4 g-4" style ="padding-top:1em; padding-left:5em; padding-right:5em;">
 		{% for i in stocks %}
@@ -34,6 +44,10 @@
 				</div>
 			{% endif %}
 		{% endfor %}
+<<<<<<< HEAD
 				
+=======
+		</div>
+>>>>>>> 5939233575e588e9fea1b43495fd17b174523ecb
 	</body>
 </html>
