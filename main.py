@@ -14,11 +14,15 @@ from models import app, db, Stock, StockStats, StockIntraday
 @app.route('/results/', methods=['GET', 'POST'])
 def results():
     entry = request.form['search']
-    if Stock.query(Stock.name).filter_by(name=entry).first() != None:
-        return render_template('nav_bar.html') + render_template('dummy_link.html')
-
-    else:
-        return render_template('nav_bar.html') + render_template('second.html')
+    stock_info = []
+    stocks = Stock.query.all()
+    for stock in stocks:
+        if entry in stock.ticker:
+            stock_info.append(stock.name, stock.ticker)
+            return render_template('nav_bar.html') + render_template('results.html', stocks=stock_info)
+        elif entry in stock.name:
+            stock_info.append(stock.name, stock.ticker)
+            return render_template('nav_bar.html') + render_template('results.html', stocks=stock_info)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
