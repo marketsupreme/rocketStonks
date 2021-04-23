@@ -8,7 +8,14 @@ import random
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
 from models import app, db, Stock, StockStats, StockIntraday
+# from create_db import app, db, create_stocks, Stock, StockIntraday, StockStats
 
+# @app.route('/results/', methods=['GET'])
+# def results(entry=None):
+#     entry = str(entry)
+#     if entry in json dict:
+        
+#     return render_template('nav_bar.html') + render_template('index.html')
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -16,7 +23,6 @@ def index():
 
 
 @app.route('/stock/')
-
 def stock(sortBy=None, asc=True, page=1):
     # creates stock page with cards sorted by filter, in asc/desc order, and by page
     sortBy = request.args.get('sortBy')
