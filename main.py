@@ -13,16 +13,29 @@ from models import app, db, Stock, StockStats, StockIntraday
 
 @app.route('/results/', methods=['GET', 'POST'])
 def results():
-    entry = request.form['search']
+    entry = request.form['search'].lower()
     stock_info = []
     stocks = Stock.query.all()
+
+    #check for categories first
+    if entry in ['technology','biomedical', 'industry']:
+        if entry == 'technology':
+            return render_template('nav_bar.html') + render_template('catTech.html', stocks=stocks)
+        elif entry == 'biomedical':
+            return render_template('nav_bar.html') + render_template('catBiomedical.html', stocks=stocks)
+        elif entry == 'industry':
+            return render_template('nav_bar.html') + render_template('catIndustry.html', stocks=stocks)
+
+    #checking the database for specific stocks
     for stock in stocks:
-        if entry in stock.ticker:
-            stock_info.append(stock.name, stock.ticker)
-            return render_template('nav_bar.html') + render_template('results.html', stocks=stock_info)
-        elif entry in stock.name:
-            stock_info.append(stock.name, stock.ticker)
-            return render_template('nav_bar.html') + render_template('results.html', stocks=stock_info)
+        if entry in stock.ticker.lower():
+            stock_info.append(stock.name)
+            stock_info.append(stock.ticker)
+            return render_template('nav_bar.html') + render_template('second.html', stocks=stock_info)
+        elif entry in stock.name.lower():
+            stock_info.append(stock.name)
+            stock_info.append(stock.ticker)
+            return render_template('nav_bar.html') + render_template('dummy_link.html', stocks=stock_info)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
