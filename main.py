@@ -13,7 +13,7 @@ from models import app, db, Stock, StockStats, StockIntraday
 
 @app.route('/results/', methods=['GET', 'POST'])
 def results():
-    entry = request.form['search'].lower()
+    entry = request.form['search']
     stock_info = []
     stocks = Stock.query.all()
 
@@ -36,7 +36,7 @@ def results():
             stock_info.append(stock.name)
             stock_info.append(stock.ticker)
             return render_template('nav_bar.html') + render_template('results.html', stocks=stock_info, entry=entry)
-    
+    return render_template('nav_bar.html') + render_template('dummy_link.html', entry=entry)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
