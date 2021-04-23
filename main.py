@@ -28,14 +28,15 @@ def results():
 
     #checking the database for specific stocks
     for stock in stocks:
-        if entry in stock.ticker.lower():
+        if entry in stock.ticker:
             stock_info.append(stock.name)
             stock_info.append(stock.ticker)
-            return render_template('nav_bar.html') + render_template('second.html', stocks=stock_info)
-        elif entry in stock.name.lower():
+            return render_template('nav_bar.html') + render_template('results.html', stocks=stock_info, entry=entry)
+        elif entry in stock.name:
             stock_info.append(stock.name)
             stock_info.append(stock.ticker)
-            return render_template('nav_bar.html') + render_template('dummy_link.html', stocks=stock_info)
+            return render_template('nav_bar.html') + render_template('results.html', stocks=stock_info, entry=entry)
+    
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
