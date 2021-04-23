@@ -23,32 +23,20 @@
 	</head>
 
 	<body style="background-color: rgb(63, 180, 235);">
-		
-		<div class="table-responsive mx-5 mb-3">
-		<table  class="table table-success table-sm mr-0 pr-0">
-		<thead>
-		<tr>
-			<th scope="col"> Sort By: </th>
-			<th scope="col"> Price   <button onclick = "location.href = '{{url_for('stock', sortBy = 'Price', asc = True, page = page )}}';">
-				&and; </button> <button onclick = "location.href = '{{url_for('stock', sortBy = 'Price', asc = False, page = page )}}';"> &or; </button>
-			</th>
-			<th scope="col"> Open <button onclick = "location.href = '{{url_for('stock', sortBy = 'Open', asc = True, page = page  )}}';">
-				&and; </button> <button onclick = "location.href = '{{url_for('stock', sortBy = 'Open', asc = False, page = page )}}';"> &or; </button>
-			</th>
-			<th scope="col"> Previous Close <button onclick = "location.href = '{{url_for('stock', sortBy = 'PreviousClose', asc = True, page = page  )}}';">
-				&and; </button> <button onclick = "location.href = '{{url_for('stock', sortBy = 'PreviousClose', asc = False, page = page )}}';"> &or; </button>
-			</th>
-			<th scope="col"> Low <button onclick = "location.href = '{{url_for('stock', sortBy = 'Low', asc = True , page = page )}}';">
-				&and; </button> <button onclick = "location.href = '{{url_for('stock', sortBy = 'Low', asc = False, page = page )}}';"> &or; </button>
-			</th>
-			<th scope="col"> High <button onclick = "location.href = '{{url_for('stock', sortBy = 'High', asc = True , page = page )}}';">
-				&and; </button> <button onclick = "location.href = '{{url_for('stock', sortBy = 'High', asc = False, page = page )}}';"> &or; </button>
-			</th>
-		</tr>
-		</thead>
-		</table>
-		
-		<div class="row row-cols-1 row-cols-md-4 g-4" style ="padding-top:1em; padding-left:5em; padding-right:5em;">
+	<br>
+
+			<strong> &nbsp &nbsp &nbsp Sort By: </strong><button onclick = "location.href = '{{url_for('stock', sortBy = 'Price', asc = True, page = page )}}';"> Price Desc. </button>
+			<button onclick = "location.href = '{{url_for('stock', sortBy = 'Price', asc = False, page = page )}}';"> Price Asc. </button>
+			<button onclick = "location.href = '{{url_for('stock', sortBy = 'Open', asc = True, page = page  )}}';"> Open Desc. </button>
+			<button onclick = "location.href = '{{url_for('stock', sortBy = 'Open', asc = False, page = page )}}';"> Open Asc. </button>
+			<button onclick = "location.href = '{{url_for('stock', sortBy = 'PreviousClose', asc = True, page = page  )}}';"> Previous Close Desc. </button>
+			<button onclick = "location.href = '{{url_for('stock', sortBy = 'PreviousClose', asc = False, page = page )}}';"> Previous Close Asc. </button>
+			<button onclick = "location.href = '{{url_for('stock', sortBy = 'Low', asc = True , page = page )}}';"> Low Desc. </button>
+			<button onclick = "location.href = '{{url_for('stock', sortBy = 'Low', asc = False, page = page )}}';"> Low Asc. </button>
+			<button onclick = "location.href = '{{url_for('stock', sortBy = 'High', asc = True , page = page )}}';"> High Desc. </button>
+			<button onclick = "location.href = '{{url_for('stock', sortBy = 'High', asc = False, page = page )}}';"> High Asc. </button>
+
+			<div class="row row-cols-1 row-cols-md-4 g-4" style ="padding-top:1em; padding-left:5em; padding-right:5em;">
 			{% if page == 6 %}
 				{% for i in range( (page - 1) * 12, (page * 12) - 1 ) %}
 					<div class="col">
