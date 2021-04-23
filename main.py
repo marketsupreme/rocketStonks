@@ -65,6 +65,42 @@ def stock(sortBy=None, asc=True, page=1):
     return render_template('nav_bar.html') + render_template('stocks.html', stocks=stocks, page=page, sortBy=sortBy, asc=asc)
 
 
+@app.route('/statistics/')
+def stockStat(sortBy=None, asc=True, page=1):
+    # creates stock page with cards sorted by filter, in asc/desc order, and by page
+    sortBy = request.args.get('sortBy')
+    asc = request.args.get('asc')
+    page = int(request.args.get('page'))
+    if sortBy == None:
+        stocks = Stock.query.all()
+    elif sortBy == 'Price':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.price.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.price).all()
+    elif sortBy == 'Open':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.open.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.open).all()
+    elif sortBy == 'PreviousClose':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.previousClose.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.previousClose).all()
+    elif sortBy == 'Low':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.low.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.low).all()
+    else:
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.high.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.high).all()
+    return render_template('nav_bar.html') + render_template('stockStat.html', stocks=stocks, page=page, sortBy=sortBy, asc=asc)
+
+
 @app.route('/cat/')
 def cat():
     return render_template('nav_bar.html') + render_template('categories.html')
