@@ -16,13 +16,27 @@ def results():
     entry = request.form['search']
     stock_info = []
     stocks = Stock.query.all()
+
+    #check for categories first
+    if entry in ['technology','biomedical', 'industry']:
+        if entry == 'technology':
+            return render_template('nav_bar.html') + render_template('catTech.html', stocks=stocks)
+        elif entry == 'biomedical':
+            return render_template('nav_bar.html') + render_template('catBiomedical.html', stocks=stocks)
+        elif entry == 'industry':
+            return render_template('nav_bar.html') + render_template('catIndustry.html', stocks=stocks)
+
+    #checking the database for specific stocks
     for stock in stocks:
         if entry in stock.ticker:
-            stock_info.append(stock.name, stock.ticker)
-            return render_template('nav_bar.html') + render_template('results.html', stocks=stock_info)
+            stock_info.append(stock.name)
+            stock_info.append(stock.ticker)
+            return render_template('nav_bar.html') + render_template('results.html', stocks=stock_info, entry=entry)
         elif entry in stock.name:
-            stock_info.append(stock.name, stock.ticker)
-            return render_template('nav_bar.html') + render_template('results.html', stocks=stock_info)
+            stock_info.append(stock.name)
+            stock_info.append(stock.ticker)
+            return render_template('nav_bar.html') + render_template('results.html', stocks=stock_info, entry=entry)
+    return render_template('nav_bar.html') + render_template('dummy_link.html', entry=entry)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -63,6 +77,42 @@ def stock(sortBy=None, asc=True, page=1):
         else:
             stocks = Stock.query.order_by(Stock.high).all()
     return render_template('nav_bar.html') + render_template('stocks.html', stocks=stocks, page=page, sortBy=sortBy, asc=asc)
+
+
+@app.route('/statistics/')
+def stockStat(sortBy=None, asc=True, page=1):
+    # creates stock page with cards sorted by filter, in asc/desc order, and by page
+    sortBy = request.args.get('sortBy')
+    asc = request.args.get('asc')
+    page = int(request.args.get('page'))
+    if sortBy == None:
+        stocks = Stock.query.all()
+    elif sortBy == 'Price':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.price.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.price).all()
+    elif sortBy == 'Open':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.open.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.open).all()
+    elif sortBy == 'PreviousClose':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.previousClose.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.previousClose).all()
+    elif sortBy == 'Low':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.low.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.low).all()
+    else:
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.high.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.high).all()
+    return render_template('nav_bar.html') + render_template('stockStat.html', stocks=stocks, page=page, sortBy=sortBy, asc=asc)
 
 
 @app.route('/cat/')
