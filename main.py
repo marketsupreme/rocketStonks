@@ -44,6 +44,8 @@ def results2():
     entry_lower = entry.lower()
     stock_info = []
     stocks = Stock.query.all()
+    cat = request.args.get('cat')
+    print(cat)
     if entry in ['technology','biomedical', 'industry']:
         if entry == 'technology':
             return render_template('nav_bar.html') + render_template('catTech.html', stocks=stocks)
@@ -53,11 +55,19 @@ def results2():
             return render_template('nav_bar.html') + render_template('catIndustry.html', stocks=stocks)
 
         #checking the database for specific stocks
-    for stock in stocks:
-        if entry_lower in stock.ticker.lower():
-            stock_info.append(stock)
-        elif entry_lower in stock.name.lower():
-            stock_info.append(stock)
+    if cat == None:
+        for stock in stocks:
+            if entry_lower in stock.ticker.lower():
+                stock_info.append(stock)
+            elif entry_lower in stock.name.lower():
+                stock_info.append(stock)
+    else:
+        for stock in stocks:
+            if stock.category == cat:
+                if entry_lower in stock.ticker.lower():
+                    stock_info.append(stock)
+                elif entry_lower in stock.name.lower():
+                    stock_info.append(stock)
     return render_template('nav_bar.html') + render_template('results2.html', entry=entry, stocks = stock_info)
 
 @app.route('/', methods=['GET', 'POST'])
