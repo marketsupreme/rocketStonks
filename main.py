@@ -101,8 +101,9 @@ def about():
     return render_template('nav_bar.html') + render_template('about.html')
 
 
-@app.route('/results/')
-def results():
+@app.route('/results/', methods=['GET'])
+def results(entry=entry):
+    entry = request.args.get('entry'))
     return render_template('nav_bar.html') + render_template('results.html')
 
 
