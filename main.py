@@ -101,9 +101,9 @@ def about():
     return render_template('nav_bar.html') + render_template('about.html')
 
 
-@app.route('/dummy/')
-def dummy():
-    return render_template('nav_bar.html') + render_template('dummy_link.html')
+@app.route('/results/')
+def results():
+    return render_template('nav_bar.html') + render_template('results.html')
 
 
 @app.route('/stock/<stockName>')
