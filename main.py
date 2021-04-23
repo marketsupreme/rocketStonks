@@ -69,22 +69,110 @@ def cat():
 @app.route('/cat/bio')
 def catBio():
     # sorts for category = biomedical in html with jinja
-    stocks = Stock.query.all()
-    return render_template('nav_bar.html') + render_template('catBiomedical.html', stocks=stocks)
+    # creates stock page with cards sorted by filter, in asc/desc order, and by page
+    sortBy = request.args.get('sortBy')
+    asc = request.args.get('asc')
+    if sortBy == None:
+        stocks = Stock.query.all()
+    elif sortBy == 'Price':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.price.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.price).all()
+    elif sortBy == 'Open':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.open.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.open).all()
+    elif sortBy == 'PreviousClose':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.previousClose.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.previousClose).all()
+    elif sortBy == 'Low':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.low.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.low).all()
+    else:
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.high.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.high).all()
+    return render_template('nav_bar.html') + render_template('catBiomedical.html', stocks=stocks, sortBy=sortBy, asc=asc)
 
 
 @app.route('/cat/industry/')
 def catIndustry():
     # sorts for category = industry in html with jinja
+    # creates stock page with cards sorted by filter, in asc/desc order, and by page
+    sortBy = request.args.get('sortBy')
+    asc = request.args.get('asc')
+    if sortBy == None:
+        stocks = Stock.query.all()
+    elif sortBy == 'Price':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.price.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.price).all()
+    elif sortBy == 'Open':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.open.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.open).all()
+    elif sortBy == 'PreviousClose':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.previousClose.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.previousClose).all()
+    elif sortBy == 'Low':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.low.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.low).all()
+    else:
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.high.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.high).all()
+    return render_template('nav_bar.html') + render_template('catIndustry.html', stocks=stocks, sortBy=sortBy, asc=asc)
     stocks = Stock.query.all()
-    return render_template('nav_bar.html') + render_template('catIndustry.html', stocks=stocks)
 
 
 @app.route('/cat/tech/')
 def catTech():
     # sorts for category = technology in html with jinja
-    stocks = Stock.query.all()
-    return render_template('nav_bar.html') + render_template('catTech.html', stocks=stocks)
+    # creates stock page with cards sorted by filter, in asc/desc order, and by page
+    sortBy = request.args.get('sortBy')
+    asc = request.args.get('asc')
+    if sortBy == None:
+        stocks = Stock.query.all()
+    elif sortBy == 'Price':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.price.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.price).all()
+    elif sortBy == 'Open':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.open.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.open).all()
+    elif sortBy == 'PreviousClose':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.previousClose.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.previousClose).all()
+    elif sortBy == 'Low':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.low.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.low).all()
+    else:
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.high.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.high).all()
+    return render_template('nav_bar.html') + render_template('catTech.html', stocks=stocks, sortBy=sortBy, asc=asc)
 
 
 # Projections page TODO
