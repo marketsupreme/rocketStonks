@@ -68,7 +68,7 @@ class StockIntraday(db.Model):
 
 class StockStats(db.Model):
     # SQL Table for all stocks and their statistics
-    __tablename__ = 'statistics'
+    __tablename__ = 'stockstatistics'
 
     symbol = db.Column(db.String(10), primary_key=True)
     name = db.Column(db.String(100), nullable=False)
@@ -100,6 +100,40 @@ class StockStats(db.Model):
     PriceToBookRatio = db.Column(db.String(20), nullable=False)
     EVToRevenue = db.Column(db.String(20), nullable=False)
     EVToEBITDA = db.Column(db.String(20), nullable=False)
+
+    def data(self):
+        return {
+            'name': self.name,
+            'symbol': self.symbol,
+            'description': self.description,
+            'currency': self.currency,
+            'country': self.country,
+            'MarketCapitalization': self.MarketCapitalization,
+            'EBITDA': self.EBITDA,
+            'PERatio': self.PERatio,
+            'PEGRatio': self.PEGRatio,
+            'BookValue': self.BookValue,
+            'DividendPerShare': self.DividendPerShare,
+            'DividendYield': self.DividendYield,
+            'EPS': self.EPS,
+            'RevenuePerShareTTM': self.RevenuePerShareTTM,
+            'ProfitMargin': self.ProfitMargin,
+            'OperatingMarginTTM': self.OperatingMarginTTM,
+            'ReturnOnAssetsTTM': self.ReturnOnAssetsTTM,
+            'ReturnOnEquityTTM': self.ReturnOnEquityTTM,
+            'RevenueTTM': self.RevenueTTM,
+            'GrossProfitTTM': self.GrossProfitTTM,
+            'DilutedEPSTTM': self.DilutedEPSTTM,
+            'QuarterlyEarningsGrowthYOY': self.QuarterlyEarningsGrowthYOY,
+            'QuarterlyRevenueGrowthYOY': self.QuarterlyRevenueGrowthYOY,
+            'AnalystTargetPrice': self.AnalystTargetPrice,
+            'TrailingPE': self.TrailingPE,
+            'ForwardPE': self.ForwardPE,
+            'PriceToSalesRatioTTM': self.PriceToSalesRatioTTM,
+            'PriceToBookRatio': self.PriceToBookRatio,
+            'EVToRevenue': self.EVToRevenue,
+            'EVToEBITDA': self.EVToEBITDA,
+        }
 
 
 # db.drop_all()

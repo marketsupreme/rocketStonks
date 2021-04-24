@@ -263,7 +263,7 @@ def catTech():
     return render_template('nav_bar.html') + render_template('catTech.html', stocks=stocks, sortBy=sortBy, asc=asc)
 
 
-# Projections page TODO
+# Projections page
 @app.route('/statistics/<stockName>')
 def statistics_page(stockName):
     # query for statistics
@@ -508,6 +508,23 @@ def stocks_intraday_api():
                                      'low': day.low, 'volume': day.volume, 'open': day.open}
         dict[stock.ticker] = ticker_dict
     return dict
+
+
+@app.route('/api/stocks/stats')
+def stocks_stats_api():
+    stocks = StockStats.query.all()
+    data = []
+    for stock in stocks:
+        data.append(stock.data())
+
+    return {'data': data}
+
+
+@app.route('/api/stocks/stats/<stockName>')
+def oneStock_stats_api(stockName):
+    stock = StockStats.query.get(stockName)
+    data = stock.data()
+    return {stock.symbol: data}
 
 
 '''OLD OLD OLD OLD'''
