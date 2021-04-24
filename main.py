@@ -9,7 +9,7 @@ from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
 from models import app, db, Stock, StockStats, StockIntraday
 #comment out below line for GCP deployment
-from create_db import app, db, create_stocks, Stock, StockIntraday, StockStats
+#from create_db import app, db, create_stocks, Stock, StockIntraday, StockStats
 
 
 @app.route('/results/', methods=['GET', 'POST'])
