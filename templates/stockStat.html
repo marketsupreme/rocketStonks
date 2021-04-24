@@ -25,16 +25,16 @@
 <body style="background-color: rgb(63, 180, 235);">
 <br>
 
-<strong> &nbsp &nbsp &nbsp Sort By: </strong><button onclick = "location.href = '{{url_for('stock', sortBy = 'Price', asc = True, page = page )}}';"> Price Desc. </button>
-<button onclick = "location.href = '{{url_for('stock', sortBy = 'Price', asc = False, page = page )}}';"> Price Asc. </button>
-<button onclick = "location.href = '{{url_for('stock', sortBy = 'Open', asc = True, page = page  )}}';"> Open Desc. </button>
-<button onclick = "location.href = '{{url_for('stock', sortBy = 'Open', asc = False, page = page )}}';"> Open Asc. </button>
-<button onclick = "location.href = '{{url_for('stock', sortBy = 'PreviousClose', asc = True, page = page  )}}';"> Previous Close Desc. </button>
-<button onclick = "location.href = '{{url_for('stock', sortBy = 'PreviousClose', asc = False, page = page )}}';"> Previous Close Asc. </button>
-<button onclick = "location.href = '{{url_for('stock', sortBy = 'Low', asc = True , page = page )}}';"> Low Desc. </button>
-<button onclick = "location.href = '{{url_for('stock', sortBy = 'Low', asc = False, page = page )}}';"> Low Asc. </button>
-<button onclick = "location.href = '{{url_for('stock', sortBy = 'High', asc = True , page = page )}}';"> High Desc. </button>
-<button onclick = "location.href = '{{url_for('stock', sortBy = 'High', asc = False, page = page )}}';"> High Asc. </button>
+<strong> &nbsp &nbsp &nbsp Sort By: </strong><button onclick = "location.href = '{{url_for('stockStat', sortBy = 'Price', asc = True, page = page )}}';"> Price Desc. </button>
+<button onclick = "location.href = '{{url_for('stockStat', sortBy = 'Price', asc = False, page = page )}}';"> Price Asc. </button>
+<button onclick = "location.href = '{{url_for('stockStat', sortBy = 'Open', asc = True, page = page  )}}';"> Open Desc. </button>
+<button onclick = "location.href = '{{url_for('stockStat', sortBy = 'Open', asc = False, page = page )}}';"> Open Asc. </button>
+<button onclick = "location.href = '{{url_for('stockStat', sortBy = 'PreviousClose', asc = True, page = page  )}}';"> Previous Close Desc. </button>
+<button onclick = "location.href = '{{url_for('stockStat', sortBy = 'PreviousClose', asc = False, page = page )}}';"> Previous Close Asc. </button>
+<button onclick = "location.href = '{{url_for('stockStat', sortBy = 'Low', asc = True , page = page )}}';"> Low Desc. </button>
+<button onclick = "location.href = '{{url_for('stockStat', sortBy = 'Low', asc = False, page = page )}}';"> Low Asc. </button>
+<button onclick = "location.href = '{{url_for('stockStat', sortBy = 'High', asc = True , page = page )}}';"> High Desc. </button>
+<button onclick = "location.href = '{{url_for('stockStat', sortBy = 'High', asc = False, page = page )}}';"> High Asc. </button>
 
 <div class="row row-cols-1 row-cols-md-4 g-4" style ="padding-top:1em; padding-left:5em; padding-right:5em;">
     {% if page == 6 %}
