@@ -37,7 +37,7 @@
 		{% for i in stocks %}
 			{% if i.category == 'Industry' %}
 				<div class="col">
-					<div class="card h-100" onclick = "location.href = '{{ i.ticker }}';" onmouseover="">
+					<div class="card h-100" onclick = "location.href = '{{url_for('stockPage', stockName = i.ticker)}}';" onmouseover="">
 						<img src="/static/images/{{i.ticker}}.jpg" class="card-img-top" alt=.>
 						<img src="/static/images/{{i.ticker}}.png" class="card-img-top" alt=.>
 						<div class="card-body">
