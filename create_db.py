@@ -6,7 +6,7 @@
 # ---------------------------
 
 import json
-from models import app, db, Stock, StockStats#StockIntraday
+from models import app, db, Stock, StockStats, StockIntraday
 
 # ------------
 # load_json

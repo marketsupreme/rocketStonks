@@ -8,7 +8,8 @@ import random
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
 from models import app, db, Stock, StockStats, StockIntraday
-# from create_db import app, db, create_stocks, Stock, StockIntraday, StockStats
+#comment out below line for GCP deployment
+from create_db import app, db, create_stocks, Stock, StockIntraday, StockStats
 
 
 @app.route('/results/', methods=['GET', 'POST'])
