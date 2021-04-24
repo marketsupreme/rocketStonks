@@ -17,8 +17,8 @@ def results():
     stock_info = []
     stocks = Stock.query.all()
 
-    #check for categories first
-    if entry in ['technology','biomedical', 'industry']:
+    # check for categories first
+    if entry in ['technology', 'biomedical', 'industry']:
         if entry == 'technology':
             return render_template('nav_bar.html') + render_template('catTech.html', stocks=stocks)
         elif entry == 'biomedical':
@@ -26,7 +26,7 @@ def results():
         elif entry == 'industry':
             return render_template('nav_bar.html') + render_template('catIndustry.html', stocks=stocks)
 
-    #checking the database for specific stocks
+    # checking the database for specific stocks
     for stock in stocks:
         if entry in stock.ticker:
             stock_info.append(stock.name)
@@ -38,6 +38,7 @@ def results():
             return render_template('nav_bar.html') + render_template('results.html', stocks=stock_info, entry=entry)
     return render_template('nav_bar.html') + render_template('dummy_link.html', entry=entry)
 
+
 @app.route('/results2/', methods=['GET', 'POST'])
 def results2():
     entry = request.form['search']
@@ -46,7 +47,7 @@ def results2():
     stocks = Stock.query.all()
     cat = request.args.get('cat')
     print(cat)
-    if entry in ['technology','biomedical', 'industry']:
+    if entry in ['technology', 'biomedical', 'industry']:
         if entry == 'technology':
             return render_template('nav_bar.html') + render_template('catTech.html', stocks=stocks)
         elif entry == 'biomedical':
@@ -54,7 +55,7 @@ def results2():
         elif entry == 'industry':
             return render_template('nav_bar.html') + render_template('catIndustry.html', stocks=stocks)
 
-        #checking the database for specific stocks
+        # checking the database for specific stocks
     if cat == None:
         for stock in stocks:
             if entry_lower in stock.ticker.lower():
@@ -68,7 +69,8 @@ def results2():
                     stock_info.append(stock)
                 elif entry_lower in stock.name.lower():
                     stock_info.append(stock)
-    return render_template('nav_bar.html') + render_template('results2.html', entry=entry, stocks = stock_info)
+    return render_template('nav_bar.html') + render_template('results2.html', entry=entry, stocks=stock_info)
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -372,43 +374,50 @@ def stockTable(sortBy=None, asc=True, page=1):
             stocks = Stock.query.order_by(Stock.high).all()
     return render_template('nav_bar.html') + render_template('stockTable.html', stocks=stocks, page=page, sortBy=sortBy, asc=asc)
 
+
 @app.route('/tables/stockIntraday')
 def stockIntradayTable(sortBy=None, asc=True, page=1):
     # creates stock table sorted by filter, in asc/desc order, and by page
-     sortBy = request.args.get('sortBy')
-     asc = request.args.get('asc')
-     page = int(request.args.get('page'))
-     if sortBy == None:
-         stocks = StockIntraday.query.all()
-     elif sortBy == 'Price':
-         if asc == 'True':
-             stocks = StockIntraday.query.order_by(StockIntraday.price.desc()).all()
-         else:
-             stocks = StockIntraday.query.order_by(StockIntraday.price).all()
-     elif sortBy == 'Open':
-         if asc == 'True':
-             stocks = StockIntraday.query.order_by(StockIntraday.open.desc()).all()
-         else:
-             stocks = StockIntraday.query.order_by(StockIntraday.open).all()
-     elif sortBy == 'Low':
-         if asc == 'True':
-             stocks = StockIntraday.query.order_by(StockIntraday.low.desc()).all()
-         else:
-             stocks = StockIntraday.query.order_by(StockIntraday.low).all()
-     elif sortBy == 'High':
-         if asc == 'True':
-             stocks = StockIntraday.query.order_by(StockIntraday.high.desc()).all()
-         else:
-             stocks = StockIntraday.query.order_by(StockIntraday.high).all()
-     else:
-         if asc == 'True':
-             stocks = StockIntraday.query.order_by(StockIntraday.volume.desc()).all()
-         else:
-             stocks = StockIntraday.query.order_by(StockIntraday.volume).all()
-     return render_template('nav_bar.html') + render_template('stockIntradayTable.html', stocks=stocks, page=page, sortBy=sortBy, asc=asc)
+    sortBy = request.args.get('sortBy')
+    asc = request.args.get('asc')
+    page = int(request.args.get('page'))
+    if sortBy == None:
+        stocks = StockIntraday.query.all()
+    elif sortBy == 'Price':
+        if asc == 'True':
+            stocks = StockIntraday.query.order_by(
+                StockIntraday.price.desc()).all()
+        else:
+            stocks = StockIntraday.query.order_by(StockIntraday.price).all()
+    elif sortBy == 'Open':
+        if asc == 'True':
+            stocks = StockIntraday.query.order_by(
+                StockIntraday.open.desc()).all()
+        else:
+            stocks = StockIntraday.query.order_by(StockIntraday.open).all()
+    elif sortBy == 'Low':
+        if asc == 'True':
+            stocks = StockIntraday.query.order_by(
+                StockIntraday.low.desc()).all()
+        else:
+            stocks = StockIntraday.query.order_by(StockIntraday.low).all()
+    elif sortBy == 'High':
+        if asc == 'True':
+            stocks = StockIntraday.query.order_by(
+                StockIntraday.high.desc()).all()
+        else:
+            stocks = StockIntraday.query.order_by(StockIntraday.high).all()
+    else:
+        if asc == 'True':
+            stocks = StockIntraday.query.order_by(
+                StockIntraday.volume.desc()).all()
+        else:
+            stocks = StockIntraday.query.order_by(StockIntraday.volume).all()
+    return render_template('nav_bar.html') + render_template('stockIntradayTable.html', stocks=stocks, page=page, sortBy=sortBy, asc=asc)
+
 
 @app.route('/tables/stockStatistics')
-def stockStatisticsTable(sortBy = None, asc = True, page = 1):
+def stockStatisticsTable(sortBy=None, asc=True, page=1):
     # creates stock table sorted by filter, in asc/desc order, and by page
     sortBy = request.args.get('sortBy')
     asc = request.args.get('asc')
@@ -417,62 +426,73 @@ def stockStatisticsTable(sortBy = None, asc = True, page = 1):
         stocks = StockStats.query.all()
     elif sortBy == 'OperatingMarginTTM':
         if asc == 'True':
-            stocks = StockStats.query.order_by(StockStats.OperatingMarginTTM.desc()).all()
+            stocks = StockStats.query.order_by(
+                StockStats.OperatingMarginTTM.desc()).all()
         else:
-            stocks = StockStats.query.order_by(StockStats.OperatingMarginTTM).all()
+            stocks = StockStats.query.order_by(
+                StockStats.OperatingMarginTTM).all()
     elif sortBy == 'ReturnOnAssetsTTM':
         if asc == 'True':
-            stocks = StockStats.query.order_by(StockStats.ReturnOnAssetsTTM.desc()).all()
+            stocks = StockStats.query.order_by(
+                StockStats.ReturnOnAssetsTTM.desc()).all()
         else:
-            stocks = StockStats.query.order_by(StockStats.ReturnOnAssetsTTM).all()
+            stocks = StockStats.query.order_by(
+                StockStats.ReturnOnAssetsTTM).all()
     elif sortBy == 'ReturnOnEquityTTM':
         if asc == 'True':
-            stocks = StockStats.query.order_by(StockStats.ReturnOnEquityTTM.desc()).all()
+            stocks = StockStats.query.order_by(
+                StockStats.ReturnOnEquityTTM.desc()).all()
         else:
-            stocks = StockStats.query.order_by(StockStats.ReturnOnEquityTTM).all()
+            stocks = StockStats.query.order_by(
+                StockStats.ReturnOnEquityTTM).all()
     elif sortBy == 'GrossProfitTTM':
         if asc == 'True':
-            stocks = StockStats.query.order_by(StockStats.GrossProfitTTM.desc()).all()
+            stocks = StockStats.query.order_by(
+                StockStats.GrossProfitTTM.desc()).all()
         else:
             stocks = StockStats.query.order_by(StockStats.GrossProfitTTM).all()
     else:
         if asc == 'True':
-            stocks = StockStats.query.order_by(StockStats.RevenueTTM.desc()).all()
+            stocks = StockStats.query.order_by(
+                StockStats.RevenueTTM.desc()).all()
         else:
             stocks = StockStats.query.order_by(StockStats.RevenueTTM).all()
-    return render_template('nav_bar.html') + render_template('stockStatisticsTable.html', stocks = stocks, page = page, sortBy = sortBy, asc = asc)
+    return render_template('nav_bar.html') + render_template('stockStatisticsTable.html', stocks=stocks, page=page, sortBy=sortBy, asc=asc)
+
 
 @app.route('/api/stocks')
 def stocks_api():
     stocks = Stock.query.all()
     dict = {}
     for stock in stocks:
-        dict[stock.ticker] = {'name' : stock.name, 'exchange' : stock.exchange, 'price' : stock.price, 'change' : stock.change,
-         'changePercent' : stock.changePercent, 'day' : stock.day, 'previousClose' : stock.previousClose, 'marketCapitalization'
-         : stock.marketCapitalization, 'open' : stock.open, 'beta' : stock.beta, 'peRatio' : stock.peRatio, 'eps' : stock.eps,
-         'low' : stock.low, 'high' : stock.high, 'yearlyLow' : stock.yearlyLow, 'yearlyHigh' : stock.yearlyHigh, 'dividend' : stock.dividend,
-         'dividendYield' : stock.dividendYield, 'volume' : stock.volume, 'exDividend' : stock.exDividend, 'category' : stock.category}
+        dict[stock.ticker] = {'name': stock.name, 'exchange': stock.exchange, 'price': stock.price, 'change': stock.change,
+                              'changePercent': stock.changePercent, 'day': stock.day, 'previousClose': stock.previousClose, 'marketCapitalization': stock.marketCapitalization, 'open': stock.open, 'beta': stock.beta, 'peRatio': stock.peRatio, 'eps': stock.eps,
+                              'low': stock.low, 'high': stock.high, 'yearlyLow': stock.yearlyLow, 'yearlyHigh': stock.yearlyHigh, 'dividend': stock.dividend,
+                              'dividendYield': stock.dividendYield, 'volume': stock.volume, 'exDividend': stock.exDividend, 'category': stock.category}
     return dict
+
 
 @app.route('/api/stocks/<stockName>')
 def specific_stock_api(stockName):
     stock = Stock.query.filter_by(ticker=stockName).all()
     stock = stock[0]
-    dict = {stockName : {'name' : stock.name, 'exchange' : stock.exchange, 'price' : stock.price, 'change' : stock.change,
-           'changePercent' : stock.changePercent, 'day' : stock.day, 'previousClose' : stock.previousClose, 'marketCapitalization'
-           : stock.marketCapitalization, 'open' : stock.open, 'beta' : stock.beta, 'peRatio' : stock.peRatio, 'eps' : stock.eps,
-           'low' : stock.low, 'high' : stock.high, 'yearlyLow' : stock.yearlyLow, 'yearlyHigh' : stock.yearlyHigh, 'dividend' : stock.dividend,
-           'dividendYield' : stock.dividendYield, 'volume' : stock.volume, 'exDividend' : stock.exDividend, 'category' : stock.category}}
+    dict = {stockName: {'name': stock.name, 'exchange': stock.exchange, 'price': stock.price, 'change': stock.change,
+                        'changePercent': stock.changePercent, 'day': stock.day, 'previousClose': stock.previousClose, 'marketCapitalization': stock.marketCapitalization, 'open': stock.open, 'beta': stock.beta, 'peRatio': stock.peRatio, 'eps': stock.eps,
+                        'low': stock.low, 'high': stock.high, 'yearlyLow': stock.yearlyLow, 'yearlyHigh': stock.yearlyHigh, 'dividend': stock.dividend,
+                        'dividendYield': stock.dividendYield, 'volume': stock.volume, 'exDividend': stock.exDividend, 'category': stock.category}}
     return dict
+
 
 @app.route('/api/stockIntraday/<stockName>')
 def specific_stock_intraday_api(stockName):
     stock_intraday = StockIntraday.query.filter_by(ticker=stockName).all()
     ticker_dict = {}
     for day in stock_intraday:
-        ticker_dict[day.date] = {'price' : day.price, 'high': day.high, 'low' : day.low, 'volume' : day.volume, 'open' : day.open}
-    dict = {stockName : ticker_dict}
+        ticker_dict[day.date] = {'price': day.price, 'high': day.high,
+                                 'low': day.low, 'volume': day.volume, 'open': day.open}
+    dict = {stockName: ticker_dict}
     return dict
+
 
 @app.route('/api/stockIntraday/<stockName>/<stockDate>')
 def specific_stock_date_intraday_api(stockName, stockDate):
@@ -489,12 +509,32 @@ def stocks_intraday_api():
     stocks = Stock.query.all()
     dict = {}
     for stock in stocks:
-        stock_intraday = StockIntraday.query.filter_by(ticker=stock.ticker).all()
+        stock_intraday = StockIntraday.query.filter_by(
+            ticker=stock.ticker).all()
         ticker_dict = {}
         for day in stock_intraday:
-            ticker_dict[day.date] = {'price' : day.price, 'high': day.high, 'low' : day.low, 'volume' : day.volume, 'open' : day.open}
+            ticker_dict[day.date] = {'price': day.price, 'high': day.high,
+                                     'low': day.low, 'volume': day.volume, 'open': day.open}
         dict[stock.ticker] = ticker_dict
     return dict
+
+
+@app.route('/api/stocks/stats')
+def stocks_stats_api():
+    stocks = StockStats.query.all()
+    data = []
+    for stock in stocks:
+        data.append(stock.data())
+
+    return {'data': data}
+
+
+@app.route('/api/stocks/stats/<stockName>')
+def oneStock_stats_api(stockName):
+    stock = StockStats.query.get(stockName)
+    data = stock.data()
+    return {stock.symbol: data}
+
 
 '''OLD OLD OLD OLD'''
 
