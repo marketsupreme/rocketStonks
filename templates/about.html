@@ -244,12 +244,19 @@
                         <li>
                         <a href="https://gitlab.com/msw2686/rocketStonks/-/tree/master" target="_blank">Gitlab Repository</a>
                         </li>
+
                         <li>
                         <a href="https://gitlab.com/msw2686/rocketStonks/-/issues" target="_blank">Gitlab Issue Tracker</a>
                         </li>
+
                         <li>
                         <a href="https://gitlab.com/msw2686/rocketStonks/-/wikis/home" target="_blank">Gitlab Wiki</a>
                         </li>
+
+                        <li>
+                        <a href="https://speakerdeck.com/rocketstonks" target="_blank">SpeakerDeck</a>
+                        </li>
+
                         <li>
                             Commits: 
                             6
@@ -272,38 +279,37 @@
                 <img src="../static/images/alphavantage.png" width="75" length="100" onclick = "location.href = alphavantage.com;" 
                     onmouseover="" style ="cursor:pointer;" class="center">
                 </a>
-            </div>
-        </div>
-        <div class='tools'>
-            <div class='nomics'>
-                <a href="https://nomics.com" target="_blank">
-                <img src="../static/images/nomics.png" width="75" length="100" onclick = "location.href = alphavantage.com;" 
-                    onmouseover="" style ="cursor:pointer;" class="center">
-                </a>
+    
             </div>
         </div>
         <div class='tools'>
             <div class='gitlab'>
-                <a href="https://gitlab.com" target="_blank">
-                <img src="../static/images/gitlab_logo.png" width="75" length="100" onclick = "location.href = alphavantage.com;" 
-                    onmouseover="" style ="cursor:pointer;" class="center">
-                </a>
+                <div class='btn text-center'>
+                    <a href="https://gitlab.com" target="_blank">
+                    <img src="../static/images/gitlab_logo.png" width="75" length="100" onclick = "location.href = alphavantage.com;" 
+                        onmouseover="" style ="cursor:pointer;" class="center">
+                    </a>
+                </div>
             </div>
         </div>
         <div class='tools'>
             <div class='bootstrap'>
+                <div class='btn text-center'>
                 <a href="https://getbootstrap.com" target="_blank">
                 <img src="../static/images/bootstrap.png" width="75" length="100" onclick = "location.href = alphavantage.com;" 
                     onmouseover="" style ="cursor:pointer;" class="center">
                 </a>
+                </div>
             </div>
         </div>
         <div class='tools'>
             <div class='flask'>
+                <div class='btn text-center'>
                 <a href="https://flask.palletprojects.com" target="_blank">
                 <img src="../static/images/flask-logo.png" width="75" length="50" onclick = "location.href = alphavantage.com;" 
                     onmouseover="" style ="cursor:pointer;">
                 </a>
+                </div>
             </div>
         </div>
         </div>
@@ -327,7 +333,7 @@
             <div class='email'>
                 <img src="../static/images/email.png" width="75" length="100" onclick = "location.href = alphavantage.com;" 
                     onmouseover="" style ="cursor:pointer;">
-                <button type="button" onclick="alert('Hello world!')">Run Tests</button>
+                <a class="btn btn-default" href="{{url_for('unit_tests')}}" role="button" style="background-color: #24c24b">Run Tests »</a>
             </div>
         </div>
         </div>

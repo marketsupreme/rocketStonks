@@ -7,7 +7,69 @@ import io
 import random
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
-from create_db import app, db, Stock, StockIntraday, StockStats
+from models import app, db, Stock, StockStats, StockIntraday
+# from create_db import app, db, create_stocks, Stock, StockIntraday, StockStats
+
+
+@app.route('/results/', methods=['GET', 'POST'])
+def results():
+    entry = request.form['search']
+    stock_info = []
+    stocks = Stock.query.all()
+
+    # check for categories first
+    if entry in ['technology', 'biomedical', 'industry']:
+        if entry == 'technology':
+            return render_template('nav_bar.html') + render_template('catTech.html', stocks=stocks)
+        elif entry == 'biomedical':
+            return render_template('nav_bar.html') + render_template('catBiomedical.html', stocks=stocks)
+        elif entry == 'industry':
+            return render_template('nav_bar.html') + render_template('catIndustry.html', stocks=stocks)
+
+    # checking the database for specific stocks
+    for stock in stocks:
+        if entry in stock.ticker:
+            stock_info.append(stock.name)
+            stock_info.append(stock.ticker)
+            return render_template('nav_bar.html') + render_template('results.html', stocks=stock_info, entry=entry)
+        elif entry in stock.name:
+            stock_info.append(stock.name)
+            stock_info.append(stock.ticker)
+            return render_template('nav_bar.html') + render_template('results.html', stocks=stock_info, entry=entry)
+    return render_template('nav_bar.html') + render_template('dummy_link.html', entry=entry)
+
+
+@app.route('/results2/', methods=['GET', 'POST'])
+def results2():
+    entry = request.form['search']
+    entry_lower = entry.lower()
+    stock_info = []
+    stocks = Stock.query.all()
+    cat = request.args.get('cat')
+    print(cat)
+    if entry in ['technology', 'biomedical', 'industry']:
+        if entry == 'technology':
+            return render_template('nav_bar.html') + render_template('catTech.html', stocks=stocks)
+        elif entry == 'biomedical':
+            return render_template('nav_bar.html') + render_template('catBiomedical.html', stocks=stocks)
+        elif entry == 'industry':
+            return render_template('nav_bar.html') + render_template('catIndustry.html', stocks=stocks)
+
+        # checking the database for specific stocks
+    if cat == None:
+        for stock in stocks:
+            if entry_lower in stock.ticker.lower():
+                stock_info.append(stock)
+            elif entry_lower in stock.name.lower():
+                stock_info.append(stock)
+    else:
+        for stock in stocks:
+            if stock.category == cat:
+                if entry_lower in stock.ticker.lower():
+                    stock_info.append(stock)
+                elif entry_lower in stock.name.lower():
+                    stock_info.append(stock)
+    return render_template('nav_bar.html') + render_template('results2.html', entry=entry, stocks=stock_info)
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -51,6 +113,42 @@ def stock(sortBy=None, asc=True, page=1):
     return render_template('nav_bar.html') + render_template('stocks.html', stocks=stocks, page=page, sortBy=sortBy, asc=asc)
 
 
+@app.route('/statistics/')
+def stockStat(sortBy=None, asc=True, page=1):
+    # creates stock page with cards sorted by filter, in asc/desc order, and by page
+    sortBy = request.args.get('sortBy')
+    asc = request.args.get('asc')
+    page = int(request.args.get('page'))
+    if sortBy == None:
+        stocks = Stock.query.all()
+    elif sortBy == 'Price':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.price.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.price).all()
+    elif sortBy == 'Open':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.open.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.open).all()
+    elif sortBy == 'PreviousClose':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.previousClose.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.previousClose).all()
+    elif sortBy == 'Low':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.low.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.low).all()
+    else:
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.high.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.high).all()
+    return render_template('nav_bar.html') + render_template('stockStat.html', stocks=stocks, page=page, sortBy=sortBy, asc=asc)
+
+
 @app.route('/cat/')
 def cat():
     return render_template('nav_bar.html') + render_template('categories.html')
@@ -59,22 +157,110 @@ def cat():
 @app.route('/cat/bio')
 def catBio():
     # sorts for category = biomedical in html with jinja
-    stocks = Stock.query.all()
-    return render_template('nav_bar.html') + render_template('catBiomedical.html', stocks=stocks)
+    # creates stock page with cards sorted by filter, in asc/desc order, and by page
+    sortBy = request.args.get('sortBy')
+    asc = request.args.get('asc')
+    if sortBy == None:
+        stocks = Stock.query.all()
+    elif sortBy == 'Price':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.price.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.price).all()
+    elif sortBy == 'Open':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.open.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.open).all()
+    elif sortBy == 'PreviousClose':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.previousClose.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.previousClose).all()
+    elif sortBy == 'Low':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.low.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.low).all()
+    else:
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.high.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.high).all()
+    return render_template('nav_bar.html') + render_template('catBiomedical.html', stocks=stocks, sortBy=sortBy, asc=asc)
 
 
 @app.route('/cat/industry/')
 def catIndustry():
     # sorts for category = industry in html with jinja
+    # creates stock page with cards sorted by filter, in asc/desc order, and by page
+    sortBy = request.args.get('sortBy')
+    asc = request.args.get('asc')
+    if sortBy == None:
+        stocks = Stock.query.all()
+    elif sortBy == 'Price':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.price.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.price).all()
+    elif sortBy == 'Open':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.open.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.open).all()
+    elif sortBy == 'PreviousClose':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.previousClose.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.previousClose).all()
+    elif sortBy == 'Low':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.low.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.low).all()
+    else:
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.high.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.high).all()
+    return render_template('nav_bar.html') + render_template('catIndustry.html', stocks=stocks, sortBy=sortBy, asc=asc)
     stocks = Stock.query.all()
-    return render_template('nav_bar.html') + render_template('catIndustry.html', stocks=stocks)
 
 
 @app.route('/cat/tech/')
 def catTech():
     # sorts for category = technology in html with jinja
-    stocks = Stock.query.all()
-    return render_template('nav_bar.html') + render_template('catTech.html', stocks=stocks)
+    # creates stock page with cards sorted by filter, in asc/desc order, and by page
+    sortBy = request.args.get('sortBy')
+    asc = request.args.get('asc')
+    if sortBy == None:
+        stocks = Stock.query.all()
+    elif sortBy == 'Price':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.price.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.price).all()
+    elif sortBy == 'Open':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.open.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.open).all()
+    elif sortBy == 'PreviousClose':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.previousClose.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.previousClose).all()
+    elif sortBy == 'Low':
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.low.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.low).all()
+    else:
+        if asc == 'True':
+            stocks = Stock.query.order_by(Stock.high.desc()).all()
+        else:
+            stocks = Stock.query.order_by(Stock.high).all()
+    return render_template('nav_bar.html') + render_template('catTech.html', stocks=stocks, sortBy=sortBy, asc=asc)
 
 
 # Projections page TODO
@@ -85,14 +271,14 @@ def statistics_page(stockName):
     return render_template('nav_bar.html') + render_template('statistics.html', stock=stock)
 
 
+@app.route('/about/tests/')
+def unit_tests():
+    return render_template('nav_bar.html') + render_template('tests.html')
+
+
 @app.route('/about/')
 def about():
     return render_template('nav_bar.html') + render_template('about.html')
-
-
-@app.route('/dummy/')
-def dummy():
-    return render_template('nav_bar.html') + render_template('dummy_link.html')
 
 
 @app.route('/stock/<stockName>')
@@ -273,6 +459,55 @@ def stockStatisticsTable(sortBy=None, asc=True, page=1):
         else:
             stocks = StockStats.query.order_by(StockStats.RevenueTTM).all()
     return render_template('nav_bar.html') + render_template('stockStatisticsTable.html', stocks=stocks, page=page, sortBy=sortBy, asc=asc)
+
+
+@app.route('/api/stocks')
+def stocks_api():
+    stocks = Stock.query.all()
+    dict = {}
+    for stock in stocks:
+        dict[stock.ticker] = {'name': stock.name, 'exchange': stock.exchange, 'price': stock.price, 'change': stock.change,
+                              'changePercent': stock.changePercent, 'day': stock.day, 'previousClose': stock.previousClose, 'marketCapitalization': stock.marketCapitalization, 'open': stock.open, 'beta': stock.beta, 'peRatio': stock.peRatio, 'eps': stock.eps,
+                              'low': stock.low, 'high': stock.high, 'yearlyLow': stock.yearlyLow, 'yearlyHigh': stock.yearlyHigh, 'dividend': stock.dividend,
+                              'dividendYield': stock.dividendYield, 'volume': stock.volume, 'exDividend': stock.exDividend, 'category': stock.category}
+    return dict
+
+
+@app.route('/api/stocks/<stockName>')
+def specific_stock_api(stockName):
+    stock = Stock.query.filter_by(ticker=stockName).all()
+    stock = stock[0]
+    dict = {stockName: {'name': stock.name, 'exchange': stock.exchange, 'price': stock.price, 'change': stock.change,
+                        'changePercent': stock.changePercent, 'day': stock.day, 'previousClose': stock.previousClose, 'marketCapitalization': stock.marketCapitalization, 'open': stock.open, 'beta': stock.beta, 'peRatio': stock.peRatio, 'eps': stock.eps,
+                        'low': stock.low, 'high': stock.high, 'yearlyLow': stock.yearlyLow, 'yearlyHigh': stock.yearlyHigh, 'dividend': stock.dividend,
+                        'dividendYield': stock.dividendYield, 'volume': stock.volume, 'exDividend': stock.exDividend, 'category': stock.category}}
+    return dict
+
+
+@app.route('/api/stockIntraday/<stockName>')
+def specific_stock_intraday_api(stockName):
+    stock_intraday = StockIntraday.query.filter_by(ticker=stockName).all()
+    ticker_dict = {}
+    for day in stock_intraday:
+        ticker_dict[day.date] = {'price': day.price, 'high': day.high,
+                                 'low': day.low, 'volume': day.volume, 'open': day.open}
+    dict = {stockName: ticker_dict}
+    return dict
+
+
+@app.route('/api/stockIntraday')
+def stocks_intraday_api():
+    stocks = Stock.query.all()
+    dict = {}
+    for stock in stocks:
+        stock_intraday = StockIntraday.query.filter_by(
+            ticker=stock.ticker).all()
+        ticker_dict = {}
+        for day in stock_intraday:
+            ticker_dict[day.date] = {'price': day.price, 'high': day.high,
+                                     'low': day.low, 'volume': day.volume, 'open': day.open}
+        dict[stock.ticker] = ticker_dict
+    return dict
 
 
 '''OLD OLD OLD OLD'''

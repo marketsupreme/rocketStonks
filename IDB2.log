@@ -1,0 +1,831 @@
+commit 14751cc382ca74556cccc3e01255419949b4d67a
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Fri Apr 2 18:45:49 2021 -0500
+
+    Fixed stock glitch on index page.
+
+commit a2057e1d8fc7986effb47dfeb3ff64b842d6d200
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Fri Apr 2 17:14:25 2021 -0500
+
+    comments
+
+commit dbef4ce4faeba17dc189458843dd6277cb3fff99
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Fri Apr 2 17:02:49 2021 -0500
+
+    models.py
+
+commit 7e8fa7d6e9ac21c6f46508425995d23e276c5974
+Merge: 94528dd 925dd7b
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Fri Apr 2 16:54:01 2021 -0500
+
+    Pagination on stocks page
+
+commit 94528dd5657591bc474df4014833070408f49821
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Fri Apr 2 16:47:27 2021 -0500
+
+    Pagination on stocks page
+
+commit 925dd7bee44786e48f7180c78f923d21941f89d1
+Merge: 9e069f5 03a66dc
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Fri Apr 2 16:35:24 2021 -0500
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+
+commit 9e069f531ec16aa6ede8e23eb8a56f96bfa159d5
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Fri Apr 2 16:35:09 2021 -0500
+
+    Commenting code for readibility.
+
+commit 03a66dcced1af1a2c38db4b6d829bf254bc445ce
+Author: Allan Castaneda <allan.castaneda@utexas.edu>
+Date:   Fri Apr 2 21:15:58 2021 +0000
+
+    Update models.py
+
+commit 14d73f2c103ac190e80589440337350c392ef6f4
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Fri Apr 2 16:13:48 2021 -0500
+
+    Fixed Issue #20
+
+commit 58e08df7f594fc3e936a4dd0b4a4689d31b12846
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Fri Apr 2 16:12:04 2021 -0500
+
+    Fixed Issue #20
+
+commit e73d528445165dc5ae53bde0c5e886c4cedba183
+Merge: c6aecf3 2e82006
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Fri Apr 2 15:53:27 2021 -0500
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+
+commit c6aecf3867ffb9fccb4ce378c0922d829fbc0763
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Fri Apr 2 15:53:12 2021 -0500
+
+    Added stock intraday table.
+
+commit 2e82006ad165ef1cad46b363054e11dea875a114
+Author: Michael Walters <mike855@outlook.com>
+Date:   Fri Apr 2 15:51:22 2021 -0500
+
+    fixed about.html stats
+
+commit 63e0748c417c27922bac48d95aef725b99316e2f
+Author: Michael Walters <mike855@outlook.com>
+Date:   Fri Apr 2 15:39:36 2021 -0500
+
+    adjusted some typos in index
+
+commit c4e680e876262e93d7502fe6269553c0c5e51045
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Fri Apr 2 15:26:12 2021 -0500
+
+    Added stock statistics table.
+
+commit 3bc07f8abaffcf77c5e7f53076c0e54affedd560
+Merge: a0a6b3b 1d7c426
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Fri Apr 2 15:22:56 2021 -0500
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+
+commit 1d7c42681dd88aab694186c1ec771fb5f22d92e1
+Author: Danfeng Wang <dannywang@utexas.edu>
+Date:   Fri Apr 2 16:22:09 2021 -0400
+
+    connect stock page and statistics page
+
+commit a0a6b3be124e03e6a32f5a1fc2fdfba5dd420cde
+Merge: 75790d0 43bdac5
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Fri Apr 2 15:22:04 2021 -0500
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+
+commit 75790d0cff26e28f6dae003156e8b9d36007a33a
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Fri Apr 2 15:21:51 2021 -0500
+
+    Added stock statistics table.
+
+commit 43bdac5722d239124cae0e133e4c17903eca9545
+Merge: 568f95c d2dff50
+Author: Danfeng Wang <dannywang@utexas.edu>
+Date:   Fri Apr 2 15:45:43 2021 -0400
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+
+commit 568f95c81577fa5dea91b298804ef02b2763ff87
+Author: Danfeng Wang <dannywang@utexas.edu>
+Date:   Fri Apr 2 15:45:41 2021 -0400
+
+    finish dynamic statistics page
+
+commit d2dff500b079f36169935ea8b7a325a78e5e3a93
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Fri Apr 2 14:39:56 2021 -0500
+
+    Added tables to navbar along with sortable tables with pagination.
+
+commit 9bc37322f1155946bd3fb64b9b0a8c16187945dc
+Author: Nam Nguyen <namnguyen430@gmail.com>
+Date:   Fri Apr 2 02:37:34 2021 -0500
+
+    created another unit test
+
+commit b153b26b860a68db96a43ff473a9aec3eaf2e4f5
+Author: Nam Nguyen <namnguyen430@gmail.com>
+Date:   Fri Apr 2 02:22:54 2021 -0500
+
+    created unit test button
+
+commit a821e37f068dbc28be3d4bd0d44feafa434a0c18
+Author: Danfeng Wang <dannywang@utexas.edu>
+Date:   Fri Apr 2 02:33:55 2021 -0400
+
+    added statistics_page function in main.py
+
+commit 6750f4c22dd5d24bb3e9993f98bdfef47bfd80dd
+Author: Danfeng Wang <dannywang@utexas.edu>
+Date:   Fri Apr 2 02:14:48 2021 -0400
+
+    populate data into the stock statistics table in the database
+
+commit 8877dd5ff66410c0e46c91047ea9122065f38f1c
+Author: Danfeng Wang <dannywang@utexas.edu>
+Date:   Fri Apr 2 01:28:45 2021 -0400
+
+    setting up database for stock statistics
+
+commit 67c20e76991c3015fbfcede7f7a24f7d971f575f
+Author: Michael Walters <mike855@outlook.com>
+Date:   Thu Apr 1 21:51:03 2021 -0500
+
+    categories load stocks dynamically now
+
+commit bb1e4cb08fa9f6b2d488102bd073b57b563e3666
+Author: Michael Walters <mike855@outlook.com>
+Date:   Thu Apr 1 21:35:15 2021 -0500
+
+    categories pages are now dyanmic
+
+commit 97ae164ef5b0799ff34b90125063fe52e709328f
+Author: Michael Walters <mike855@outlook.com>
+Date:   Thu Apr 1 20:56:01 2021 -0500
+
+    added logos for all stocks
+
+commit e7a8be398f6eb9633445ef4ff567d9348d492b57
+Author: Nam Nguyen <namnguyen430@gmail.com>
+Date:   Wed Mar 31 19:42:29 2021 -0500
+
+    basic layout of unittest created
+
+commit 202fb042ee107839d55e36cf468263a1d729e3b3
+Author: Nam Nguyen <namnguyen430@gmail.com>
+Date:   Wed Mar 31 19:35:08 2021 -0500
+
+    created unit test file
+
+commit 49bc74635da3a9f78f54cdf8f54c364564f01287
+Merge: a41d7a3 74b8b0d
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Wed Mar 31 19:32:18 2021 -0500
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+
+commit a41d7a34a728d6ea1bfab34fa1b1fef12c21d5da
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Wed Mar 31 19:32:03 2021 -0500
+
+    Jinja stocks loop
+
+commit 74b8b0d270c5a93f894effa8018c250a15dcd7ab
+Merge: ac9603c 9f158d3
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Wed Mar 31 19:05:23 2021 -0500
+
+    Got graphs working and added table to db.
+
+commit ac9603c739e85a6fc36bc1d55a941d30ae4321ce
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Wed Mar 31 19:02:15 2021 -0500
+
+    Got graphs working and added table to db.
+
+commit 9f158d3c1cd8d1558ae69b6e9f35e329944a91ec
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Wed Mar 31 18:34:35 2021 -0500
+
+    postgres to postgresql
+
+commit 11766a8251abefaca7dfa998e2ea3ddff0e3776d
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Wed Mar 31 16:36:41 2021 -0500
+
+    Made changes to JSON and created db along with dynamic pages now querying db.
+
+commit 124ff97b44b3d13e0a1786293c8ff95029cfa2d9
+Merge: 0c2a09a 218bf6f
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Wed Mar 31 13:30:35 2021 -0500
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+    
+     Conflicts:
+    	requirements.txt
+
+commit 0c2a09af202e0f1f21b0673b4e42d0a390907cf0
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Wed Mar 31 13:29:59 2021 -0500
+
+    WIP DB setup.
+
+commit 218bf6f30875061d6dcbf3b988835427f9469f28
+Author: Michael Walters <mike855@outlook.com>
+Date:   Wed Mar 31 13:27:25 2021 -0500
+
+    scrape.py and stocks.json created. still need crypto and penny stocks tickers
+
+commit 2143abcc829e80800402e35753b9d2ca08795beb
+Merge: 27774bf f8d245a
+Author: Nam Nguyen <namnguyen430@gmail.com>
+Date:   Mon Mar 29 20:20:51 2021 -0500
+
+    updated about page and created unitttests file
+
+commit 27774bf2cb260ac7f38713fd0e8418bc7271f5e5
+Author: Nam Nguyen <namnguyen430@gmail.com>
+Date:   Mon Mar 29 20:16:17 2021 -0500
+
+    updated about page and created unittests file
+
+commit f8d245aed25e730ca10497ee94fca84867b44f9e
+Merge: b05720d a42d2fb
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Mon Mar 29 18:47:41 2021 -0500
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+    
+     Conflicts:
+    	main.py
+
+commit b05720d2edf7c08fe6b9328f1503fa1b9ee813d7
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Mon Mar 29 18:46:41 2021 -0500
+
+    Re-pushing dynamic page on main.py.
+
+commit a42d2fb65f1bb1d932ccc10092bf32f945ec2e1e
+Merge: 73daccd ce11f1e
+Author: Michael Walters <mike855@outlook.com>
+Date:   Mon Mar 29 18:39:03 2021 -0500
+
+    fraij files
+
+commit 73daccdd7e72123cc69e39c522432ca9ea9bd7ab
+Author: Michael Walters <mike855@outlook.com>
+Date:   Mon Mar 29 18:35:14 2021 -0500
+
+    added database files from Fraij's repo
+
+commit ce11f1e3aa20421568a18136a291f46ac17a3320
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Mon Mar 29 17:44:07 2021 -0500
+
+    Created ability to have a dynamic graph.
+
+commit e5d89322c50699ed689ff74983c1ef41ddcdacd9
+Merge: cc48a0f a3a9137
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Mon Mar 29 17:10:43 2021 -0500
+
+    Merge branches 'dev' and 'master' of https://gitlab.com/msw2686/rocketStonks into dev
+
+commit cc48a0f8cec4febbb2046d3f3abb80e7c4a99f99
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Mon Mar 29 17:09:25 2021 -0500
+
+    Created dynamic stock page with flask using dummy data.
+
+commit d65ca1205c99d9d2e3124083207354455e681256
+Merge: b4a2687 a3a9137
+Author: Michael Walters <mike855@outlook.com>
+Date:   Sun Mar 28 16:57:57 2021 -0500
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+
+commit a3a91370411ccc47126007736928e00374649c81
+Merge: a20c320 a5c13e6
+Author: Michael Walters <mike855@outlook.com>
+Date:   Fri Feb 26 23:37:45 2021 +0000
+
+    Merge branch 'dev' into 'master'
+    
+    added more links
+    
+    See merge request msw2686/rocketStonks!8
+
+commit a5c13e601644f4084e1dedcceeea733829792ec9
+Author: Nam Nguyen <namnguyen430@gmail.com>
+Date:   Fri Feb 26 17:31:04 2021 -0600
+
+    added more links
+
+commit a20c320e93455864723bba2dcb6b8655de1782d0
+Author: Michael Walters <mike855@outlook.com>
+Date:   Fri Feb 26 17:28:25 2021 -0600
+
+    adjusted one error in hon.html
+
+commit c83dc9aea626df5b3b1c5b18ea0bb6e9e2f1da6a
+Author: Michael Walters <mike855@outlook.com>
+Date:   Fri Feb 26 16:54:29 2021 -0600
+
+    added yaml and deploy
+
+commit b4a26875d26226f156ae1040ebd31acae92857b5
+Merge: 44d6e12 725071e
+Author: Michael Walters <mike855@outlook.com>
+Date:   Fri Feb 26 16:52:01 2021 -0600
+
+    Merge branch 'master' of https://gitlab.com/msw2686/rocketStonks into dev
+
+commit 44d6e124f0f654980723614bf6bee3b387bc5b7c
+Author: Michael Walters <mike855@outlook.com>
+Date:   Fri Feb 26 16:51:42 2021 -0600
+
+    added yaml and deploy.sh
+
+commit 725071ec28df374ebc7eb52d67747a49b68df1cb
+Merge: 04350ad 5a2e85d
+Author: Michael Walters <mike855@outlook.com>
+Date:   Fri Feb 26 22:39:00 2021 +0000
+
+    Merge branch 'dev' into 'master'
+    
+    Dev to master
+    
+    See merge request msw2686/rocketStonks!7
+
+commit 5a2e85d206e685ddb0a2a883bbbb349784a4b29c
+Merge: 1e7fe35 d2a4c26
+Author: Michael Walters <mike855@outlook.com>
+Date:   Fri Feb 26 16:38:02 2021 -0600
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+
+commit 1e7fe35e7325842266eabfb3a31f7b06a588e243
+Author: Michael Walters <mike855@outlook.com>
+Date:   Fri Feb 26 16:37:51 2021 -0600
+
+    updated log file
+
+commit d2a4c2617b2420ce445d58455d95f68a06c914ca
+Author: Nam Nguyen <namnguyen430@gmail.com>
+Date:   Fri Feb 26 16:37:00 2021 -0600
+
+    final commit first phase
+
+commit f7735f339f2341ebaf476182738d06ac41536a8b
+Merge: 168005b 1ed00d5
+Author: Nam Nguyen <namnguyen430@gmail.com>
+Date:   Fri Feb 26 16:14:26 2021 -0600
+
+    cards fixed
+
+commit 168005bde291d1b8cad3451bdc62df9197526891
+Author: Nam Nguyen <namnguyen430@gmail.com>
+Date:   Fri Feb 26 16:04:30 2021 -0600
+
+    fixed cards
+
+commit 1ed00d5fb1376f6eaf335f38fdd742a560253357
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Fri Feb 26 16:02:25 2021 -0600
+
+    Added dummy stocks to categories pages and fixed specific stock page style to be inline with statistics page.
+
+commit 51995e5a7ec6a592d2bf64f6365d437475d3bef2
+Merge: 779c4aa 86db437
+Author: Danfeng Wang <dannywang@utexas.edu>
+Date:   Fri Feb 26 05:34:40 2021 +0000
+
+    Merge branch 'projections' into 'dev'
+    
+    Projections
+    
+    See merge request msw2686/rocketStonks!6
+
+commit 86db4379319c47282f981ac93024d9653b51f9aa
+Merge: de1f614 779c4aa
+Author: Danfeng Wang <dannywang@utexas.edu>
+Date:   Fri Feb 26 00:31:48 2021 -0500
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into projections
+
+commit de1f6140c43de31e014e1f160a86bd9696fd9faa
+Author: Danfeng Wang <dannywang@utexas.edu>
+Date:   Fri Feb 26 00:30:53 2021 -0500
+
+    add back link - link back to stock page
+
+commit 779c4aa47df68b51e4159dc884fba0b902225c9f
+Author: Nam Nguyen <namnguyen430@gmail.com>
+Date:   Thu Feb 25 23:25:12 2021 -0600
+
+    fixed about page text lineup
+
+commit ca1fc9f779d1e43927360aeedfb63a20eca76fe5
+Merge: c94bcc7 d58729a
+Author: Danfeng Wang <dannywang@utexas.edu>
+Date:   Fri Feb 26 00:24:29 2021 -0500
+
+    resolve merge conflict
+
+commit c94bcc72c33c8b7f2ecbeb1184202a9d4685a5ea
+Author: Danfeng Wang <dannywang@utexas.edu>
+Date:   Fri Feb 26 00:17:44 2021 -0500
+
+    finish bootstrap styling
+
+commit 0cf013c90ae4569da9930e31fb62e6a3cd24e78d
+Author: Danfeng Wang <dannywang@utexas.edu>
+Date:   Thu Feb 25 23:31:23 2021 -0500
+
+    adding jumbotron
+
+commit c96529e9df76dc2b6ecfd3847f9d8e0fed3ef470
+Author: Danfeng Wang <dannywang@utexas.edu>
+Date:   Thu Feb 25 22:47:30 2021 -0500
+
+    added some bootstrap style
+
+commit d58729adebd0090220a0a8ae8decb843826f02d5
+Merge: 3b399ad 4868b93
+Author: Michael Walters <mike855@outlook.com>
+Date:   Thu Feb 25 21:43:16 2021 -0600
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+
+commit 3b399ad9d1c7852da43a792d641db9b34600c841
+Author: Michael Walters <mike855@outlook.com>
+Date:   Thu Feb 25 21:43:04 2021 -0600
+
+    fixed index projections link
+
+commit 4868b933ccf813d2237cf078ad9e7e1222c45647
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Thu Feb 25 21:41:54 2021 -0600
+
+    projections nav bar
+
+commit 71bd9e97fdd72c5e993d3dc9879cdb98f8930911
+Merge: 6e60b69 5be480e
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Thu Feb 25 21:35:43 2021 -0600
+
+    nav bar
+
+commit 5be480e92c55f34e982fde6f03cb657238baeab3
+Merge: a7cc525 a289bc6
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Thu Feb 25 21:29:32 2021 -0600
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+
+commit 6e60b69d9dd8e67b732eb23e1096d163c54bf9bc
+Merge: de7c411 a289bc6
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Thu Feb 25 21:28:16 2021 -0600
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+
+commit de7c4117dd34e4d6ecf9a1afd68b75cb6dbc6561
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Thu Feb 25 21:28:03 2021 -0600
+
+    nav bar standardized
+
+commit a289bc6d95f0915f94e55d0abc67c771a81e52ce
+Author: Michael Walters <mike855@outlook.com>
+Date:   Thu Feb 25 21:26:12 2021 -0600
+
+    updated the readme
+
+commit a7cc5258dce37be36e79df6798aef367919e82ee
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Thu Feb 25 21:24:21 2021 -0600
+
+    Fixed double navbar for stocks and added images.
+
+commit 4ff4ae4d421c5d56bbb87514d235012a85a53126
+Merge: fd0005c 21b6ffa
+Author: Danfeng Wang <dannywang@utexas.edu>
+Date:   Fri Feb 26 01:49:59 2021 +0000
+
+    Merge branch 'projections' into 'dev'
+    
+    Projections
+    
+    See merge request msw2686/rocketStonks!5
+
+commit 21b6ffa73384af972f6a1841377e4413bd85c047
+Merge: f6c30f7 fd0005c
+Author: Danfeng Wang <dannywang@utexas.edu>
+Date:   Thu Feb 25 20:44:16 2021 -0500
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into projections
+
+commit f6c30f7d82bf2440c2dafb7cbf8d95933200a397
+Author: Danfeng Wang <dannywang@utexas.edu>
+Date:   Thu Feb 25 20:42:47 2021 -0500
+
+    finish projection page for MRNA
+
+commit fd0005c2abd6186f7e6a63de40b1beb719241760
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Thu Feb 25 18:39:10 2021 -0600
+
+    Added page that dummy links point to and finished adding placeholder stocks.
+
+commit fec4409a4c755dbbc4e4a6eee3b854c462d9dfe0
+Merge: e78f87e 73845c2
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Thu Feb 25 17:58:51 2021 -0600
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+    
+     Conflicts:
+    	main.py
+
+commit 73845c271b8f7e4c861e5d5bed5fd2b0537d3ad6
+Author: Nam Nguyen <namnguyen430@gmail.com>
+Date:   Thu Feb 25 16:24:22 2021 -0600
+
+    added icons and links
+
+commit 191e94f7ecc196a2e19f52c545f2496319cdf87f
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Thu Feb 25 16:18:54 2021 -0600
+
+    categories new
+
+commit 5b13985ad15619ce07857dfb5cb074c3f1e4042e
+Author: Danfeng Wang <dannywang@utexas.edu>
+Date:   Wed Feb 24 22:36:14 2021 -0500
+
+    finish filling in info on HON projection page
+
+commit e78f87eba9bbdfa5a95297e824f1312d6422c026
+Merge: e41de81 b947808
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Wed Feb 24 21:20:33 2021 -0600
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+    
+     Conflicts:
+    	main.py
+
+commit d8c2530216bf42e19d0c956adbe6299ba39f443e
+Merge: 076c951 b947808
+Author: Michael Walters <mike855@outlook.com>
+Date:   Wed Feb 24 21:20:21 2021 -0600
+
+    none
+
+commit e41de819deac093736c9ae8f7c273bb54e7f8638
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Wed Feb 24 21:19:53 2021 -0600
+
+    Added base nav_bar html page
+
+commit 076c95181258ad6b19ab90fdc8f3067074139fe4
+Author: Michael Walters <mike855@outlook.com>
+Date:   Wed Feb 24 21:19:12 2021 -0600
+
+    added to flask to modulize navbar
+
+commit b9478085c815e7e1ee23d9584de022cae5d3d9a3
+Merge: 2bf9663 8cc1ed5
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Wed Feb 24 21:12:23 2021 -0600
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+
+commit 8cc1ed54f81431e0be8420d65770d8da4a51bba3
+Merge: 3402ceb 84afa6c
+Author: Danfeng Wang <dannywang@utexas.edu>
+Date:   Thu Feb 25 03:02:23 2021 +0000
+
+    Merge branch 'projections_page' into 'dev'
+    
+    Projections page
+    
+    See merge request msw2686/rocketStonks!4
+
+commit 2bf96630a250c77ce83d890e23aa700bf4121e8a
+Merge: bc59574 3402ceb
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Wed Feb 24 21:01:27 2021 -0600
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+
+commit 3402ceb1d019ea111ecb3856b2f94b98e68e520b
+Author: Nam Nguyen <namnguyen430@gmail.com>
+Date:   Wed Feb 24 21:00:00 2021 -0600
+
+    deleted extra nav bar
+
+commit bc5957412eb46fe4761ae24bdf9d39b9ff604e74
+Merge: b84fec0 0be0637
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Wed Feb 24 20:59:38 2021 -0600
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+
+commit 84afa6c7f49877d779b03a8af7c5703c43bc3c1d
+Merge: a962788 0be0637
+Author: Danfeng Wang <dannywang@utexas.edu>
+Date:   Wed Feb 24 21:58:48 2021 -0500
+
+    merge into dev branch
+
+commit b84fec06b7a0eb309219e59aa70313008d61791b
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Wed Feb 24 20:53:30 2021 -0600
+
+    categories cards
+
+commit 0be06372740b3801308355f97f8bf0a88df04540
+Author: Nam Nguyen <namnguyen430@gmail.com>
+Date:   Wed Feb 24 20:52:31 2021 -0600
+
+    first commit created about us page
+
+commit a9627887f82418fae228a4613f60162ae268c8f0
+Merge: fabde5f 04350ad
+Author: Danfeng Wang <dannywang@utexas.edu>
+Date:   Wed Feb 24 21:43:41 2021 -0500
+
+    resolve merge conflict for AAPL projection page
+
+commit d4a1ac0b868965f387c0f614467584b6ce4bf404
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Wed Feb 24 20:37:35 2021 -0600
+
+    Added base nav_bar html page
+
+commit c30d4c1176102e22d8ae1621468f970b947eea92
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Wed Feb 24 20:20:15 2021 -0600
+
+    Added pages for stocks with cards for the 3 stocks currently completed.
+
+commit 8e25c01f8c99453faf599623fa7aad9f43807b25
+Merge: 4a0f50c 4b981ef
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Wed Feb 24 20:16:44 2021 -0600
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+    
+     Conflicts:
+    	main.py
+    	templates/index.html
+
+commit 4a0f50c526ca636076936061f0989ff54b5e142f
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Wed Feb 24 20:13:43 2021 -0600
+
+    Added pages for stocks with cards for the 3 stocks currently completed.
+
+commit fabde5f6f29cad83d3a97174e2be27c85d89de84
+Author: Danfeng Wang <dannywang@utexas.edu>
+Date:   Wed Feb 24 21:10:45 2021 -0500
+
+    finish apple AAPL projection page
+
+commit 4b981ef16344aaba5e86c6e44b86417313f55a98
+Author: Michael Walters <mike855@outlook.com>
+Date:   Mon Feb 15 18:44:02 2021 -0600
+
+    added a blanket stocks page template.
+
+commit 35486a3f5cbcd364984d5733f4f5fc2f2fc6375a
+Author: Michael Walters <mike855@outlook.com>
+Date:   Mon Feb 15 17:49:43 2021 -0600
+
+    added a categories page to house all categories
+
+commit 0fe456bfc6b02291f71de54620a4167aa2052429
+Author: Michael Walters <mike855@outlook.com>
+Date:   Sun Feb 14 02:11:24 2021 -0600
+
+    continued stylizing index
+
+commit c5d08dbd7d387c2931e1ac730ae393cbf887f32a
+Merge: daa421e 04350ad
+Author: Michael Walters <mike855@outlook.com>
+Date:   Sun Feb 14 00:29:54 2021 -0600
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+
+commit daa421e574b72a7c26c53437ce0ef96defc89772
+Author: Michael Walters <mike855@outlook.com>
+Date:   Sun Feb 14 00:29:30 2021 -0600
+
+    added the .log file
+
+commit 04350ad7081de9e895baf49ca385d6c05d3a5058
+Merge: 37e413a 8892c64
+Author: Michael Walters <mike855@outlook.com>
+Date:   Sun Feb 14 01:03:47 2021 +0000
+
+    Merge branch 'dev' into 'master'
+    
+    first merge with master
+    
+    See merge request msw2686/rocketStonks!1
+
+commit 8892c64aeae999eecd4a52aab8a9457c7bbbe390
+Author: Michael Walters <mike855@outlook.com>
+Date:   Sat Feb 13 18:57:59 2021 -0600
+
+    main.py has been populated and is confirmed to work with venv
+
+commit 08a2e98e6ad29342e97b08eb058e03e604a27d54
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Sat Feb 13 17:45:29 2021 -0600
+
+    Finished stock page template, and static stock page content.
+
+commit 562c82a6578a061c8961e8fe622d10fa1e8b407f
+Merge: 2e256db 45bed56
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Sat Feb 13 17:14:43 2021 -0600
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+
+commit c7c8352f76714af632b7aaa24fb99c620d5114b9
+Author: Danfeng Wang <dannywang@utexas.edu>
+Date:   Sat Feb 13 18:13:17 2021 -0500
+
+    Start working on the projection pages; finish basic setup; half way finish the apple inc page;
+
+commit 2e256db71a7307e75104a5ed60b90e8405dc88c7
+Merge: 3149d67 cc40e3d
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Sat Feb 13 17:12:33 2021 -0600
+
+    Merge branch 'dev' of https://gitlab.com/msw2686/rocketStonks into dev
+
+commit 45bed56e011a6beb6ddf774a28dcf6c000a5dede
+Author: Michael Walters <mike855@outlook.com>
+Date:   Sat Feb 13 17:12:15 2021 -0600
+
+    working on index.html and navbar
+
+commit cc40e3d172b4cd331798bf25eaed7288907d47c1
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Sat Feb 13 17:09:13 2021 -0600
+
+    Updated WIP Stock page - part 2.
+
+commit 3149d67de17ec05f292481d9470bc434f9f59f58
+Author: Alec-Biggerstaff <71775697+Alec-Biggerstaff@users.noreply.github.com>
+Date:   Sat Feb 13 16:48:34 2021 -0600
+
+    categories
+
+commit a8ed3fc8209b24fb819ea4829fcfaf8635d8506f
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Sat Feb 13 16:36:24 2021 -0600
+
+    Updated WIP Stock page.
+
+commit 31a5b8963b29efa0c1b586b9c0ef4abae16eadfb
+Author: Allan Castaneda <acasta2399@gmail.com>
+Date:   Sat Feb 13 16:06:05 2021 -0600
+
+    Added static folder, some images, and WIP stock page.
+
+commit 37e413a99d42589853411db841b57df8733e89c9
+Author: Michael Walters <mike855@outlook.com>
+Date:   Tue Feb 9 12:23:52 2021 -0600
+
+    updated repo with Fraij's template
+
+commit c89ff4af8d021392ad4496f78b588bad517635fe
+Author: Michael Walters <mike855@outlook.com>
+Date:   Mon Feb 8 20:22:19 2021 +0000
+
+    Initial commit

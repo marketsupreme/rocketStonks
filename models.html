@@ -1,0 +1,365 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module models</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>models</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Callan%5Cdocuments%5C2021%20spring%20classes%5Ccs%20331e%5Crocketstonks%5Cmodels.py">c:\users\allan\documents\2021 spring classes\cs 331e\rocketstonks\models.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;---------------------------<br>
+#&nbsp;projects/IDB3/models.py<br>
+#&nbsp;Fares&nbsp;Fraij<br>
+#&nbsp;---------------------------</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial">sqlalchemy.ext.declarative.api.Model(<a href="flask_sqlalchemy.model.html#Model">flask_sqlalchemy.model.Model</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="models.html#Stock">Stock</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#StockIntraday">StockIntraday</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#StockStats">StockStats</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Stock">class <strong>Stock</strong></a>(sqlalchemy.ext.declarative.api.Model)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Stock">Stock</a>(**kwargs)<br>
+&nbsp;<br>
+Base&nbsp;class&nbsp;for&nbsp;SQLAlchemy&nbsp;declarative&nbsp;base&nbsp;model.<br>
+&nbsp;<br>
+To&nbsp;define&nbsp;models,&nbsp;subclass&nbsp;:attr:`db.Model&nbsp;&lt;SQLAlchemy.Model&gt;`,&nbsp;not&nbsp;this<br>
+class.&nbsp;To&nbsp;customize&nbsp;``db.Model``,&nbsp;subclass&nbsp;this&nbsp;and&nbsp;pass&nbsp;it&nbsp;as<br>
+``model_class``&nbsp;to&nbsp;:class:`SQLAlchemy`.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Stock">Stock</a></dd>
+<dd>sqlalchemy.ext.declarative.api.Model</dd>
+<dd><a href="flask_sqlalchemy.model.html#Model">flask_sqlalchemy.model.Model</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Stock-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
+&nbsp;<br>
+Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
+values&nbsp;in&nbsp;``kwargs``.<br>
+&nbsp;<br>
+Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
+attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
+for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>beta</strong></dt>
+</dl>
+<dl><dt><strong>category</strong></dt>
+</dl>
+<dl><dt><strong>change</strong></dt>
+</dl>
+<dl><dt><strong>changePercent</strong></dt>
+</dl>
+<dl><dt><strong>day</strong></dt>
+</dl>
+<dl><dt><strong>dividend</strong></dt>
+</dl>
+<dl><dt><strong>dividendYield</strong></dt>
+</dl>
+<dl><dt><strong>eps</strong></dt>
+</dl>
+<dl><dt><strong>exDividend</strong></dt>
+</dl>
+<dl><dt><strong>exchange</strong></dt>
+</dl>
+<dl><dt><strong>high</strong></dt>
+</dl>
+<dl><dt><strong>low</strong></dt>
+</dl>
+<dl><dt><strong>marketCapitalization</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<dl><dt><strong>open</strong></dt>
+</dl>
+<dl><dt><strong>peRatio</strong></dt>
+</dl>
+<dl><dt><strong>previousClose</strong></dt>
+</dl>
+<dl><dt><strong>price</strong></dt>
+</dl>
+<dl><dt><strong>ticker</strong></dt>
+</dl>
+<dl><dt><strong>volume</strong></dt>
+</dl>
+<dl><dt><strong>yearlyHigh</strong></dt>
+</dl>
+<dl><dt><strong>yearlyLow</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x2b5be379220; Stock&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('stock', MetaData(bind=None), Column('name...20), table=&lt;stock&gt;, nullable=False), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'stock'</dl>
+
+<hr>
+Data and other attributes inherited from sqlalchemy.ext.declarative.api.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<dl><dt><strong>query</strong> = &lt;flask_sqlalchemy.BaseQuery object&gt;</dl>
+
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>SQLAlchemy&nbsp;:class:`~sqlalchemy.orm.query.Query`&nbsp;subclass&nbsp;with&nbsp;convenience&nbsp;methods&nbsp;for&nbsp;querying&nbsp;in&nbsp;a&nbsp;web&nbsp;application.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;the&nbsp;default&nbsp;:attr:`~Model.query`&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as&nbsp;:attr:`~SQLAlchemy.Query`.<br>
+Override&nbsp;the&nbsp;query&nbsp;class&nbsp;for&nbsp;an&nbsp;individual&nbsp;model&nbsp;by&nbsp;subclassing&nbsp;this&nbsp;and&nbsp;setting&nbsp;:attr:`~Model.query_class`.</tt></dl>
+
+<hr>
+Methods inherited from <a href="flask_sqlalchemy.model.html#Model">flask_sqlalchemy.model.Model</a>:<br>
+<dl><dt><a name="Stock-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.model.html#Model">flask_sqlalchemy.model.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="StockIntraday">class <strong>StockIntraday</strong></a>(sqlalchemy.ext.declarative.api.Model)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#StockIntraday">StockIntraday</a>(**kwargs)<br>
+&nbsp;<br>
+Base&nbsp;class&nbsp;for&nbsp;SQLAlchemy&nbsp;declarative&nbsp;base&nbsp;model.<br>
+&nbsp;<br>
+To&nbsp;define&nbsp;models,&nbsp;subclass&nbsp;:attr:`db.Model&nbsp;&lt;SQLAlchemy.Model&gt;`,&nbsp;not&nbsp;this<br>
+class.&nbsp;To&nbsp;customize&nbsp;``db.Model``,&nbsp;subclass&nbsp;this&nbsp;and&nbsp;pass&nbsp;it&nbsp;as<br>
+``model_class``&nbsp;to&nbsp;:class:`SQLAlchemy`.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#StockIntraday">StockIntraday</a></dd>
+<dd>sqlalchemy.ext.declarative.api.Model</dd>
+<dd><a href="flask_sqlalchemy.model.html#Model">flask_sqlalchemy.model.Model</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="StockIntraday-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
+&nbsp;<br>
+Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
+values&nbsp;in&nbsp;``kwargs``.<br>
+&nbsp;<br>
+Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
+attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
+for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>date</strong></dt>
+</dl>
+<dl><dt><strong>high</strong></dt>
+</dl>
+<dl><dt><strong>id</strong></dt>
+</dl>
+<dl><dt><strong>low</strong></dt>
+</dl>
+<dl><dt><strong>open</strong></dt>
+</dl>
+<dl><dt><strong>price</strong></dt>
+</dl>
+<dl><dt><strong>ticker</strong></dt>
+</dl>
+<dl><dt><strong>volume</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x2b5be379940; StockIntraday&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('stockhistory', MetaData(bind=None), Colum..., primary_key=True, nullable=False), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'stockhistory'</dl>
+
+<hr>
+Data and other attributes inherited from sqlalchemy.ext.declarative.api.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<dl><dt><strong>query</strong> = &lt;flask_sqlalchemy.BaseQuery object&gt;</dl>
+
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>SQLAlchemy&nbsp;:class:`~sqlalchemy.orm.query.Query`&nbsp;subclass&nbsp;with&nbsp;convenience&nbsp;methods&nbsp;for&nbsp;querying&nbsp;in&nbsp;a&nbsp;web&nbsp;application.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;the&nbsp;default&nbsp;:attr:`~Model.query`&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as&nbsp;:attr:`~SQLAlchemy.Query`.<br>
+Override&nbsp;the&nbsp;query&nbsp;class&nbsp;for&nbsp;an&nbsp;individual&nbsp;model&nbsp;by&nbsp;subclassing&nbsp;this&nbsp;and&nbsp;setting&nbsp;:attr:`~Model.query_class`.</tt></dl>
+
+<hr>
+Methods inherited from <a href="flask_sqlalchemy.model.html#Model">flask_sqlalchemy.model.Model</a>:<br>
+<dl><dt><a name="StockIntraday-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.model.html#Model">flask_sqlalchemy.model.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="StockStats">class <strong>StockStats</strong></a>(sqlalchemy.ext.declarative.api.Model)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#StockStats">StockStats</a>(**kwargs)<br>
+&nbsp;<br>
+Base&nbsp;class&nbsp;for&nbsp;SQLAlchemy&nbsp;declarative&nbsp;base&nbsp;model.<br>
+&nbsp;<br>
+To&nbsp;define&nbsp;models,&nbsp;subclass&nbsp;:attr:`db.Model&nbsp;&lt;SQLAlchemy.Model&gt;`,&nbsp;not&nbsp;this<br>
+class.&nbsp;To&nbsp;customize&nbsp;``db.Model``,&nbsp;subclass&nbsp;this&nbsp;and&nbsp;pass&nbsp;it&nbsp;as<br>
+``model_class``&nbsp;to&nbsp;:class:`SQLAlchemy`.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#StockStats">StockStats</a></dd>
+<dd>sqlalchemy.ext.declarative.api.Model</dd>
+<dd><a href="flask_sqlalchemy.model.html#Model">flask_sqlalchemy.model.Model</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="StockStats-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
+&nbsp;<br>
+Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
+values&nbsp;in&nbsp;``kwargs``.<br>
+&nbsp;<br>
+Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
+attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
+for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>AnalystTargetPrice</strong></dt>
+</dl>
+<dl><dt><strong>BookValue</strong></dt>
+</dl>
+<dl><dt><strong>DilutedEPSTTM</strong></dt>
+</dl>
+<dl><dt><strong>DividendPerShare</strong></dt>
+</dl>
+<dl><dt><strong>DividendYield</strong></dt>
+</dl>
+<dl><dt><strong>EBITDA</strong></dt>
+</dl>
+<dl><dt><strong>EPS</strong></dt>
+</dl>
+<dl><dt><strong>EVToEBITDA</strong></dt>
+</dl>
+<dl><dt><strong>EVToRevenue</strong></dt>
+</dl>
+<dl><dt><strong>ForwardPE</strong></dt>
+</dl>
+<dl><dt><strong>GrossProfitTTM</strong></dt>
+</dl>
+<dl><dt><strong>MarketCapitalization</strong></dt>
+</dl>
+<dl><dt><strong>OperatingMarginTTM</strong></dt>
+</dl>
+<dl><dt><strong>PEGRatio</strong></dt>
+</dl>
+<dl><dt><strong>PERatio</strong></dt>
+</dl>
+<dl><dt><strong>PriceToBookRatio</strong></dt>
+</dl>
+<dl><dt><strong>PriceToSalesRatioTTM</strong></dt>
+</dl>
+<dl><dt><strong>ProfitMargin</strong></dt>
+</dl>
+<dl><dt><strong>QuarterlyEarningsGrowthYOY</strong></dt>
+</dl>
+<dl><dt><strong>QuarterlyRevenueGrowthYOY</strong></dt>
+</dl>
+<dl><dt><strong>ReturnOnAssetsTTM</strong></dt>
+</dl>
+<dl><dt><strong>ReturnOnEquityTTM</strong></dt>
+</dl>
+<dl><dt><strong>RevenuePerShareTTM</strong></dt>
+</dl>
+<dl><dt><strong>RevenueTTM</strong></dt>
+</dl>
+<dl><dt><strong>TrailingPE</strong></dt>
+</dl>
+<dl><dt><strong>country</strong></dt>
+</dl>
+<dl><dt><strong>currency</strong></dt>
+</dl>
+<dl><dt><strong>description</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<dl><dt><strong>symbol</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x2b5bebaaca0; StockStats&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('statistics', MetaData(bind=None), Column(...table=&lt;statistics&gt;, nullable=False), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'statistics'</dl>
+
+<hr>
+Data and other attributes inherited from sqlalchemy.ext.declarative.api.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<dl><dt><strong>query</strong> = &lt;flask_sqlalchemy.BaseQuery object&gt;</dl>
+
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>SQLAlchemy&nbsp;:class:`~sqlalchemy.orm.query.Query`&nbsp;subclass&nbsp;with&nbsp;convenience&nbsp;methods&nbsp;for&nbsp;querying&nbsp;in&nbsp;a&nbsp;web&nbsp;application.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;the&nbsp;default&nbsp;:attr:`~Model.query`&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as&nbsp;:attr:`~SQLAlchemy.Query`.<br>
+Override&nbsp;the&nbsp;query&nbsp;class&nbsp;for&nbsp;an&nbsp;individual&nbsp;model&nbsp;by&nbsp;subclassing&nbsp;this&nbsp;and&nbsp;setting&nbsp;:attr:`~Model.query_class`.</tt></dl>
+
+<hr>
+Methods inherited from <a href="flask_sqlalchemy.model.html#Model">flask_sqlalchemy.model.Model</a>:<br>
+<dl><dt><a name="StockStats-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.model.html#Model">flask_sqlalchemy.model.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>app</strong> = &lt;Flask 'models'&gt;<br>
+<strong>db</strong> = &lt;SQLAlchemy engine=postgresql://postgres:***@localhost:5432/postgres&gt;</td></tr></table>
+</body></html>

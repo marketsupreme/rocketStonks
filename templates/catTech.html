@@ -19,7 +19,22 @@
 
 		<br/><br/><br/>
 		<h1>Technology Stocks</h1><br/>
+		<strong> &nbsp &nbsp &nbsp Sort By: </strong><button onclick = "location.href = '{{url_for('catTech', sortBy = 'Price', asc = True)}}';"> Price Desc. </button>
+		<button onclick = "location.href = '{{url_for('catTech', sortBy = 'Price', asc = False)}}';"> Price Asc. </button>
+		<button onclick = "location.href = '{{url_for('catTech', sortBy = 'Open', asc = True)}}';"> Open Desc. </button>
+		<button onclick = "location.href = '{{url_for('catTech', sortBy = 'Open', asc = False)}}';"> Open Asc. </button>
+		<button onclick = "location.href = '{{url_for('catTech', sortBy = 'PreviousClose', asc = True)}}';"> Previous Close Desc. </button>
+		<button onclick = "location.href = '{{url_for('catTech', sortBy = 'PreviousClose', asc = False)}}';"> Previous Close Asc. </button>
+		<button onclick = "location.href = '{{url_for('catTech', sortBy = 'Low', asc = True)}}';"> Low Desc. </button>
+		<button onclick = "location.href = '{{url_for('catTech', sortBy = 'Low', asc = False)}}';"> Low Asc. </button>
+		<button onclick = "location.href = '{{url_for('catTech', sortBy = 'High', asc = True)}}';"> High Desc. </button>
+		<button onclick = "location.href = '{{url_for('catTech', sortBy = 'High', asc = False)}}';"> High Asc. </button>
+		<form action="{{url_for('results2', cat = 'Technology')}}" method = 'POST' style ='padding: 1em; padding-left:5em;'>
+			<input type = "text" name ="search" id = "search" placeholder= "Search for a tech stock" >
+			<button type="submit"><i class="fa fa-search"></i></button>
+		</form>
 		<div class="row row-cols-1 row-cols-md-4 g-4" style ="padding-top:1em; padding-left:5em; padding-right:5em;">
+
 		{% for i in stocks %}
 			{% if i.category == 'Technology' %}
 				<div class="col">
@@ -33,38 +48,6 @@
 				</div>
 			{% endif %}
 		{% endfor %}
-			<!-- <div class="col">
-				<div class="card h-100" onclick = "location.href = '{{url_for('AAPL')}}';" onmouseover="">
-					<img src="/static/images/apple-logo.png" class="card-img-top" alt="apple logo">
-					<div class="card-body">
-						<h5 class="card-title"> Apple Inc. <strong>(AAPL)</strong> </h5>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card h-100" onclick = "location.href = '{{url_for('dummy')}}';" onmouseover="">
-					<img src="/static/images/Microsoft-Logo.jpg" class="card-img-top" alt="microsoft logo">
-					<div class="card-body">
-						<h5 class="card-title"> Microsoft Corporation <strong> (MSFT) </strong> </h5>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card h-100" onclick = "location.href = '{{url_for('dummy')}}';" onmouseover="">
-					<img src="/static/images/Alphabet-logo.png" class="card-img-top" alt="alphabet logo">
-					<div class="card-body">
-						<h5 class="card-title"> Alphabet Inc. <strong> (GOOG) </strong></h5>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card h-100" onclick = "location.href = '{{url_for('dummy')}}';" onmouseover="">
-					<img src="/static/images/Amazon-logo.png" class="card-img-top" alt="amazon logo">
-					<div class="card-body">
-						<h5 class="card-title"> Amazon.com, Inc. <strong> (AMZN) </strong></h5>
-					</div>
-				</div>
-			</div> -->
 		</div>
 	</body>
 </html>
