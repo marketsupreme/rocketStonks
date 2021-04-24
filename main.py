@@ -474,6 +474,16 @@ def specific_stock_intraday_api(stockName):
     dict = {stockName : ticker_dict}
     return dict
 
+@app.route('/api/stockIntraday/<stockName>/<stockDate>')
+def specific_stock_date_intraday_api(stockName, stockDate):
+    day = StockIntraday.query.filter_by(ticker=stockName, date = stockDate).all()
+    day = day[0]
+    dict = {}
+    ticker_dict = {}
+    ticker_dict[stockDate] = {'price' : day.price, 'high': day.high, 'low' : day.low, 'volume' : day.volume, 'open' : day.open}
+    dict[stockName] = ticker_dict
+    return dict
+
 @app.route('/api/stockIntraday')
 def stocks_intraday_api():
     stocks = Stock.query.all()
