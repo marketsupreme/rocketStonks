@@ -83,11 +83,11 @@
                         <ul>
                             <li>
                                 Commits: 
-                                12
+                                22
                             </li>
                             <li>
                                 Issues: 
-                                6
+                                15
                             </li>
                             <li>
                                 Unit Tests: 
@@ -117,15 +117,15 @@
                         <ul>
                             <li>
                                 Commits: 
-                                20
+                                60
                             </li>
                             <li>
                                 Issues: 
-                                8
+                                23
                             </li>
                             <li>
                                 Unit Tests: 
-                                0
+                                6
                             </li>
                             
                         </ul>
@@ -151,15 +151,15 @@
                         <ul>
                             <li>
                                 Commits: 
-                                7
+                                24
                             </li>
                             <li>
                                 Issues: 
-                                3
+                                15
                             </li>
                             <li>
                                 Unit Tests: 
-                                0
+                                5
                             </li>
                             
                         </ul>
@@ -186,15 +186,15 @@
                         <ul>
                             <li>
                                 Commits: 
-                                22
+                                49
                             </li>
                             <li>
                                 Issues: 
-                                8
+                                27
                             </li>
                             <li>
                                 Unit Tests: 
-                                0
+                                5
                             </li>
                             
                         </ul>
@@ -220,15 +220,15 @@
                         <ul>
                             <li>
                                 Commits: 
-                                13
+                                25
                             </li>
                             <li>
                                 Issues: 
-                                5
+                                18
                             </li>
                             <li>
                                 Unit Tests: 
-                                0
+                                6
                             </li>
                             
                         </ul>
@@ -244,23 +244,30 @@
                         <li>
                         <a href="https://gitlab.com/msw2686/rocketStonks/-/tree/master" target="_blank">Gitlab Repository</a>
                         </li>
+
                         <li>
                         <a href="https://gitlab.com/msw2686/rocketStonks/-/issues" target="_blank">Gitlab Issue Tracker</a>
                         </li>
+
                         <li>
                         <a href="https://gitlab.com/msw2686/rocketStonks/-/wikis/home" target="_blank">Gitlab Wiki</a>
                         </li>
+
+                        <li>
+                        <a href="https://speakerdeck.com/rocketstonks" target="_blank">SpeakerDeck</a>
+                        </li>
+
                         <li>
                             Commits: 
-                            6
+                            180
                         </li>
                         <li>
                             Issues: 
-                            6
+                            98
                         </li>
                         <li>
                             Unit Tests: 
-                            6
+                            28
                         </li>            
                     </ul>
             </div>
@@ -272,46 +279,37 @@
                 <img src="../static/images/alphavantage.png" width="75" length="100" onclick = "location.href = alphavantage.com;" 
                     onmouseover="" style ="cursor:pointer;" class="center">
                 </a>
-                <h5>Our back-end team used Alpha Vantage to get the data for 
-                    each ticker we established in a text file. Iterating through 
-                    that file, they replaced each ticker name in the url for the API 
-                    and gathered 4 site-specific categories of data for each ticker: 
-                    Overview, Intraday, Historical and Statistics. Each call returned a 
-                    JSON so they saved each JSON to their respective dictionary entry. 
-                    Each ticker fell under a category, so the general layout of the dictionary 
-                    was {'Technology':{'<ticker.name>':{Overview: (JSON stuff), 
-                    Statistics: (JSON stuff)}}} and so on. The website allowed 
-                    5 calls per minute and 500 calls per day. Since we had 24 stocks per 
-                    category, there were 72 stocks that needed 4 calls each so a total of 
-                    288 calls needed to be made. To ensure no more than 5 calls per minute, 
-                    the function "sleep()" formt he "time" library was used to stop the code 
-                    for 60 seconds. When the calling was finished, the large dictionary was then 
-                    dumped using json.dump() into a usable json format. 
-                </h5>
+    
             </div>
         </div>
         <div class='tools'>
             <div class='gitlab'>
-                <a href="https://gitlab.com" target="_blank">
-                <img src="../static/images/gitlab_logo.png" width="75" length="100" onclick = "location.href = alphavantage.com;" 
-                    onmouseover="" style ="cursor:pointer;" class="center">
-                </a>
+                <div class='btn text-center'>
+                    <a href="https://gitlab.com" target="_blank">
+                    <img src="../static/images/gitlab_logo.png" width="75" length="100" onclick = "location.href = alphavantage.com;" 
+                        onmouseover="" style ="cursor:pointer;" class="center">
+                    </a>
+                </div>
             </div>
         </div>
         <div class='tools'>
             <div class='bootstrap'>
+                <div class='btn text-center'>
                 <a href="https://getbootstrap.com" target="_blank">
                 <img src="../static/images/bootstrap.png" width="75" length="100" onclick = "location.href = alphavantage.com;" 
                     onmouseover="" style ="cursor:pointer;" class="center">
                 </a>
+                </div>
             </div>
         </div>
         <div class='tools'>
             <div class='flask'>
+                <div class='btn text-center'>
                 <a href="https://flask.palletprojects.com" target="_blank">
                 <img src="../static/images/flask-logo.png" width="75" length="50" onclick = "location.href = alphavantage.com;" 
                     onmouseover="" style ="cursor:pointer;">
                 </a>
+                </div>
             </div>
         </div>
         </div>

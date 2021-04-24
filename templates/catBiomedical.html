@@ -19,12 +19,25 @@
 
 		<br/><br/><br/>
 		<h1>Biomedical Stocks</h1><br/>
-		
+		<strong> &nbsp &nbsp &nbsp Sort By: </strong><button onclick = "location.href = '{{url_for('catBio', sortBy = 'Price', asc = True)}}';"> Price Desc. </button>
+		<button onclick = "location.href = '{{url_for('catBio', sortBy = 'Price', asc = False)}}';"> Price Asc. </button>
+		<button onclick = "location.href = '{{url_for('catBio', sortBy = 'Open', asc = True)}}';"> Open Desc. </button>
+		<button onclick = "location.href = '{{url_for('catBio', sortBy = 'Open', asc = False)}}';"> Open Asc. </button>
+		<button onclick = "location.href = '{{url_for('catBio', sortBy = 'PreviousClose', asc = True)}}';"> Previous Close Desc. </button>
+		<button onclick = "location.href = '{{url_for('catBio', sortBy = 'PreviousClose', asc = False)}}';"> Previous Close Asc. </button>
+		<button onclick = "location.href = '{{url_for('catBio', sortBy = 'Low', asc = True)}}';"> Low Desc. </button>
+		<button onclick = "location.href = '{{url_for('catBio', sortBy = 'Low', asc = False)}}';"> Low Asc. </button>
+		<button onclick = "location.href = '{{url_for('catBio', sortBy = 'High', asc = True)}}';"> High Desc. </button>
+		<button onclick = "location.href = '{{url_for('catBio', sortBy = 'High', asc = False)}}';"> High Asc. </button>
+		<form action="{{url_for('results2', cat = 'Biomedical')}}" method = 'POST' style ='padding: 1em; padding-left:5em;'>
+			<input type = "text" name ="search" id = "search" placeholder= "Search for a bio stock" >
+			<button type="submit"><i class="fa fa-search"></i></button>
+		</form>
 		<div class="row row-cols-1 row-cols-md-4 g-4" style ="padding-top:1em; padding-left:5em; padding-right:5em;">
 		{% for i in stocks %}
 			{% if i.category == 'Biomedical' %}
 				<div class="col">
-					<div class="card h-100" onclick = "location.href = '{{ i.ticker }}';" onmouseover="">
+					<div class="card h-100" onclick = "location.href = '{{url_for('stockPage', stockName = i.ticker)}}';" onmouseover="">
 						<img src="/static/images/{{i.ticker}}.jpg" class="card-img-top" alt=.>
 						<img src="/static/images/{{i.ticker}}.png" class="card-img-top" alt=.>
 						<div class="card-body">
@@ -34,37 +47,10 @@
 				</div>
 			{% endif %}
 		{% endfor %}
-				<!-- <div class="card h-100" onclick = "location.href = '{{url_for('MRNA')}}';" onmouseover="">
-					<img src="/static/images/moderna-logo.jpg" class="card-img-top" alt="moderna logo">
-					<div class="card-body">
-						<h5 class="card-title"> Moderna Inc. <strong>(MRNA)</strong> </h5>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card h-100" onclick = "location.href = '{{url_for('dummy')}}';" onmouseover="">
-					<img src="/static/images/Pfizer-logo.jpg" class="card-img-top" alt="pfizer logo">
-					<div class="card-body">
-						<h5 class="card-title"> Pfizer Inc. <strong> (PFE) </strong></h5>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card h-100" onclick = "location.href = '{{url_for('dummy')}}';" onmouseover="">
-					<img src="/static/images/Alexion-logo.png" class="card-img-top" alt="alexion logo">
-					<div class="card-body">
-						<h5 class="card-title"> Alexion Pharmaceuticals, Inc. <strong> (ALXN) </strong></h5>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card h-100" onclick = "location.href = '{{url_for('dummy')}}';" onmouseover="">
-					<img src="/static/images/Novartis-logo.webp" class="card-img-top" alt="novartis logo">
-					<div class="card-body">
-						<h5 class="card-title"> Novartis AG <strong> (NVS) </strong></h5>
-					</div>
-				</div>
-			</div> --> -->
-		<!-- </div> -->
+<<<<<<< HEAD
+				
+=======
+		</div>
+>>>>>>> 5939233575e588e9fea1b43495fd17b174523ecb
 	</body>
 </html>

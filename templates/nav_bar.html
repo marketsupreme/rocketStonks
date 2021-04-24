@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/icon.png">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!--END HERE-->
 </head>
@@ -27,7 +28,12 @@
                     <img src="/static/images/icon.png" alt="" width="48" height="38" class="d-inline-block align-top" >
                     rocketStonks
                 </a>
-            </div>
+                <div class="search" style = "float:center">
+                    <form action="{{url_for('results2')}}" method = 'POST'>
+                        <input type = "text" name ="search" id = "search" placeholder= "Search for a stock" >
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
         </nav>
     </div>
     <div class="collapse navbar-collapse" id="navbarNavDropdown" style="float:right; padding-right: 5%;">
@@ -35,13 +41,16 @@
             <li class="nav-item">
                 <a class="btn btn-default" href="{{url_for('stock', page = 1, sortBy = None, asc = 'True')}}" style="font-size: 20px; padding-right: 20%;">Stocks</a>
             </li>
+            <li class="nav-item">
+                <a class="btn btn-default" href="{{url_for('stockStat', page = 1, sortBy = None, asc = 'True')}}" style="font-size: 20px; padding-right: 20%;">Statistics</a>
+            </li>
             <li class="nav-item dropdown">
                 <a class="btn btn-default dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="true" style="font-size: 20px; padding-right: 20%;">
                     Categories
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="{{url_for('catBio')}}">Biomedical</a></li>
-                    <li><a class="dropdown-item" href="{{url_for('catIndustry')}}">Industry</a></li>
+                    <li><a class="dropdown-item" href="{{url_for('catBio', sortBy = None, asc = 'True')}}">Biomedical</a></li>
+                    <li><a class="dropdown-item" href="{{url_for('catIndustry', sortBy = None, asc = 'True')}}">Industry</a></li>
                     <li><a class="dropdown-item" href="{{url_for('catTech')}}">Technology</a></li>
                     <!-- <li><a class="dropdown-item disabled" href="{{url_for('catCrypto')}}">Cryptocurrency</a></li>
                     <li><a class="dropdown-item disabled" href="{{url_for('catPenny')}}">Penny Stocks</a></li> -->

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<!--
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="/static/css/stocks.css" rel="stylesheet">
+    <title> Stock Name </title>
+</head>
+-->
+<head>
+
+    <title>rocketStonks</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/icon.png">
+    <link rel="stylesheet" href="/static/css/stocks_page.css">
+
+</head>
+
+<body style="background-color: rgb(63, 180, 235);">
+<br>
+
+<strong> &nbsp &nbsp &nbsp Sort By: </strong><button onclick = "location.href = '{{url_for('stockStat', sortBy = 'Price', asc = True, page = page )}}';"> Price Desc. </button>
+<button onclick = "location.href = '{{url_for('stockStat', sortBy = 'Price', asc = False, page = page )}}';"> Price Asc. </button>
+<button onclick = "location.href = '{{url_for('stockStat', sortBy = 'Open', asc = True, page = page  )}}';"> Open Desc. </button>
+<button onclick = "location.href = '{{url_for('stockStat', sortBy = 'Open', asc = False, page = page )}}';"> Open Asc. </button>
+<button onclick = "location.href = '{{url_for('stockStat', sortBy = 'PreviousClose', asc = True, page = page  )}}';"> Previous Close Desc. </button>
+<button onclick = "location.href = '{{url_for('stockStat', sortBy = 'PreviousClose', asc = False, page = page )}}';"> Previous Close Asc. </button>
+<button onclick = "location.href = '{{url_for('stockStat', sortBy = 'Low', asc = True , page = page )}}';"> Low Desc. </button>
+<button onclick = "location.href = '{{url_for('stockStat', sortBy = 'Low', asc = False, page = page )}}';"> Low Asc. </button>
+<button onclick = "location.href = '{{url_for('stockStat', sortBy = 'High', asc = True , page = page )}}';"> High Desc. </button>
+<button onclick = "location.href = '{{url_for('stockStat', sortBy = 'High', asc = False, page = page )}}';"> High Asc. </button>
+
+<div class="row row-cols-1 row-cols-md-4 g-4" style ="padding-top:1em; padding-left:5em; padding-right:5em;">
+    {% if page == 6 %}
+    {% for i in range( (page - 1) * 12, (page * 12) - 1 ) %}
+    <div class="col">
+        <div class="card h-100" onclick = "location.href = '{{ stocks[i].ticker }}';" onmouseover="">
+            <img src="/static/images/{{stocks[i].ticker}}.jpg" class="card-img-top" alt=.>
+            <img src="/static/images/{{stocks[i].ticker}}.png" class="card-img-top" alt=.>
+            <div class="card-body">
+                <h5 class="card-title"> {{ stocks[i].name }} <strong>({{ stocks[i].ticker }})</strong> </h5>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% if page != 6 %}
+    {% for i in range( (page - 1) * 12, page * 12) %}
+    <div class="col">
+        <div class="card h-100" onclick = "location.href = '{{ stocks[i].ticker }}';" onmouseover="">
+            <img src="/static/images/{{stocks[i].ticker}}.jpg" class="card-img-top" alt=.>
+            <img src="/static/images/{{stocks[i].ticker}}.png" class="card-img-top" alt=.>
+            <div class="card-body">
+                <h5 class="card-title"> {{ stocks[i].name }} <strong>({{ stocks[i].ticker }})</strong> </h5>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>
+
+{% if page != 6 %}
+<button style = "float:right;" onclick = "location.href = '{{url_for('stock', sortBy = sortBy, asc = asc, page = page + 1 )}}';"> Next Page </button>
+{% endif %}
+{% if page != 1 %}
+<button style = "float:left;" onclick = "location.href = '{{url_for('stock', sortBy = sortBy, asc = asc, page = page - 1 )}}';"> Previous Page </button>
+{% endif %}
+
+</body>
+</html>
