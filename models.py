@@ -14,7 +14,7 @@ app = Flask(__name__, static_folder="./static", template_folder="./templates")
 #app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_STRING",'postgresql://postgres:1234@34.66.136.81:5432/postgres')
 # make sure to type in your password to connect properly
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
-    "DB_STRING", 'postgresql://postgres:tbtbtb311@localhost:5432/postgres')
+    "DB_STRING", 'postgresql://postgres:password@localhost:5432/postgres')
 # to suppress a warning message
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
@@ -68,7 +68,7 @@ class StockIntraday(db.Model):
 
 class StockStats(db.Model):
     # SQL Table for all stocks and their statistics
-    __tablename__ = 'stockstatistics'
+    __tablename__ = 'statistics'
 
     symbol = db.Column(db.String(10), primary_key=True)
     name = db.Column(db.String(100), nullable=False)
